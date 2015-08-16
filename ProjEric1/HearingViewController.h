@@ -10,4 +10,5 @@
 
 @interface HearingViewController : UIViewController
 
+@property NSString* subMenu;
 @end

@@ -9,17 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @class TTSItemStruct;
+@class XMLListParser;
 
-@interface ItemTableViewController : UITableViewController <NSXMLParserDelegate> {
-    
-    NSMutableString *currentElementValue;
-    NSMutableArray *items;
-    TTSItemStruct *aItem;
-    BOOL storingFlag;
+@interface ItemTableViewController : UITableViewController {
+
     NSArray *elementToParse;
 }
 
     @property NSString *category;
+    @property NSString *subMenu;
+    @property NSMutableArray *items;
 
 
 @end

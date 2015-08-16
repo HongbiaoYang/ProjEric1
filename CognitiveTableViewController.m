@@ -1,43 +1,23 @@
 //
-//  ItemTableViewController.m
+//  CognitiveTableViewController.m
 //  ProjEric1
 //
-//  Created by Hongbiao Yang on 8/5/15.
+//  Created by hongbiao yang on 8/15/15.
 //  Copyright (c) 2015 Bill. All rights reserved.
 //
 
-#import "ItemTableViewController.h"
-#import "TTSItemStruct.h"
-#import "ItemTableViewCell.h"
+#import "CognitiveTableViewController.h"
 #import "XMLListParser.h"
+#import "TTSItemStruct.h"
+#import "CognitiveItemTableViewCell.h"
 #import <AVFoundation/AVSpeechSynthesis.h>
 
 
-NSString *getPathByCategory(NSString *category);
-
-@interface ItemTableViewController ()
+@interface CognitiveTableViewController ()
 
 @end
 
-NSString *getPathByCategory(NSString *category) {
-    if ([category isEqualToString:@"gettingon"]) {
-        return [[NSBundle mainBundle] pathForResource:@"xml/gettingonoff" ofType:@"xml"];
-
-    } else if ([category isEqualToString:@"riding"]) {
-        return [[NSBundle mainBundle] pathForResource:@"xml/ridingbus" ofType:@"xml"];
-
-    } else if ([category isEqualToString:@"safety"]) {
-        return [[NSBundle mainBundle] pathForResource:@"xml/safety" ofType:@"xml"];
-
-    } else if ([category isEqualToString:@"emergency"]) {
-        return [[NSBundle mainBundle] pathForResource:@"xml/emergency" ofType:@"xml"];
-    } else {
-        return NULL;
-    }
-    
-}
-
-@implementation ItemTableViewController
+@implementation CognitiveTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,43 +27,19 @@ NSString *getPathByCategory(NSString *category) {
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSArray *paths = [[NSArray alloc] initWithObjects:[[NSBundle mainBundle] pathForResource:@"xml/gettingonoff" ofType:@"xml"],
+                    [[NSBundle mainBundle] pathForResource:@"xml/ridingbus" ofType:@"xml"],
+                    [[NSBundle mainBundle] pathForResource:@"xml/safety" ofType:@"xml"],
+                    [[NSBundle mainBundle] pathForResource:@"xml/emergency" ofType:@"xml"]];
 
-    elementToParse = [[NSArray alloc] initWithObjects:@"Title",@"Text",
-                      @"Titulo",@"Texto",@"Image",@"ImageV",nil];
+    NSArray *elements = [[NSArray alloc] initWithObjects:@"Title",@"Text",
+                                                      @"Titulo",@"Texto",@"Image",@"ImageV",nil];
 
-    NSString *path = getPathByCategory([self category]);
 
     XMLListParser *xmlParser = [[XMLListParser alloc]init];
-    [self setItems:[xmlParser loadXML:path withElements:elementToParse]];
+    [self setItems:[xmlParser loadMultiXML:paths withElements:elements]];
+
 }
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"indexpath=%ld", [indexPath row]);
-
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-
-    long row = [indexPath row];
-    TTSItemStruct *sItem = self.items[row];
-
-
-    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:sItem.text];
-    [utterance setRate:0.2f];
-    [synthesizer speakUtterance:utterance];
-}
-
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-
-    // in iOS 7 regardless of orientation width is the shorter side
-    CGFloat height = [UIScreen mainScreen].bounds.size.width;
-    return height / 3;
-}
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -99,27 +55,42 @@ NSString *getPathByCategory(NSString *category) {
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     // Return the number of rows in the section.
     return self.items.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = [UIScreen mainScreen].bounds.size.width;
+    return height / 2;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
+    long row = [indexPath row];
+    TTSItemStruct *sItem = self.items[row];
+
+
+    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:sItem.text];
+    [utterance setRate:0.2f];
+    [synthesizer speakUtterance:utterance];
+
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    NSString *cellIdentifier = @"ItemTableCell";
-    ItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    NSString *cellIdentifier = @"CognitiveItemCell";
+    CognitiveItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
 
     long row = [indexPath row];
-    
-    TTSItemStruct *tItem = self.items[row];
-    // NSLog(@"row=%ld text=%@ img=%@ item=%@ count=%ld", row, tItem.text, tItem.image, tItem, items.count);
 
-    if ([[self subMenu] isEqualToString:@"hearing"]) {
-        cell.itemLabel.text = [tItem title];
-    } else if ([[self subMenu] isEqualToString:@"nonenglish"]) {
-        cell.itemLabel.text = [tItem titulo];
-    }
+    TTSItemStruct *tItem = self.items[row];
+    NSLog(@"row=%ld text=%@ img=%@ item=%@ count=%ld", row, tItem.text, tItem.image, tItem.title, self.items.count);
+
+    cell.itemLabel.text = [tItem title];
 
     NSString *imageName = [NSString stringWithFormat:@"sym/%@", [tItem image]];
     cell.itemImage.image = [UIImage imageNamed:imageName];

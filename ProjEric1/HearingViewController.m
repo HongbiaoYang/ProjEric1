@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view.
 }
 
@@ -43,6 +44,8 @@
 
     ItemTableViewController *destinationViewController = [segue destinationViewController];
     destinationViewController.category = [segue identifier];
+    destinationViewController.subMenu = [self subMenu];
+
 
 }
 

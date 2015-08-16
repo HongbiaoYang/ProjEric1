@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VYG-Kh-kor">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VYG-Kh-kor">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -49,7 +49,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Nng-Mr-Qy3" kind="push" id="CDc-WS-pVA"/>
+                                    <segue destination="Nng-Mr-Qy3" kind="push" identifier="hearing" id="CDc-WS-pVA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IF0-rK-nVq">
@@ -57,6 +57,9 @@
                                 <state key="normal" title="cognitive" image="cognitive">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="eZ1-I4-YRw" kind="push" identifier="cognitive" id="3vx-xq-gPH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09G-Ve-MkJ">
                                 <rect key="frame" x="289" y="177" width="253" height="93"/>
@@ -64,7 +67,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="X3g-jI-cOh" kind="push" id="aaB-gY-rf4"/>
+                                    <segue destination="X3g-jI-cOh" kind="push" identifier="nonenglish" id="aaB-gY-rf4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,6 +113,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="415" y="211"/>
+        </scene>
+        <!--Cognitive Table View Controller-->
+        <scene sceneID="vmx-5K-Mfg">
+            <objects>
+                <tableViewController id="eZ1-I4-YRw" customClass="CognitiveTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5oN-C2-BPV">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CognitiveItemCell" id="CDZ-qE-TLw" customClass="CognitiveItemTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CDZ-qE-TLw" id="61o-hy-4jR">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1LQ-sI-SZb">
+                                            <rect key="frame" x="9" y="9" width="271" height="27"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGY-8O-v4f">
+                                            <rect key="frame" x="290" y="9" width="271" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UGY-8O-v4f" firstAttribute="leading" secondItem="1LQ-sI-SZb" secondAttribute="trailing" constant="10" id="GyM-lS-rr5"/>
+                                        <constraint firstItem="1LQ-sI-SZb" firstAttribute="height" secondItem="UGY-8O-v4f" secondAttribute="height" id="Ig7-qU-4Mx"/>
+                                        <constraint firstItem="1LQ-sI-SZb" firstAttribute="top" secondItem="61o-hy-4jR" secondAttribute="topMargin" constant="1" id="KOM-g9-gou"/>
+                                        <constraint firstItem="UGY-8O-v4f" firstAttribute="trailing" secondItem="61o-hy-4jR" secondAttribute="trailingMargin" constant="1" id="eM1-O4-mEE"/>
+                                        <constraint firstItem="1LQ-sI-SZb" firstAttribute="leading" secondItem="61o-hy-4jR" secondAttribute="leadingMargin" constant="1" id="f75-pr-UzG"/>
+                                        <constraint firstItem="1LQ-sI-SZb" firstAttribute="width" secondItem="UGY-8O-v4f" secondAttribute="width" id="j3T-If-kaT"/>
+                                        <constraint firstItem="1LQ-sI-SZb" firstAttribute="centerY" secondItem="UGY-8O-v4f" secondAttribute="centerY" id="vhm-Vj-qPq"/>
+                                        <constraint firstItem="1LQ-sI-SZb" firstAttribute="bottom" secondItem="61o-hy-4jR" secondAttribute="bottomMargin" constant="1" id="xY1-El-E6w"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="itemImage" destination="1LQ-sI-SZb" id="nao-qS-z7J"/>
+                                    <outlet property="itemLabel" destination="UGY-8O-v4f" id="E9c-uK-MhA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eZ1-I4-YRw" id="Mb5-jW-uCN"/>
+                            <outlet property="delegate" destination="eZ1-I4-YRw" id="rk6-0B-SHz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="GEh-qs-ic8"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0wy-fW-Swp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415" y="678"/>
         </scene>
         <!--hearing-->
         <scene sceneID="VvM-Mn-Gw4">
@@ -272,12 +328,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sN8-7E-lhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749" y="120"/>
+            <point key="canvasLocation" x="1950" y="359"/>
         </scene>
-        <!--Non English View Controller-->
+        <!--Hearing View Controller-->
         <scene sceneID="NU0-Gg-OwY">
             <objects>
-                <viewController id="X3g-jI-cOh" customClass="NonEnglishViewController" sceneMemberID="viewController">
+                <viewController id="X3g-jI-cOh" customClass="HearingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JIW-JG-8WN"/>
                         <viewControllerLayoutGuide type="bottom" id="7bL-qf-5JM"/>
@@ -291,18 +347,27 @@
                                 <state key="normal" title="gettingon_s" image="gettingonandoffthebus_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="SQJ-az-dFG" kind="push" identifier="gettingon" id="zgV-VD-auN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhd-LP-iVP">
                                 <rect key="frame" x="289" y="74" width="253" height="93"/>
                                 <state key="normal" title="riding_s" image="ridingthebus_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="SQJ-az-dFG" kind="push" identifier="riding" id="ahp-Cm-7Yy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPg-6x-JOF">
                                 <rect key="frame" x="26" y="177" width="253" height="93"/>
                                 <state key="normal" title="safety_s" image="safety_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="SQJ-az-dFG" kind="push" identifier="safety" id="Ej0-wu-Sg6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwT-O4-ibH">
                                 <rect key="frame" x="26" y="280" width="165" height="30"/>
@@ -327,6 +392,9 @@
                                 <state key="normal" title="emergency_s" image="emergency_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="SQJ-az-dFG" kind="push" identifier="emergency" id="xhI-nb-nFS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -410,6 +478,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="AyO-S4-bPA"/>
+        <segue reference="xhI-nb-nFS"/>
     </inferredMetricsTieBreakers>
 </document>

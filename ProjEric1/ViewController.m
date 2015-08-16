@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HearingViewController.h"
 
 @interface ViewController ()
 
@@ -19,9 +20,22 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"hearing"] || [[segue identifier]isEqualToString:@"nonenglish"]) {
+        HearingViewController *subViewController = [segue destinationViewController];
+        subViewController.subMenu = [segue identifier];
+    }
+    
+}
+
 
 @end
