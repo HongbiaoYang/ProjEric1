@@ -55,6 +55,8 @@ NSString *getPathByCategory(NSString *category) {
 
     XMLListParser *xmlParser = [[XMLListParser alloc]init];
     [self setItems:[xmlParser loadXML:path withElements:elementToParse]];
+    self.view.backgroundColor = [UIColor blackColor];
+
 }
 
 
@@ -124,6 +126,14 @@ NSString *getPathByCategory(NSString *category) {
     NSString *imageName = [NSString stringWithFormat:@"sym/%@", [tItem image]];
     cell.itemImage.image = [UIImage imageNamed:imageName];
 
+
+    // blackground color of each cell
+    UIColor *blueBack = [UIColor colorWithRed: 64.0/255.0f green:147.0/255.0f blue:223.0/255.0f alpha:1.0];
+    cell.itemLabel.backgroundColor = blueBack;
+    cell.itemLabel.textColor = [UIColor whiteColor];
+    [cell.itemLabel setFont:[UIFont fontWithName:@"ArialMT" size:20]];
+
+    cell.itemImage.backgroundColor = [UIColor blueColor];
 
     return cell;
 }

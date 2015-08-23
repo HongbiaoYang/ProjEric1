@@ -30,7 +30,7 @@
     NSArray *paths = [[NSArray alloc] initWithObjects:[[NSBundle mainBundle] pathForResource:@"xml/gettingonoff" ofType:@"xml"],
                     [[NSBundle mainBundle] pathForResource:@"xml/ridingbus" ofType:@"xml"],
                     [[NSBundle mainBundle] pathForResource:@"xml/safety" ofType:@"xml"],
-                    [[NSBundle mainBundle] pathForResource:@"xml/emergency" ofType:@"xml"]];
+                    [[NSBundle mainBundle] pathForResource:@"xml/emergency" ofType:@"xml"], nil];
 
     NSArray *elements = [[NSArray alloc] initWithObjects:@"Title",@"Text",
                                                       @"Titulo",@"Texto",@"Image",@"ImageV",nil];
@@ -38,6 +38,7 @@
 
     XMLListParser *xmlParser = [[XMLListParser alloc]init];
     [self setItems:[xmlParser loadMultiXML:paths withElements:elements]];
+    self.view.backgroundColor = [UIColor blackColor];
 
 }
 

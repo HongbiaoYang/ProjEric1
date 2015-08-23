@@ -21,6 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blackColor];
+    _YesButton.backgroundColor = [UIColor yellowColor];
+    _NoButton.backgroundColor = [UIColor yellowColor];
+    _MoreButton.backgroundColor = [UIColor yellowColor];
+
 
     // Do any additional setup after loading the view.
 }

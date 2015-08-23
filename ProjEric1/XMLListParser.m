@@ -30,6 +30,8 @@ NSArray *elementToParse;
     [m_parser setDelegate:self];
 
     BOOL flag = [m_parser parse];
+    if (flag == NO)
+        NSLog(@"Load xml failed!");
     return [self items];
 
 }
@@ -52,6 +54,10 @@ NSArray *elementToParse;
 
         
         BOOL flag = [m_parser parse];
+        if (flag == NO)
+            NSLog(@"Load multi xml failed!");
+        
+        
         [self.allItems addObjectsFromArray:self.items];
 
         // NSLog(@"all items=%@", [self allItems]);

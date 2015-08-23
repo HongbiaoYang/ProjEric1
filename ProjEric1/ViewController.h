@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *YesButton;
+@property (weak, nonatomic) IBOutlet UIButton *NoButton;
+@property (weak, nonatomic) IBOutlet UIButton *MoreButton;
 
 
 @end

@@ -21,7 +21,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2T-QD-Yxi">
                                 <rect key="frame" x="26" y="74" width="253" height="93"/>
-                                <state key="normal" title="vision" image="vision">
+                                <state key="normal" image="vision">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -45,7 +45,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-o0-XvV">
                                 <rect key="frame" x="289" y="74" width="253" height="93"/>
-                                <state key="normal" title="hearing" image="hearing">
+                                <state key="normal" image="hearing">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -54,7 +54,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IF0-rK-nVq">
                                 <rect key="frame" x="26" y="177" width="253" height="93"/>
-                                <state key="normal" title="cognitive" image="cognitive">
+                                <state key="normal" image="cognitive">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -63,7 +63,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09G-Ve-MkJ">
                                 <rect key="frame" x="289" y="177" width="253" height="93"/>
-                                <state key="normal" title="nonenglish" image="nonenglishspeaking">
+                                <state key="normal" image="nonenglishspeaking">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -104,15 +104,21 @@
                             <constraint firstAttribute="trailingMargin" secondItem="09G-Ve-MkJ" secondAttribute="trailing" constant="10" id="mjj-4n-mw1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hJX-D0-9dC" secondAttribute="trailing" constant="10" id="pBi-Yn-gRB"/>
                             <constraint firstItem="gbD-44-Ggv" firstAttribute="width" secondItem="hJX-D0-9dC" secondAttribute="width" id="rXK-wY-Mum"/>
+                            <constraint firstItem="IF0-rK-nVq" firstAttribute="width" secondItem="x2T-QD-Yxi" secondAttribute="width" id="xga-Wa-Qtt"/>
                             <constraint firstItem="2us-Mr-xqv" firstAttribute="top" secondItem="hJX-D0-9dC" secondAttribute="bottom" constant="10" id="ydn-UO-tII"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zU1-Os-Y8V"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="MoreButton" destination="hJX-D0-9dC" id="3AB-wD-w1j"/>
+                        <outlet property="NoButton" destination="0mo-2h-cOl" id="HxD-wC-Gwy"/>
+                        <outlet property="YesButton" destination="gbD-44-Ggv" id="0qv-RU-SAt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415" y="211"/>
+            <point key="canvasLocation" x="408" y="205"/>
         </scene>
         <!--Cognitive Table View Controller-->
         <scene sceneID="vmx-5K-Mfg">
@@ -181,20 +187,11 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnJ-7T-Omx">
                                 <rect key="frame" x="289" y="74" width="253" height="93"/>
-                                <state key="normal" title="riding" image="ridingthebus">
+                                <state key="normal" image="ridingthebus">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="SQJ-az-dFG" kind="push" identifier="riding" id="fPy-52-JVH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-0x-hgf">
-                                <rect key="frame" x="289" y="177" width="253" height="93"/>
-                                <state key="normal" title="emergency" image="emergency">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="SQJ-az-dFG" kind="push" identifier="emergency" id="AyO-S4-bPA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxb-Vi-FjV">
@@ -217,7 +214,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdV-CQ-7z6">
                                 <rect key="frame" x="26" y="74" width="253" height="93"/>
-                                <state key="normal" title="getting" image="gettingonandoffthebus">
+                                <state key="normal" image="gettingonandoffthebus">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -226,11 +223,20 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sh-Zh-x4s">
                                 <rect key="frame" x="26" y="177" width="253" height="93"/>
-                                <state key="normal" title="safety" image="safety">
+                                <state key="normal" image="safety">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="SQJ-az-dFG" kind="push" identifier="safety" id="gyz-VI-CmD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-0x-hgf">
+                                <rect key="frame" x="289" y="177" width="253" height="93"/>
+                                <state key="normal" image="emergency">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="SQJ-az-dFG" kind="push" identifier="emergency" id="AyO-S4-bPA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -272,6 +278,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="InX-h4-uKz"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="MoreButton" destination="DWi-ov-rmg" id="RhR-gM-0xi"/>
+                        <outlet property="NoButton" destination="PcE-nI-gCl" id="xwg-7Y-eoB"/>
+                        <outlet property="YesButton" destination="uxb-Vi-FjV" id="80p-88-MXt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFc-4D-wmU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -344,7 +355,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vo1-ir-CvP">
                                 <rect key="frame" x="26" y="74" width="253" height="93"/>
-                                <state key="normal" title="gettingon_s" image="gettingonandoffthebus_s">
+                                <state key="normal" image="gettingonandoffthebus_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -353,7 +364,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhd-LP-iVP">
                                 <rect key="frame" x="289" y="74" width="253" height="93"/>
-                                <state key="normal" title="riding_s" image="ridingthebus_s">
+                                <state key="normal" image="ridingthebus_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -362,7 +373,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPg-6x-JOF">
                                 <rect key="frame" x="26" y="177" width="253" height="93"/>
-                                <state key="normal" title="safety_s" image="safety_s">
+                                <state key="normal" image="safety_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -389,7 +400,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pr-Mc-49N">
                                 <rect key="frame" x="289" y="177" width="253" height="93"/>
-                                <state key="normal" title="emergency_s" image="emergency_s">
+                                <state key="normal" image="emergency_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -460,17 +471,17 @@
     </scenes>
     <resources>
         <image name="cognitive" width="445" height="455"/>
-        <image name="emergency" width="380" height="433"/>
+        <image name="emergency" width="445" height="455"/>
         <image name="emergency_s" width="380" height="432"/>
-        <image name="gettingonandoffthebus" width="591" height="437"/>
+        <image name="gettingonandoffthebus" width="441" height="451"/>
         <image name="gettingonandoffthebus_s" width="591" height="444"/>
-        <image name="hearing" width="392" height="431"/>
+        <image name="hearing" width="441" height="451"/>
         <image name="nonenglishspeaking" width="434" height="424"/>
-        <image name="ridingthebus" width="416" height="437"/>
+        <image name="ridingthebus" width="445" height="455"/>
         <image name="ridingthebus_s" width="412" height="432"/>
-        <image name="safety" width="477" height="470"/>
+        <image name="safety" width="441" height="451"/>
         <image name="safety_s" width="392" height="385"/>
-        <image name="vision" width="386" height="426"/>
+        <image name="vision" width="445" height="455"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -478,6 +489,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xhI-nb-nFS"/>
+        <segue reference="gyz-VI-CmD"/>
     </inferredMetricsTieBreakers>
 </document>
