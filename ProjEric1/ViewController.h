@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class AVSpeechSynthesizer;
+
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *YesButton;
 @property (weak, nonatomic) IBOutlet UIButton *NoButton;
 @property (weak, nonatomic) IBOutlet UIButton *MoreButton;
-
+@property AVSpeechSynthesizer *synthesizer;
 
 @end
 

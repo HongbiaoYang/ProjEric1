@@ -57,6 +57,11 @@ NSString *getPathByCategory(NSString *category) {
     [self setItems:[xmlParser loadXML:path withElements:elementToParse]];
     self.view.backgroundColor = [UIColor blackColor];
 
+    [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    
+    self.title = [self category];
+
 }
 
 

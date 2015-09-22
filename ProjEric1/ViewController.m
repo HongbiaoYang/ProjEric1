@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "HearingViewController.h"
+#import <AVFoundation/AVSpeechSynthesis.h>
+
 
 @interface ViewController ()
 
@@ -23,10 +25,34 @@
     _NoButton.backgroundColor = [UIColor yellowColor];
     _MoreButton.backgroundColor = [UIColor yellowColor];
 
+    [self setSynthesizer:[[AVSpeechSynthesizer alloc] init]];
+
+
+
+}
+
+- (IBAction)YesClick:(id)sender {
+
+    [self SpeakOutText:@"Yes"];
+}
+
+- (IBAction)NoClick:(id)sender {
+    [self SpeakOutText:@"No"];
+}
+
+- (IBAction)MoreClick:(id)sender {
     
     
 }
 
+
+-(void) SpeakOutText:(NSString *)text {
+
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:text];
+    [utterance setRate:0.2f];
+    [[self synthesizer] speakUtterance:utterance];
+
+}
 
 
 

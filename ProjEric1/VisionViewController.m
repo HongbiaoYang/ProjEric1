@@ -103,6 +103,9 @@ AVSpeechSynthesizer *synthesizer;
     [[self view] addGestureRecognizer:recognizer];
 
     
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
+    
 }
 
 - (void)presentCurrentImageWithLevel:(NSInteger) level withIndex1:(NSInteger)index1 withIndex2:(NSInteger)index2 {
