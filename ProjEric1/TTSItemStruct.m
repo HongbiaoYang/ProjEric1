@@ -17,6 +17,8 @@
 @synthesize image;
 @synthesize imageV;
 
+
+
 @end
 
 

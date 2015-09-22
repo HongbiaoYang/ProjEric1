@@ -40,6 +40,9 @@
     [self setItems:[xmlParser loadMultiXML:paths withElements:elements]];
     self.view.backgroundColor = [UIColor blackColor];
 
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
 }
 
 - (void)didReceiveMemoryWarning {

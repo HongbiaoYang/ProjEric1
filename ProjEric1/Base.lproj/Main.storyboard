@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VYG-Kh-kor">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VYG-Kh-kor">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -7,6 +7,55 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Project Eric-->
+        <scene sceneID="cev-zW-jwK">
+            <objects>
+                <viewController id="Jhh-FK-Lbk" customClass="VisionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bXV-S8-J5v"/>
+                        <viewControllerLayoutGuide type="bottom" id="DES-Z3-Qr1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9wh-s8-fxJ">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hST-A5-OmV">
+                                <rect key="frame" x="26" y="74" width="516" height="181"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhz-0z-Qlm">
+                                <rect key="frame" x="26" y="265" width="516" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lhz-0z-Qlm" firstAttribute="leading" secondItem="9wh-s8-fxJ" secondAttribute="leadingMargin" constant="10" id="AKt-sJ-Yuq"/>
+                            <constraint firstItem="hST-A5-OmV" firstAttribute="height" secondItem="lhz-0z-Qlm" secondAttribute="height" multiplier="4" id="DQ9-BA-cvF"/>
+                            <constraint firstItem="lhz-0z-Qlm" firstAttribute="top" secondItem="hST-A5-OmV" secondAttribute="bottom" constant="10" id="IVN-38-3vl"/>
+                            <constraint firstItem="hST-A5-OmV" firstAttribute="width" secondItem="lhz-0z-Qlm" secondAttribute="width" id="M6P-UV-Xe7"/>
+                            <constraint firstItem="hST-A5-OmV" firstAttribute="top" secondItem="bXV-S8-J5v" secondAttribute="bottom" constant="10" id="OKJ-m2-NHv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hST-A5-OmV" secondAttribute="trailing" constant="10" id="Sdc-jT-s5d"/>
+                            <constraint firstItem="hST-A5-OmV" firstAttribute="leading" secondItem="9wh-s8-fxJ" secondAttribute="leadingMargin" constant="10" id="qrO-fd-uVg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lhz-0z-Qlm" secondAttribute="trailing" constant="10" id="sOY-KW-IJB"/>
+                            <constraint firstItem="DES-Z3-Qr1" firstAttribute="top" secondItem="lhz-0z-Qlm" secondAttribute="bottom" constant="10" id="zMI-jL-3KO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Project Eric" id="sxF-yf-2y4">
+                        <barButtonItem key="backBarButtonItem" title="Ba" id="SlP-gi-gZe"/>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="VisionImage" destination="hST-A5-OmV" id="huy-93-9Kt"/>
+                        <outlet property="VisionTitle" destination="lhz-0z-Qlm" id="0y0-tW-htn"/>
+                        <outlet property="VisonImage" destination="hST-A5-OmV" id="SKW-Lq-rle"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xS0-JR-F7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1051" y="-97"/>
+        </scene>
         <!--Main Menu-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -24,6 +73,9 @@
                                 <state key="normal" image="vision">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Jhh-FK-Lbk" kind="push" id="afY-dg-bVF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbD-44-Ggv">
                                 <rect key="frame" x="26" y="280" width="165" height="30"/>
@@ -108,7 +160,7 @@
                             <constraint firstItem="2us-Mr-xqv" firstAttribute="top" secondItem="hJX-D0-9dC" secondAttribute="bottom" constant="10" id="ydn-UO-tII"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zU1-Os-Y8V"/>
+                    <navigationItem key="navigationItem" title="Project Eric" id="zU1-Os-Y8V"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="MoreButton" destination="hJX-D0-9dC" id="3AB-wD-w1j"/>
@@ -120,7 +172,7 @@
             </objects>
             <point key="canvasLocation" x="408" y="205"/>
         </scene>
-        <!--Cognitive Table View Controller-->
+        <!--Project Eric-->
         <scene sceneID="vmx-5K-Mfg">
             <objects>
                 <tableViewController id="eZ1-I4-YRw" customClass="CognitiveTableViewController" sceneMemberID="viewController">
@@ -140,7 +192,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGY-8O-v4f">
                                             <rect key="frame" x="290" y="9" width="271" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -166,7 +218,7 @@
                             <outlet property="delegate" destination="eZ1-I4-YRw" id="rk6-0B-SHz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="GEh-qs-ic8"/>
+                    <navigationItem key="navigationItem" title="Project Eric" id="GEh-qs-ic8"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wy-fW-Swp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,7 +328,7 @@
                             <constraint firstItem="ctv-0x-hgf" firstAttribute="height" secondItem="OnJ-7T-Omx" secondAttribute="height" id="upu-FC-1DO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="InX-h4-uKz"/>
+                    <navigationItem key="navigationItem" title="Project Eric" id="InX-h4-uKz"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="MoreButton" destination="DWi-ov-rmg" id="RhR-gM-0xi"/>
@@ -286,9 +338,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFc-4D-wmU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="81"/>
+            <point key="canvasLocation" x="1132" y="283"/>
         </scene>
-        <!--Item Table View Controller-->
+        <!--Project Eric-->
         <scene sceneID="MGP-VI-UsT">
             <objects>
                 <tableViewController id="SQJ-az-dFG" customClass="ItemTableViewController" sceneMemberID="viewController">
@@ -334,14 +386,14 @@
                             <outlet property="delegate" destination="SQJ-az-dFG" id="dXi-JO-UHy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="w3u-BV-sp7"/>
+                    <navigationItem key="navigationItem" title="Project Eric" id="w3u-BV-sp7"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sN8-7E-lhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1950" y="359"/>
         </scene>
-        <!--Hearing View Controller-->
+        <!--Project Eric-->
         <scene sceneID="NU0-Gg-OwY">
             <objects>
                 <viewController id="X3g-jI-cOh" customClass="HearingViewController" sceneMemberID="viewController">
@@ -444,11 +496,11 @@
                             <constraint firstItem="Ixu-VZ-teG" firstAttribute="top" secondItem="8pr-Mc-49N" secondAttribute="bottom" constant="10" id="yZK-OH-FOE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2hA-zi-qAr"/>
+                    <navigationItem key="navigationItem" title="Project Eric" id="2hA-zi-qAr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEg-Cy-yF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="510"/>
+            <point key="canvasLocation" x="1011" y="723"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YLr-hP-w2L">
@@ -489,6 +541,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gyz-VI-CmD"/>
+        <segue reference="zgV-VD-auN"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		815BF9DF1BAF18B6009566B5 /* VisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815BF9DE1BAF18B6009566B5 /* VisionViewController.m */; };
 		8167DF1E1B6982520055D891 /* KissXML in Resources */ = {isa = PBXBuildFile; fileRef = 8167DF1D1B6982520055D891 /* KissXML */; };
 		81D6FA021B6AC3310072693F /* xml in Resources */ = {isa = PBXBuildFile; fileRef = 81D6FA011B6AC3310072693F /* xml */; };
 		81D6FA051B6ACCBD0072693F /* TTSItemStruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D6FA041B6ACCBC0072693F /* TTSItemStruct.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		815BF9DD1BAF18B6009566B5 /* VisionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisionViewController.h; sourceTree = "<group>"; };
+		815BF9DE1BAF18B6009566B5 /* VisionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisionViewController.m; sourceTree = "<group>"; };
 		8167DF1D1B6982520055D891 /* KissXML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = KissXML; sourceTree = "<group>"; };
 		81D6FA011B6AC3310072693F /* xml */ = {isa = PBXFileReference; lastKnownFileType = folder; name = xml; path = ProjEric1/xml; sourceTree = "<group>"; };
 		81D6FA031B6ACCBC0072693F /* TTSItemStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSItemStruct.h; sourceTree = "<group>"; };
@@ -113,13 +116,7 @@
 				81DFD3F71B72B1380039EFA6 /* sym */,
 				8167DF1D1B6982520055D891 /* KissXML */,
 				A99AEAB51B597F7900BBBD08 /* AppDelegate.h */,
-				81DFD3EF1B72A7470039EFA6 /* ItemTableViewController.h */,
-				81DFD3F01B72A7470039EFA6 /* ItemTableViewController.m */,
-				81DFD3F21B72A76B0039EFA6 /* ItemTableViewCell.h */,
-				81DFD3F31B72A76B0039EFA6 /* ItemTableViewCell.m */,
 				A99AEAB61B597F7900BBBD08 /* AppDelegate.m */,
-				AE5C8A7A1B801B0F00D0FE5F /* CognitiveTableViewController.h */,
-				AE5C8A7B1B801B0F00D0FE5F /* CognitiveTableViewController.m */,
 				AE5C8A7D1B8023AF00D0FE5F /* XMLListParser.h */,
 				AE5C8A7E1B8023AF00D0FE5F /* XMLListParser.m */,
 				81D6FA031B6ACCBC0072693F /* TTSItemStruct.h */,
@@ -127,14 +124,22 @@
 				A99AEAB81B597F7900BBBD08 /* ViewController.h */,
 				A99AEAB91B597F7900BBBD08 /* ViewController.m */,
 				A99AEABB1B597F7900BBBD08 /* Main.storyboard */,
-				AE5C8A801B803C4F00D0FE5F /* CognitiveItemTableViewCell.h */,
-				AE5C8A811B803C4F00D0FE5F /* CognitiveItemTableViewCell.m */,
-				A99AEABE1B597F7900BBBD08 /* Images.xcassets */,
-				A99AEAB11B597F7900BBBD08 /* Supporting Files */,
+				815BF9DD1BAF18B6009566B5 /* VisionViewController.h */,
+				815BF9DE1BAF18B6009566B5 /* VisionViewController.m */,
 				A99AEAF91B59954C00BBBD08 /* HearingViewController.h */,
 				A99AEAFA1B59954C00BBBD08 /* HearingViewController.m */,
 				A99AEAFC1B59956E00BBBD08 /* NonEnglishViewController.h */,
 				A99AEAFD1B59956E00BBBD08 /* NonEnglishViewController.m */,
+				AE5C8A801B803C4F00D0FE5F /* CognitiveItemTableViewCell.h */,
+				AE5C8A811B803C4F00D0FE5F /* CognitiveItemTableViewCell.m */,
+				AE5C8A7A1B801B0F00D0FE5F /* CognitiveTableViewController.h */,
+				AE5C8A7B1B801B0F00D0FE5F /* CognitiveTableViewController.m */,
+				81DFD3EF1B72A7470039EFA6 /* ItemTableViewController.h */,
+				81DFD3F01B72A7470039EFA6 /* ItemTableViewController.m */,
+				81DFD3F21B72A76B0039EFA6 /* ItemTableViewCell.h */,
+				81DFD3F31B72A76B0039EFA6 /* ItemTableViewCell.m */,
+				A99AEABE1B597F7900BBBD08 /* Images.xcassets */,
+				A99AEAB11B597F7900BBBD08 /* Supporting Files */,
 			);
 			path = ProjEric1;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				81DFD3F41B72A76B0039EFA6 /* ItemTableViewCell.m in Sources */,
 				A99AEABA1B597F7900BBBD08 /* ViewController.m in Sources */,
 				81DFD3F11B72A7470039EFA6 /* ItemTableViewController.m in Sources */,
+				815BF9DF1BAF18B6009566B5 /* VisionViewController.m in Sources */,
 				A99AEAB71B597F7900BBBD08 /* AppDelegate.m in Sources */,
 				A99AEAB41B597F7900BBBD08 /* main.m in Sources */,
 				A99AEAFB1B59954C00BBBD08 /* HearingViewController.m in Sources */,

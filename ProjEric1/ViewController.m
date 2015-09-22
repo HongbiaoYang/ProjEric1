@@ -22,6 +22,9 @@
     _YesButton.backgroundColor = [UIColor yellowColor];
     _NoButton.backgroundColor = [UIColor yellowColor];
     _MoreButton.backgroundColor = [UIColor yellowColor];
+
+    
+    
 }
 
 
