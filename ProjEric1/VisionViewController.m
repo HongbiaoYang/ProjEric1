@@ -9,12 +9,15 @@
 #import "VisionViewController.h"
 #import "XMLListParser.h"
 #import "TTSItemStruct.h"
+#import "ResourceCenter.h"
 #import <AVFoundation/AVSpeechSynthesis.h>
 
 
 AVSpeechSynthesizer *synthesizer;
 
-@interface VisionViewController ()
+@interface VisionViewController () {
+    ResourceCenter *sharedCenter;
+}
 @property (weak, nonatomic) IBOutlet UIImageView *VisionImage;
 
 @end
@@ -105,7 +108,9 @@ AVSpeechSynthesizer *synthesizer;
     
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
-    
+
+    sharedCenter = [ResourceCenter sharedResource];
+
 }
 
 - (void)presentCurrentImageWithLevel:(NSInteger) level withIndex1:(NSInteger)index1 withIndex2:(NSInteger)index2 {
@@ -139,12 +144,7 @@ AVSpeechSynthesizer *synthesizer;
     NSLog(@"cat = %@ level = %d tItem=%@ index=%d/%d image=%@", [tItem title],
             level, tItem, index1, index2, [tItem imageV]);
 
-
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:tItem .text];
-    [utterance setRate:0.3f];
-    [synthesizer speakUtterance:utterance];
-
-
+    [sharedCenter SpeakOut:tItem.text];
 }
 
 - (NSArray *)getArrayOfLevel:(NSInteger)level {

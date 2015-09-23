@@ -8,8 +8,13 @@
 
 #import "NonEnglishViewController.h"
 #import "ItemTableViewController.h"
+#import "ResourceCenter.h"
 
-@interface NonEnglishViewController ()
+
+@interface NonEnglishViewController () {
+    ResourceCenter *sharedCenter;
+}
+
 
 @end
 
@@ -23,9 +28,21 @@
     [[self NoButton] setBackgroundColor:[UIColor yellowColor]];
     [[self MoreButton] setBackgroundColor:[UIColor yellowColor]];
 
-
-
+    sharedCenter = [ResourceCenter sharedResource];
 }
+
+
+- (IBAction)YesClick:(id)sender {
+    [sharedCenter SpeakOut:@"Yes"];
+}
+
+- (IBAction)NoClick:(id)sender {
+    [sharedCenter SpeakOut:@"No"];
+}
+
+- (IBAction)MoreClick:(id)sender {
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

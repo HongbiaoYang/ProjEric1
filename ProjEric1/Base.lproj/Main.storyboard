@@ -265,6 +265,9 @@
                                 <state key="normal" title="Yes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="YesClick:" destination="Nng-Mr-Qy3" eventType="touchUpInside" id="HcG-cs-FNu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWi-ov-rmg">
                                 <rect key="frame" x="377" y="280" width="165" height="30"/>
@@ -272,6 +275,9 @@
                                 <state key="normal" title="More">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="MoreClick:" destination="Nng-Mr-Qy3" eventType="touchUpInside" id="UUT-AN-2TM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdV-CQ-7z6">
                                 <rect key="frame" x="26" y="74" width="253" height="93"/>
@@ -304,6 +310,9 @@
                                 <rect key="frame" x="201" y="280" width="166" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="No"/>
+                                <connections>
+                                    <action selector="NoClick:" destination="Nng-Mr-Qy3" eventType="touchUpInside" id="ims-Eq-eTU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -446,18 +455,24 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83Z-Y6-vch">
-                                <rect key="frame" x="201" y="280" width="166" height="30"/>
+                                <rect key="frame" x="201" y="280" width="166" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="No">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="NoClick:" destination="X3g-jI-cOh" eventType="touchUpInside" id="BDj-uX-yoc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixu-VZ-teG">
-                                <rect key="frame" x="377" y="280" width="165" height="30"/>
+                                <rect key="frame" x="377" y="280" width="165" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="More">
+                                <state key="normal" title="Más">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="MoreClick:" destination="X3g-jI-cOh" eventType="touchUpInside" id="WZ1-te-KE8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="button1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vo1-ir-CvP" userLabel="1">
                                 <rect key="frame" x="26" y="74" width="253" height="93"/>
@@ -469,11 +484,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwT-O4-ibH">
-                                <rect key="frame" x="26" y="280" width="165" height="30"/>
+                                <rect key="frame" x="26" y="280" width="165" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Yes">
+                                <state key="normal" title="Sí">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="YesClick:" destination="X3g-jI-cOh" eventType="touchUpInside" id="WTb-58-DMs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -558,7 +576,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gyz-VI-CmD"/>
+        <segue reference="xhI-nb-nFS"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -10,12 +10,15 @@
 #import "TTSItemStruct.h"
 #import "ItemTableViewCell.h"
 #import "XMLListParser.h"
+#import "ResourceCenter.h"
 #import <AVFoundation/AVSpeechSynthesis.h>
 
 
 NSString *getPathByCategory(NSString *category);
 
-@interface ItemTableViewController ()
+@interface ItemTableViewController () {
+    ResourceCenter *sharedCenter;
+}
 
 @end
 
@@ -57,11 +60,54 @@ NSString *getPathByCategory(NSString *category) {
     [self setItems:[xmlParser loadXML:path withElements:elementToParse]];
     self.view.backgroundColor = [UIColor blackColor];
 
-    [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];    
     [self.navigationController.navigationBar setTranslucent:NO];
     
-    self.title = [self category];
+    self.title = [self fullTitle:[self subMenu] category:[self category] ];
+    sharedCenter = [ResourceCenter sharedResource];
 
+}
+
+- (NSString *)fullTitle:(NSString *)menu category:(NSString *)category {
+    NSMutableString *title = [[NSMutableString alloc] init];
+
+    if ([[menu lowercaseString] isEqualToString:@"hearing"]) {
+        [title setString:@"Hearing->"];
+        NSLog(@"if menu is hearing :%@", title);
+
+        if ([[category lowercaseString] isEqualToString:@"gettingon"]) {
+            [title appendString:@"Getting on and off the bus"];
+        } else if ([[category lowercaseString] isEqualToString:@"riding"]) {
+            [title appendString:@"Riding the bus"];
+        } else if ([[category lowercaseString] isEqualToString:@"safety"]) {
+            [title appendString:@"Safety"];
+        } else if ([[category lowercaseString] isEqualToString:@"emergency"]) {
+            [title appendString:@"Emergency"];
+        } else {
+            [title appendString:@"Unknown"];
+        }
+
+
+    } else if ([[menu lowercaseString] isEqualToString:@"nonenglish"]) {
+        [title setString:@"Español->"];
+
+        if ([[category lowercaseString] isEqualToString:@"gettingon"]) {
+            [title appendString:@"Embarque"];
+        } else if ([[category lowercaseString] isEqualToString:@"riding"]) {
+            [title appendString:@"Viajar"];
+        } else if ([[category lowercaseString] isEqualToString:@"safety"]) {
+            [title appendString:@"Bajar"];
+        } else if ([[category lowercaseString] isEqualToString:@"emergency"]) {
+            [title appendString:@"Emergency"];
+        } else {
+            [title appendString:@"Unknown"];
+        }
+    }
+
+    NSLog(@"menu=%@ cat=%@ title=%@", menu, category, title);
+
+
+    return title;
 }
 
 
@@ -73,11 +119,7 @@ NSString *getPathByCategory(NSString *category) {
     long row = [indexPath row];
     TTSItemStruct *sItem = self.items[row];
 
-
-    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:sItem.text];
-    [utterance setRate:0.2f];
-    [synthesizer speakUtterance:utterance];
+    [sharedCenter SpeakOut:sItem.text];
 }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		813FCAFC1BB2EF4E00E038CA /* ResourceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 813FCAFB1BB2EF4E00E038CA /* ResourceCenter.m */; };
 		815BF9DF1BAF18B6009566B5 /* VisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815BF9DE1BAF18B6009566B5 /* VisionViewController.m */; };
 		8167DF1E1B6982520055D891 /* KissXML in Resources */ = {isa = PBXBuildFile; fileRef = 8167DF1D1B6982520055D891 /* KissXML */; };
 		81D6FA021B6AC3310072693F /* xml in Resources */ = {isa = PBXBuildFile; fileRef = 81D6FA011B6AC3310072693F /* xml */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		813FCAFA1BB2EF4E00E038CA /* ResourceCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceCenter.h; sourceTree = "<group>"; };
+		813FCAFB1BB2EF4E00E038CA /* ResourceCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceCenter.m; sourceTree = "<group>"; };
 		815BF9DD1BAF18B6009566B5 /* VisionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisionViewController.h; sourceTree = "<group>"; };
 		815BF9DE1BAF18B6009566B5 /* VisionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisionViewController.m; sourceTree = "<group>"; };
 		8167DF1D1B6982520055D891 /* KissXML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = KissXML; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				81DFD3F01B72A7470039EFA6 /* ItemTableViewController.m */,
 				81DFD3F21B72A76B0039EFA6 /* ItemTableViewCell.h */,
 				81DFD3F31B72A76B0039EFA6 /* ItemTableViewCell.m */,
+				813FCAFA1BB2EF4E00E038CA /* ResourceCenter.h */,
+				813FCAFB1BB2EF4E00E038CA /* ResourceCenter.m */,
 				A99AEABE1B597F7900BBBD08 /* Images.xcassets */,
 				A99AEAB11B597F7900BBBD08 /* Supporting Files */,
 			);
@@ -282,6 +287,7 @@
 				A99AEAB41B597F7900BBBD08 /* main.m in Sources */,
 				A99AEAFB1B59954C00BBBD08 /* HearingViewController.m in Sources */,
 				AE5C8A821B803C4F00D0FE5F /* CognitiveItemTableViewCell.m in Sources */,
+				813FCAFC1BB2EF4E00E038CA /* ResourceCenter.m in Sources */,
 				81D6FA051B6ACCBD0072693F /* TTSItemStruct.m in Sources */,
 				AE5C8A7F1B8023AF00D0FE5F /* XMLListParser.m in Sources */,
 				A99AEAFE1B59956E00BBBD08 /* NonEnglishViewController.m in Sources */,

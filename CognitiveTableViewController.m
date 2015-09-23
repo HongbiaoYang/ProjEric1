@@ -10,10 +10,12 @@
 #import "XMLListParser.h"
 #import "TTSItemStruct.h"
 #import "CognitiveItemTableViewCell.h"
-#import <AVFoundation/AVSpeechSynthesis.h>
+#import "ResourceCenter.h"
 
 
-@interface CognitiveTableViewController ()
+@interface CognitiveTableViewController () {
+    ResourceCenter *sharedCenter;
+}
 
 @end
 
@@ -43,6 +45,7 @@
     
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
+    sharedCenter = [ResourceCenter sharedResource];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,11 +78,7 @@
     long row = [indexPath row];
     TTSItemStruct *sItem = self.items[row];
 
-
-    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:sItem.text];
-    [utterance setRate:0.2f];
-    [synthesizer speakUtterance:utterance];
+    [sharedCenter SpeakOut:sItem.text];
 
 }
 

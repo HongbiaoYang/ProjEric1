@@ -9,15 +9,32 @@
 #import "HearingViewController.h"
 #import "ItemTableViewCell.h"
 #import "ItemTableViewController.h"
+#import "ResourceCenter.h"
 
 
-@interface HearingViewController ()
+
+@interface HearingViewController () {
+    ResourceCenter *sharedCenter;
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *gettingonoff;
 
 @end
 
 @implementation HearingViewController
+
+- (IBAction)YesClick:(id)sender {
+    [sharedCenter SpeakOut:@"Yes"];
+
+}
+
+- (IBAction)NoClick:(id)sender {
+    [sharedCenter SpeakOut:@"No"];
+}
+
+- (IBAction)MoreClick:(id)sender {
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +43,8 @@
     _NoButton.backgroundColor = [UIColor yellowColor];
     _MoreButton.backgroundColor = [UIColor yellowColor];
 
+
+    sharedCenter = [ResourceCenter sharedResource];
 
     // Do any additional setup after loading the view.
 }
