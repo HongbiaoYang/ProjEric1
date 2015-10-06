@@ -68,6 +68,7 @@
         subViewController.subMenu = [segue identifier];
     }
     
+    NSLog(@"segue = %@", [segue identifier]);
 }
 
 

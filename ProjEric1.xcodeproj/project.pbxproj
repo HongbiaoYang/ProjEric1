@@ -15,6 +15,8 @@
 		81DFD3F11B72A7470039EFA6 /* ItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DFD3F01B72A7470039EFA6 /* ItemTableViewController.m */; };
 		81DFD3F41B72A76B0039EFA6 /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DFD3F31B72A76B0039EFA6 /* ItemTableViewCell.m */; };
 		81DFD3F81B72B1380039EFA6 /* sym in Resources */ = {isa = PBXBuildFile; fileRef = 81DFD3F71B72B1380039EFA6 /* sym */; };
+		81E49F141BC20398006E7DE8 /* MoreMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E49F131BC20398006E7DE8 /* MoreMenuTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		81E49F171BC2054A006E7DE8 /* MoreItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E49F161BC2054A006E7DE8 /* MoreItemTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		A99AEAB41B597F7900BBBD08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99AEAB31B597F7900BBBD08 /* main.m */; };
 		A99AEAB71B597F7900BBBD08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A99AEAB61B597F7900BBBD08 /* AppDelegate.m */; };
 		A99AEABA1B597F7900BBBD08 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99AEAB91B597F7900BBBD08 /* ViewController.m */; };
@@ -52,6 +54,10 @@
 		81DFD3F21B72A76B0039EFA6 /* ItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableViewCell.h; sourceTree = "<group>"; };
 		81DFD3F31B72A76B0039EFA6 /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
 		81DFD3F71B72B1380039EFA6 /* sym */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sym; sourceTree = "<group>"; };
+		81E49F121BC20398006E7DE8 /* MoreMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreMenuTableViewController.h; sourceTree = "<group>"; };
+		81E49F131BC20398006E7DE8 /* MoreMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMenuTableViewController.m; sourceTree = "<group>"; };
+		81E49F151BC2054A006E7DE8 /* MoreItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreItemTableViewCell.h; sourceTree = "<group>"; };
+		81E49F161BC2054A006E7DE8 /* MoreItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreItemTableViewCell.m; sourceTree = "<group>"; };
 		A99AEAAE1B597F7900BBBD08 /* ProjEric1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjEric1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99AEAB21B597F7900BBBD08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99AEAB31B597F7900BBBD08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +143,10 @@
 				AE5C8A811B803C4F00D0FE5F /* CognitiveItemTableViewCell.m */,
 				AE5C8A7A1B801B0F00D0FE5F /* CognitiveTableViewController.h */,
 				AE5C8A7B1B801B0F00D0FE5F /* CognitiveTableViewController.m */,
+				81E49F151BC2054A006E7DE8 /* MoreItemTableViewCell.h */,
+				81E49F161BC2054A006E7DE8 /* MoreItemTableViewCell.m */,
+				81E49F121BC20398006E7DE8 /* MoreMenuTableViewController.h */,
+				81E49F131BC20398006E7DE8 /* MoreMenuTableViewController.m */,
 				81DFD3EF1B72A7470039EFA6 /* ItemTableViewController.h */,
 				81DFD3F01B72A7470039EFA6 /* ItemTableViewController.m */,
 				81DFD3F21B72A76B0039EFA6 /* ItemTableViewCell.h */,
@@ -279,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE5C8A7C1B801B0F00D0FE5F /* CognitiveTableViewController.m in Sources */,
+				81E49F141BC20398006E7DE8 /* MoreMenuTableViewController.m in Sources */,
 				81DFD3F41B72A76B0039EFA6 /* ItemTableViewCell.m in Sources */,
 				A99AEABA1B597F7900BBBD08 /* ViewController.m in Sources */,
 				81DFD3F11B72A7470039EFA6 /* ItemTableViewController.m in Sources */,
@@ -286,6 +297,7 @@
 				A99AEAB71B597F7900BBBD08 /* AppDelegate.m in Sources */,
 				A99AEAB41B597F7900BBBD08 /* main.m in Sources */,
 				A99AEAFB1B59954C00BBBD08 /* HearingViewController.m in Sources */,
+				81E49F171BC2054A006E7DE8 /* MoreItemTableViewCell.m in Sources */,
 				AE5C8A821B803C4F00D0FE5F /* CognitiveItemTableViewCell.m in Sources */,
 				813FCAFC1BB2EF4E00E038CA /* ResourceCenter.m in Sources */,
 				81D6FA051B6ACCBD0072693F /* TTSItemStruct.m in Sources */,
@@ -428,6 +440,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos8.4;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -444,6 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos8.4;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

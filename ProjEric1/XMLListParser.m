@@ -112,7 +112,8 @@ NSArray *elementToParse;
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
 
-    if ([elementName isEqualToString:@"General"] || [elementName isEqualToString:@"Emergency"]) {
+    if ([elementName isEqualToString:@"General"] || [elementName isEqualToString:@"Emergency"]
+        || [elementName isEqualToString:@"Response"]) {
         // NSLog(@"items=%@", items);
 
         self.items = [[NSMutableArray alloc] init];

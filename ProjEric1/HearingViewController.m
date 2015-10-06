@@ -10,6 +10,7 @@
 #import "ItemTableViewCell.h"
 #import "ItemTableViewController.h"
 #import "ResourceCenter.h"
+#import "MoreMenuTableViewController.h"
 
 
 
@@ -65,10 +66,18 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-
-    ItemTableViewController *destinationViewController = [segue destinationViewController];
-    destinationViewController.category = [segue identifier];
-    destinationViewController.subMenu = [self subMenu];
+    
+    if ([[segue identifier] isEqualToString:@"hearingMore"]) {
+        MoreMenuTableViewController *destinationViewController = [segue destinationViewController];
+        destinationViewController.from = [segue identifier];
+        
+        NSLog(@"segue in Hearing=%@", [segue identifier]);
+        
+    } else {
+        ItemTableViewController *destinationViewController = [segue destinationViewController];
+        destinationViewController.category = [segue identifier];
+        destinationViewController.subMenu = [self subMenu];
+    }
 
 
 }

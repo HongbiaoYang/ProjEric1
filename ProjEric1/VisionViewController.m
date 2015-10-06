@@ -187,7 +187,7 @@ AVSpeechSynthesizer *synthesizer;
         NSLog(@"swipe right");
         if ([self level] == 0 && self.index1 < 3) {
             self.index1 += 1;
-        } else if ([self level] == 1 && [self index2] < [[self getArrayOfLevel:[self index1]] count])
+        } else if ([self level] == 1 && [self index2] < [[self getArrayOfLevel:[self index1]] count] - 1)
             self.index2 += 1;
     }
 

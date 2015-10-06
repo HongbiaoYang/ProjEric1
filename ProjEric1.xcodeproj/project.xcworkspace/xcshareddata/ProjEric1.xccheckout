@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>042DF20C-EF73-44FE-84BF-22D47D2CB550</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ProjEric1</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>FCFAFB085BD82D632C3C6B0B4CA77E36B9BE7D0A</key>
 		<string>https://github.com/HongbiaoYang/ProjEric1.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ProjEric1.xcodeproj/project.xcworkspace</string>
+	<string>ProjEric1.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>FCFAFB085BD82D632C3C6B0B4CA77E36B9BE7D0A</key>

@@ -35,7 +35,7 @@
 
 - (void)SpeakOut:(NSString *)text {
     AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:text];
-    [utterance setRate:0.3f];
+    [utterance setRate:0.4f];
     [[self synthesizer] speakUtterance:utterance];
 }
 
