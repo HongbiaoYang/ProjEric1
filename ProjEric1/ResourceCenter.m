@@ -28,6 +28,7 @@
     self = [super init];
     if (self) {
         synthesizer = [[AVSpeechSynthesizer alloc] init];
+        [self setTalkSpeed:0.2f];
     }
 
     return self;
@@ -35,9 +36,20 @@
 
 - (void)SpeakOut:(NSString *)text {
     AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:text];
-    [utterance setRate:0.4f];
+    [utterance setRate:[self talkSpeed]];
     [[self synthesizer] speakUtterance:utterance];
 }
+
++ (CGSize)screenSize {
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+        return CGSizeMake(screenSize.height, screenSize.width);
+    }
+    return screenSize;
+}
+
+
+
 
 - (void)dealloc {
 

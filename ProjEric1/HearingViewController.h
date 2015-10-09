@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface HearingViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *YesButton;
-@property (weak, nonatomic) IBOutlet UIButton *NoButton;
-@property (weak, nonatomic) IBOutlet UIButton *MoreButton;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *YesItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *NoItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *MoreItem;
 
 
 @property NSString* subMenu;

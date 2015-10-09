@@ -12,6 +12,10 @@
 
 @interface CognitiveTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *YesItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *NoItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *MoreItem;
+
 @property  XMLListParser *xmlParser;
 @property(nonatomic, strong) NSMutableArray *items;
 @end

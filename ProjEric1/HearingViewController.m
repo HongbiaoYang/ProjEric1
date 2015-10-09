@@ -24,30 +24,33 @@
 
 @implementation HearingViewController
 
-- (IBAction)YesClick:(id)sender {
+
+
+- (IBAction)YesClicker:(id)sender {
     [sharedCenter SpeakOut:@"Yes"];
 
 }
 
-- (IBAction)NoClick:(id)sender {
+- (IBAction)NoClicker:(id)sender {
     [sharedCenter SpeakOut:@"No"];
+
 }
 
-- (IBAction)MoreClick:(id)sender {
-}
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    _YesButton.backgroundColor = [UIColor yellowColor];
-    _NoButton.backgroundColor = [UIColor yellowColor];
-    _MoreButton.backgroundColor = [UIColor yellowColor];
-
-
+    self.navigationController.toolbar.barTintColor = [UIColor yellowColor];
+    
     sharedCenter = [ResourceCenter sharedResource];
 
     // Do any additional setup after loading the view.
+    CGFloat width = [ResourceCenter screenSize].width / 3;
+    self.YesItem.width = width;
+    self.NoItem.width = width;
+    self.MoreItem.width = width;
 }
 
 - (void)didReceiveMemoryWarning {

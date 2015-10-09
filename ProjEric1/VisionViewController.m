@@ -10,10 +10,6 @@
 #import "XMLListParser.h"
 #import "TTSItemStruct.h"
 #import "ResourceCenter.h"
-#import <AVFoundation/AVSpeechSynthesis.h>
-
-
-AVSpeechSynthesizer *synthesizer;
 
 @interface VisionViewController () {
     ResourceCenter *sharedCenter;
@@ -25,6 +21,12 @@ AVSpeechSynthesizer *synthesizer;
 
 
 @implementation VisionViewController
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[self navigationController] setToolbarHidden:NO];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -83,10 +85,6 @@ AVSpeechSynthesizer *synthesizer;
 
     [self presentCurrentImageWithLevel:[self level] withIndex1:[self index1] withIndex2:[self index2]];
 
-    // initialized the speech synthesizer once
-    synthesizer = [[AVSpeechSynthesizer alloc] init];
-
-
     UISwipeGestureRecognizer *recognizer;
     
     recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
@@ -108,6 +106,8 @@ AVSpeechSynthesizer *synthesizer;
     
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
+
+    [self.navigationController setToolbarHidden:YES];
 
     sharedCenter = [ResourceCenter sharedResource];
 

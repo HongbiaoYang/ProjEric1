@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 @class AVSpeechSynthesizer;
@@ -16,9 +17,12 @@
     AVSpeechSynthesizer *synthesizer;
 }
 @property AVSpeechSynthesizer *synthesizer;
+@property float talkSpeed;
 
  +(id) sharedResource;
 
  -(void)SpeakOut:(NSString *)text;
++ (CGSize)screenSize;
+
 
 @end

@@ -11,6 +11,7 @@
 #import "TTSItemStruct.h"
 #import "CognitiveItemTableViewCell.h"
 #import "ResourceCenter.h"
+#import "MoreMenuTableViewController.h"
 
 
 @interface CognitiveTableViewController () {
@@ -20,6 +21,15 @@
 @end
 
 @implementation CognitiveTableViewController
+
+- (IBAction)YesClicker:(id)sender {
+    [sharedCenter SpeakOut:@"Yes"];
+}
+
+- (IBAction)NoClicker:(id)sender {
+    [sharedCenter SpeakOut:@"No"];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,10 +52,15 @@
     [self setItems:[xmlParser loadMultiXML:paths withElements:elements]];
     self.view.backgroundColor = [UIColor blackColor];
 
-    
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
+
     sharedCenter = [ResourceCenter sharedResource];
+    
+    CGFloat width = [ResourceCenter screenSize].width / 3;
+    self.YesItem.width = width;
+    self.NoItem.width = width;
+    self.MoreItem.width = width;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,8 +82,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = [UIScreen mainScreen].bounds.size.width;
-    return height / 2;
+
+    return [ResourceCenter screenSize] .height / 2;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -137,14 +152,20 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"cognitiveMore"]) {
+        MoreMenuTableViewController *destinationViewController = [segue destinationViewController];
+        destinationViewController.from = [segue identifier];
+
+    }
+
 }
-*/
+
 
 @end

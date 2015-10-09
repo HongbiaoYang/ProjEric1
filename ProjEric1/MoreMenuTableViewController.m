@@ -29,7 +29,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSArray *paths = [[NSArray alloc] initWithObjects:
-                      [[NSBundle mainBundle] pathForResource:@"xml/response" ofType:@"xml"],
                     [[NSBundle mainBundle] pathForResource:@"xml/response" ofType:@"xml"],
                       nil];
     
@@ -38,19 +37,28 @@
     
     
     XMLListParser *xmlParser = [[XMLListParser alloc]init];
-    [self setItems:[xmlParser loadMultiXML:paths withElements:elements]];
+    //[self setItems:[xmlParser loadMultiXML:paths withElements:elements]];
+
+    NSMutableArray *xmlItems = [xmlParser loadMultiXML:paths withElements:elements];
+    NSLog(@"more from %@", [self from]);
+    if (! ([[self from] isEqualToString:@"displayMore"] || [[self from] isEqualToString:@"hearingMore"] ||
+            [[self from] isEqualToString:@"mainMore"])) {
+        [xmlItems removeObjectAtIndex:0];
+    }
+
+    [self setItems:xmlItems];
+
     self.view.backgroundColor = [UIColor blackColor];
-    
-    
+
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
     
     sharedCenter = [ResourceCenter sharedResource];
     
-    // NSLog(@"Inside More Menu view %@ count=%ld", paths, [[self items] count]);
-
-    
+    [self.navigationController setToolbarHidden:YES];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -70,8 +78,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = [UIScreen mainScreen].bounds.size.width;
-    return height / 3;
+
+
+    if ([[self from] isEqualToString:@"cognitiveMore"]) {
+        return [ResourceCenter screenSize].height / 2;
+    } else  {
+        return [ResourceCenter screenSize].height / 3;
+    }
 }
 
 
@@ -85,9 +98,12 @@
     
     TTSItemStruct *tItem = self.items[row];
     // NSLog(@"row=%ld text=%@ img=%@ item=%@ count=%ld", row, tItem.text, tItem.image, tItem, [[self items] count]);
-    
-    cell.MoreLabel.text = [tItem title];
- 
+
+    if ([[self from] isEqualToString:@"nonenglishMore"]) {
+        cell.MoreLabel.text = [[tItem titulo] stringByAppendingFormat:@" / %@", [tItem title]];
+    } else {
+        cell.MoreLabel.text = [tItem title];
+    }
     
     NSString *imageName = [NSString stringWithFormat:@"sym/%@", [tItem image]];
     cell.MoreImage.image = [UIImage imageNamed:imageName];
@@ -117,7 +133,12 @@
 }
 
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"will disappear");
+    [[self navigationController] setToolbarHidden:NO];
 
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -151,6 +172,7 @@
     return YES;
 }
 */
+
 
 /*
 #pragma mark - Navigation

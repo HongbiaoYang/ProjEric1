@@ -11,6 +11,7 @@
 #import "ItemTableViewCell.h"
 #import "XMLListParser.h"
 #import "ResourceCenter.h"
+#import "MoreMenuTableViewController.h"
 #import <AVFoundation/AVSpeechSynthesis.h>
 
 
@@ -42,6 +43,15 @@ NSString *getPathByCategory(NSString *category) {
 
 @implementation ItemTableViewController
 
+- (IBAction)YesClicker:(id)sender {
+    [sharedCenter SpeakOut:@"Yes"];
+}
+
+- (IBAction)NoClicker:(id)sender {
+    [sharedCenter SpeakOut:@"No"];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -66,6 +76,11 @@ NSString *getPathByCategory(NSString *category) {
     self.title = [self fullTitle:[self subMenu] category:[self category] ];
     sharedCenter = [ResourceCenter sharedResource];
 
+    
+    CGFloat width = [ResourceCenter screenSize].width / 3;
+    self.YesItem.width = width;
+    self.NoItem.width = width;
+    self.MoreItem.width = width;
 }
 
 - (NSString *)fullTitle:(NSString *)menu category:(NSString *)category {
@@ -123,13 +138,10 @@ NSString *getPathByCategory(NSString *category) {
 }
 
 
-
+// in iOS 7 regardless of orientation width is the shorter side; in iOS8+ it is orientation dependent
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-
-    // in iOS 7 regardless of orientation width is the shorter side
-    CGFloat height = [UIScreen mainScreen].bounds.size.width;
-    return height / 3;
+    return [ResourceCenter screenSize].height / 3;
 }
 
 
@@ -220,14 +232,17 @@ NSString *getPathByCategory(NSString *category) {
 }
 */
 
-/*
-#pragma mark - Navigation
+
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"displayMore"]) {
+        MoreMenuTableViewController *destinationViewController = [segue destinationViewController];
+        destinationViewController.from = [segue identifier];
+    }
 }
-*/
+
 
 @end

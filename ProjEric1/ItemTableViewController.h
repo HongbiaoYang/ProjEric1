@@ -16,9 +16,13 @@
     NSArray *elementToParse;
 }
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *YesItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *NoItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *MoreItem;
+
+
     @property NSString *category;
     @property NSString *subMenu;
     @property NSMutableArray *items;
-
 
 @end

@@ -8,10 +8,15 @@
 
 #import "ViewController.h"
 #import "HearingViewController.h"
+#import "ResourceCenter.h"
+#import "SettingViewController.h"
+#import "MoreMenuTableViewController.h"
 #import <AVFoundation/AVSpeechSynthesis.h>
 
 
-@interface ViewController ()
+@interface ViewController () {
+    ResourceCenter *sharedCenter;
+}
 
 @end
 
@@ -21,37 +26,54 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor blackColor];
-    _YesButton.backgroundColor = [UIColor yellowColor];
-    _NoButton.backgroundColor = [UIColor yellowColor];
-    _MoreButton.backgroundColor = [UIColor yellowColor];
 
-    [self setSynthesizer:[[AVSpeechSynthesizer alloc] init]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
 
+    self.navigationController.toolbar.barTintColor = [UIColor yellowColor];
+
+    CGFloat width = [ResourceCenter screenSize].width / 3;
+    self.YesItem.width = width;
+    self.NoItem.width = width;
+    self.MoreItem.width = width;
+
+    sharedCenter = [ResourceCenter sharedResource];
+
+
+    UIImage *imgEmergency = [UIImage imageNamed:@"emergency_ico"];
+    UIButton *btnEmergency = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnEmergency.bounds = CGRectMake(0, 0, imgEmergency.size.width, imgEmergency.size.height);
+    [btnEmergency setImage:imgEmergency forState:UIControlStateNormal];
+    UIBarButtonItem *iconEmergency = [[UIBarButtonItem alloc] initWithCustomView:btnEmergency];
+
+    //
+    UIBarButtonItem *icoSetting = [[UIBarButtonItem alloc] initWithTitle:@"\u2699" style:UIBarButtonItemStylePlain target:self action:@selector(settingPage:)];
+    UIFont *customFont = [UIFont fontWithName:@"Helvetica" size:28.0];
+    NSDictionary *fontDict = @{NSFontAttributeName:customFont};
+    [icoSetting setTitleTextAttributes:fontDict forState:UIControlStateNormal];
+
+
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: icoSetting, iconEmergency, nil]];
 
 
 }
-
-- (IBAction)YesClick:(id)sender {
-
-    [self SpeakOutText:@"Yes"];
+- (IBAction)YesClicker:(id)sender {
+    [sharedCenter SpeakOut:@"Yes"];
 }
 
-- (IBAction)NoClick:(id)sender {
-    [self SpeakOutText:@"No"];
+- (IBAction)NoClicker:(id)sender {
+    [sharedCenter SpeakOut:@"No"];
 }
 
-- (IBAction)MoreClick:(id)sender {
+
+-(void) settingPage:(id)sender {
+    [sharedCenter SpeakOut:@"setting"];
+
+    SettingViewController *settingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"setting"];
+    [self.navigationController pushViewController:settingViewController animated:YES];
+
+
     
-    
-}
-
-
--(void) SpeakOutText:(NSString *)text {
-
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:text];
-    [utterance setRate:0.2f];
-    [[self synthesizer] speakUtterance:utterance];
-
 }
 
 
@@ -66,6 +88,9 @@
     if ([[segue identifier] isEqualToString:@"hearing"] || [[segue identifier]isEqualToString:@"nonenglish"]) {
         HearingViewController *subViewController = [segue destinationViewController];
         subViewController.subMenu = [segue identifier];
+    } else if ([[segue identifier] isEqualToString:@"mainMore"]) {
+        MoreMenuTableViewController *destinationViewController = [segue destinationViewController];
+        destinationViewController.from = [segue identifier];
     }
     
     NSLog(@"segue = %@", [segue identifier]);

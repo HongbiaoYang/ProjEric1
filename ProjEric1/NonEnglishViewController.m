@@ -9,6 +9,7 @@
 #import "NonEnglishViewController.h"
 #import "ItemTableViewController.h"
 #import "ResourceCenter.h"
+#import "MoreMenuTableViewController.h"
 
 
 @interface NonEnglishViewController () {
@@ -24,24 +25,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor blackColor];
-    [[self YesButton] setBackgroundColor: [UIColor yellowColor]];
-    [[self NoButton] setBackgroundColor:[UIColor yellowColor]];
-    [[self MoreButton] setBackgroundColor:[UIColor yellowColor]];
+    self.navigationController.toolbar.barTintColor = [UIColor yellowColor];
 
     sharedCenter = [ResourceCenter sharedResource];
+    
+    CGFloat width = [ResourceCenter screenSize].width / 3;
+    self.YesItem.width = width;
+    self.NoItem.width = width;
+    self.MoreItem.width = width;
 }
 
 
-- (IBAction)YesClick:(id)sender {
+
+- (IBAction)YesClicker:(id)sender {
     [sharedCenter SpeakOut:@"Yes"];
 }
 
-- (IBAction)NoClick:(id)sender {
+- (IBAction)NoClicker:(id)sender {
     [sharedCenter SpeakOut:@"No"];
+
 }
 
-- (IBAction)MoreClick:(id)sender {
-}
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -54,9 +59,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    ItemTableViewController *destinationViewController = [segue destinationViewController];
-    destinationViewController.category = [segue identifier];
-    destinationViewController.subMenu = [self subMenu];
+    if ([[segue identifier] isEqualToString:@"nonenglishMore"]) {
+        MoreMenuTableViewController *destinationViewController = [segue destinationViewController];
+        destinationViewController.from = [segue identifier];
+
+    } else {
+        ItemTableViewController *destinationViewController = [segue destinationViewController];
+        destinationViewController.category = [segue identifier];
+        destinationViewController.subMenu = [self subMenu];
+    }
 
 }
 
