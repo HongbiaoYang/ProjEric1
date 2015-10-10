@@ -1,12 +1,5 @@
-﻿<xml>
+<xml>
     <Response>
-        <Item>
-            <Title>Input Your Text...</Title>
-            <Text></Text>
-            <Customize>input</Customize>
-            <Image>picture108</Image>
-			<ImageV>picture108_v</ImageV>
-        </Item>
         <Item>
             <Title>Thank you very much</Title>
             <Text>Thank you very much</Text>

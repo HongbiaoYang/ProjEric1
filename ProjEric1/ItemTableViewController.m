@@ -68,9 +68,9 @@ NSString *getPathByCategory(NSString *category) {
 
     XMLListParser *xmlParser = [[XMLListParser alloc]init];
     [self setItems:[xmlParser loadXML:path withElements:elementToParse]];
-    self.view.backgroundColor = [UIColor blackColor];
 
-    [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];    
+    self.view.backgroundColor = [UIColor blackColor];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
     [self.navigationController.navigationBar setTranslucent:NO];
     
     self.title = [self fullTitle:[self subMenu] category:[self category] ];
@@ -240,7 +240,7 @@ NSString *getPathByCategory(NSString *category) {
     // Pass the selected object to the new view controller.
     if ([[segue identifier] isEqualToString:@"displayMore"]) {
         MoreMenuTableViewController *destinationViewController = [segue destinationViewController];
-        destinationViewController.from = [segue identifier];
+        destinationViewController.from = [[segue identifier] stringByAppendingFormat:@"-%@", [self subMenu]];
     }
 }
 

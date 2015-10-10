@@ -53,6 +53,22 @@ ResourceCenter *sharedCenter;
 
     self.arrInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
 
+//    // if there is no record in the database
+//    if (self.arrInfo == nil) {
+//        NSString *query = [NSString stringWithFormat:@"insert into appInfo values (null, 'speakSpeed', 0.3);", self.SpeedSlider.value];
+//        [self.dbManager executeQuery:query];
+//
+//        // If the query was successfully executed then pop the view controller.
+//        if (self.dbManager.affectedRows != 0) {
+//            NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+//        }
+//        else{
+//            NSLog(@"Could not execute the query.");
+//        }
+//
+//        return 0.3f;
+//    }
+
     NSString *speedStr = (NSString *) [[[self arrInfo] objectAtIndex:0] objectAtIndex:0];
 
 
@@ -71,7 +87,6 @@ ResourceCenter *sharedCenter;
     // If the query was successfully executed then pop the view controller.
     if (self.dbManager.affectedRows != 0) {
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-
     }
     else{
         NSLog(@"Could not execute the query.");

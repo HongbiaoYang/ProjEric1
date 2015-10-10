@@ -13,6 +13,4 @@
 @property(nonatomic, strong) NSMutableArray *items;
 @property NSMutableString *from;
 
-
-
 @end

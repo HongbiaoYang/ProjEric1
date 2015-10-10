@@ -25,11 +25,11 @@
 		A99AEACE1B597F7900BBBD08 /* ProjEric1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A99AEACD1B597F7900BBBD08 /* ProjEric1Tests.m */; };
 		A99AEAFB1B59954C00BBBD08 /* HearingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99AEAFA1B59954C00BBBD08 /* HearingViewController.m */; };
 		A99AEAFE1B59956E00BBBD08 /* NonEnglishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99AEAFD1B59956E00BBBD08 /* NonEnglishViewController.m */; };
+		AE00F7731BC8ADCB00D75048 /* projEric.sql in Resources */ = {isa = PBXBuildFile; fileRef = AE00F7721BC8ADCB00D75048 /* projEric.sql */; };
 		AE099A3D1BC6F71D00C9B24A /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE099A3C1BC6F71D00C9B24A /* SettingViewController.m */; };
 		AE099A3F1BC7536D00C9B24A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE099A3E1BC7536D00C9B24A /* libsqlite3.dylib */; };
 		AE099A451BC753F500C9B24A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE099A441BC753F500C9B24A /* DBManager.m */; };
 		AE1952431BC77158009DD9F6 /* CognitiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1952421BC77158009DD9F6 /* CognitiveTableViewController.m */; };
-		AE1952451BC77213009DD9F6 /* projEric.sql in Resources */ = {isa = PBXBuildFile; fileRef = AE1952441BC77213009DD9F6 /* projEric.sql */; };
 		AE5C8A7F1B8023AF00D0FE5F /* XMLListParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5C8A7E1B8023AF00D0FE5F /* XMLListParser.m */; };
 		AE5C8A821B803C4F00D0FE5F /* CognitiveItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5C8A811B803C4F00D0FE5F /* CognitiveItemTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -78,6 +78,7 @@
 		A99AEAFA1B59954C00BBBD08 /* HearingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HearingViewController.m; sourceTree = "<group>"; };
 		A99AEAFC1B59956E00BBBD08 /* NonEnglishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonEnglishViewController.h; sourceTree = "<group>"; };
 		A99AEAFD1B59956E00BBBD08 /* NonEnglishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonEnglishViewController.m; sourceTree = "<group>"; };
+		AE00F7721BC8ADCB00D75048 /* projEric.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = projEric.sql; path = ProjEric1/projEric.sql; sourceTree = "<group>"; };
 		AE099A3B1BC6F71D00C9B24A /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		AE099A3C1BC6F71D00C9B24A /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		AE099A3E1BC7536D00C9B24A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -85,7 +86,6 @@
 		AE099A441BC753F500C9B24A /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		AE1952411BC77158009DD9F6 /* CognitiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CognitiveTableViewController.h; sourceTree = "<group>"; };
 		AE1952421BC77158009DD9F6 /* CognitiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CognitiveTableViewController.m; sourceTree = "<group>"; };
-		AE1952441BC77213009DD9F6 /* projEric.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = projEric.sql; path = ProjEric1/projEric.sql; sourceTree = "<group>"; };
 		AE5C8A7D1B8023AF00D0FE5F /* XMLListParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLListParser.h; sourceTree = "<group>"; };
 		AE5C8A7E1B8023AF00D0FE5F /* XMLListParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLListParser.m; sourceTree = "<group>"; };
 		AE5C8A801B803C4F00D0FE5F /* CognitiveItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CognitiveItemTableViewCell.h; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		A99AEAA51B597F7900BBBD08 = {
 			isa = PBXGroup;
 			children = (
-				AE1952441BC77213009DD9F6 /* projEric.sql */,
+				AE00F7721BC8ADCB00D75048 /* projEric.sql */,
 				AE099A3E1BC7536D00C9B24A /* libsqlite3.dylib */,
 				81D6FA011B6AC3310072693F /* xml */,
 				A99AEAB01B597F7900BBBD08 /* ProjEric1 */,
@@ -283,7 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE1952451BC77213009DD9F6 /* projEric.sql in Resources */,
+				AE00F7731BC8ADCB00D75048 /* projEric.sql in Resources */,
 				81DFD3F81B72B1380039EFA6 /* sym in Resources */,
 				81D6FA021B6AC3310072693F /* xml in Resources */,
 				8167DF1E1B6982520055D891 /* KissXML in Resources */,

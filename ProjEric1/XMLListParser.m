@@ -88,7 +88,6 @@ NSArray *elementToParse;
 
         if ([elementName isEqualToString:@"Title"]) {
             aItem.title = trimmedString;
-
         }
 
         if ([elementName isEqualToString:@"Text"]) {

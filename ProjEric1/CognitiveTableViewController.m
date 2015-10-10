@@ -50,10 +50,11 @@
 
     XMLListParser *xmlParser = [[XMLListParser alloc]init];
     [self setItems:[xmlParser loadMultiXML:paths withElements:elements]];
-    self.view.backgroundColor = [UIColor blackColor];
 
-    [self.navigationController.navigationBar setTranslucent:NO];
+    self.view.backgroundColor = [UIColor blackColor];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+
 
     sharedCenter = [ResourceCenter sharedResource];
     
@@ -113,6 +114,13 @@
     NSString *imageName = [NSString stringWithFormat:@"sym/%@", [tItem image]];
     cell.itemImage.image = [UIImage imageNamed:imageName];
 
+    // blackground color of each cell
+    UIColor *blueBack = [UIColor colorWithRed: 64.0/255.0f green:147.0/255.0f blue:223.0/255.0f alpha:1.0];
+    cell.itemLabel.backgroundColor = blueBack;
+    cell.itemLabel.textColor = [UIColor whiteColor];
+    [cell.itemLabel setFont:[UIFont fontWithName:@"ArialMT" size:20]];
+
+    cell.itemImage.backgroundColor = [UIColor blueColor];
 
     return cell;
 }

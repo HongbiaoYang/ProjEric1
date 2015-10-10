@@ -55,7 +55,6 @@
 
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: icoSetting, iconEmergency, nil]];
 
-
 }
 - (IBAction)YesClicker:(id)sender {
     [sharedCenter SpeakOut:@"Yes"];
@@ -71,9 +70,6 @@
 
     SettingViewController *settingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"setting"];
     [self.navigationController pushViewController:settingViewController animated:YES];
-
-
-    
 }
 
 

@@ -10,6 +10,7 @@
 
 @interface TTSItemStruct : NSObject
 
+- (instancetype)initItemWithText:(NSString *)text;
 
 @property (nonatomic, retain)   NSString *title;
 @property (nonatomic, retain)   NSString *text;

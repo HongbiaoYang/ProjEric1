@@ -11,10 +11,13 @@
 #import "ResourceCenter.h"
 #import "MoreItemTableViewCell.h"
 #import "TTSItemStruct.h"
+#import "DBManager.h"
 
 @interface MoreMenuTableViewController () {
     ResourceCenter *sharedCenter;
 }
+
+@property (nonatomic, strong) DBManager *dbManager;
 
 @end
 
@@ -33,7 +36,7 @@
                       nil];
     
     NSArray *elements = [[NSArray alloc] initWithObjects:@"Title",@"Text",
-                         @"Titulo",@"Texto",@"Image",@"ImageV",nil];
+                         @"Titulo",@"Texto",@"Image",@"ImageV",@"Customize",nil];
     
     
     XMLListParser *xmlParser = [[XMLListParser alloc]init];
@@ -41,12 +44,38 @@
 
     NSMutableArray *xmlItems = [xmlParser loadMultiXML:paths withElements:elements];
     NSLog(@"more from %@", [self from]);
-    if (! ([[self from] isEqualToString:@"displayMore"] || [[self from] isEqualToString:@"hearingMore"] ||
-            [[self from] isEqualToString:@"mainMore"])) {
-        [xmlItems removeObjectAtIndex:0];
+
+    // create dbManager
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"projEric.sql"];
+
+    // customized array from user input
+    NSString *query = @"select itemDesc from CustomItem order by itemID desc";
+    NSMutableArray *customArray = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSMutableArray *customArrayItems = [self convertValueToItem:customArray];
+
+    // add input option if from hearing/main
+    NSLog(@"from %@", [self from]);
+    if ([[self from] isEqualToString:@"displayMore-hearing"]|| [[self from] isEqualToString:@"hearingMore"] ||
+            [[self from] isEqualToString:@"mainMore"]) {
+
+        TTSItemStruct *aItem = [[TTSItemStruct alloc] init];
+        aItem.title = @"Input Your Text...";
+        aItem.image = @"picture108.png";
+        aItem.imageV = @"input";
+
+        [customArrayItems insertObject:aItem atIndex:0];
+
+        NSLog(@"input item= %@", aItem);
+
+        // combine the arrays together
+        [customArrayItems addObjectsFromArray:xmlItems];
+        NSLog(@"array = %@", customArrayItems);
+
+        [self setItems:customArrayItems];
+    } else {
+        [self setItems:xmlItems];
     }
 
-    [self setItems:xmlItems];
 
     self.view.backgroundColor = [UIColor blackColor];
 
@@ -58,6 +87,18 @@
     [self.navigationController setToolbarHidden:YES];
 }
 
+- (NSMutableArray *)convertValueToItem:(NSMutableArray *)array {
+    NSMutableArray *itemArray = [[NSMutableArray alloc] init];
+
+    for (NSArray *textArr in array) {
+        NSLog(@"array=%@ test=%@",array, [textArr objectAtIndex:0]);
+        TTSItemStruct *aItem = [[TTSItemStruct alloc] initItemWithText:[textArr objectAtIndex:0]];
+        [itemArray addObject:aItem];
+    }
+
+    NSLog(@"itemarray=%@", itemArray);
+    return itemArray;
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -73,6 +114,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    NSLog(@"self items %d", [[self items] count]);
 
     return [[self items] count];
 }
@@ -99,7 +142,7 @@
     TTSItemStruct *tItem = self.items[row];
     // NSLog(@"row=%ld text=%@ img=%@ item=%@ count=%ld", row, tItem.text, tItem.image, tItem, [[self items] count]);
 
-    if ([[self from] isEqualToString:@"nonenglishMore"]) {
+    if ([[self from] isEqualToString:@"nonenglishMore"] || [[self from] isEqualToString:@"displayMore-nonenglish"]) {
         cell.MoreLabel.text = [[tItem titulo] stringByAppendingFormat:@" / %@", [tItem title]];
     } else {
         cell.MoreLabel.text = [tItem title];
@@ -127,11 +170,61 @@
     
     long row = [indexPath row];
     TTSItemStruct *sItem = self.items[row];
-    
-    [sharedCenter SpeakOut:sItem.text];
-    
+
+
+    if ([sItem.imageV isEqualToString:@"input"]) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add..." message:@"Input Your Text" delegate:self
+                                               cancelButtonTitle:@"Save" otherButtonTitles:@"Speak", nil];
+
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+
+        [alert show];
+
+    } else  {
+        [sharedCenter SpeakOut:sItem.text];
+    }
+
+
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"Entered: %@ idx=%d",[[alertView textFieldAtIndex:0] text], buttonIndex);
+    if (buttonIndex == 1) {
+        [sharedCenter SpeakOut:[[alertView textFieldAtIndex:0] text]];
+    } else if (buttonIndex == 0) {
+        [self addCustomItem:[[alertView textFieldAtIndex:0] text]];
+    } else {
+        NSLog(@"Something is wrong, index=%d", buttonIndex);
+    }
+}
+
+
+- (void)addCustomItem:(NSString *)text {
+
+    NSString *query = [NSString stringWithFormat:@"insert into customItem values (null, '%@');", text];
+
+    // NSLog(@"query=%@", query);
+
+    // Execute the query.
+    [self.dbManager executeQuery:query];
+
+    // If the query was successfully executed then pop the view controller.
+    if (self.dbManager.affectedRows != 0) {
+        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+        TTSItemStruct *aItem = [[TTSItemStruct alloc] init];
+        aItem.title = text;
+        aItem.text = text;
+        aItem.image = @"customize.png";
+        aItem.imageV = @"added";
+
+        [[self items] insertObject:aItem atIndex:1];
+        [[self tableView] reloadData];
+    }
+    else{
+        NSLog(@"Could not execute the query.", self.dbManager);
+    }
+
+}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -139,25 +232,57 @@
     [[self navigationController] setToolbarHidden:NO];
 
 }
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    long row = [indexPath row];
+    TTSItemStruct *sItem = self.items[row];
+    if (sItem.imageV == @"added") {
+        return YES;
+    } else {
+        return NO;
+    }
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+    long row = [indexPath row];
+    TTSItemStruct *sItem = self.items[row];
+
+    [[self items] removeObject:sItem];
+
+    [self updateDeleteItems:sItem];
+    [[self tableView] reloadData];
+
+
+
+    NSLog(@"delete");
+
 }
-*/
+
+- (void)updateDeleteItems:(TTSItemStruct *)aStruct {
+
+    NSString *query = [NSString stringWithFormat:@"delete from customItem where itemDesc= '%@';", aStruct.title];
+
+    // Execute the query.
+    [self.dbManager executeQuery:query];
+
+    // If the query was successfully executed then pop the view controller.
+    if (self.dbManager.affectedRows != 0) {
+        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+
+    }
+    else{
+        NSLog(@"Could not execute the query.", self.dbManager);
+    }
+
+
+}
+
 
 /*
 // Override to support rearranging the table view.
