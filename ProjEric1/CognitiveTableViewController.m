@@ -18,6 +18,9 @@
     ResourceCenter *sharedCenter;
 }
 
+@property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
+
+
 @end
 
 @implementation CognitiveTableViewController
@@ -62,6 +65,29 @@
     self.YesItem.width = width;
     self.NoItem.width = width;
     self.MoreItem.width = width;
+
+
+    self.lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGestures:)];
+    self.lpgr.minimumPressDuration = 1.0f;
+    self.lpgr.allowableMovement = 100.0f;
+    [self.view addGestureRecognizer:self.lpgr];
+
+}
+
+- (void)handleLongPressGestures:(UILongPressGestureRecognizer *)sender
+{
+    if ([sender isEqual:self.lpgr]) {
+        if (sender.state == UIGestureRecognizerStateBegan)
+        {
+            CGPoint lpLocation = [sender locationInView:self.tableView];
+            NSIndexPath  *lpIndexPath = [self.tableView indexPathForRowAtPoint:lpLocation];
+//            UITableViewCell *lpCell = [self.tableView cellForRowAtIndexPath:lpIndexPath];
+            long row = [lpIndexPath row];
+            TTSItemStruct *sItem = self.items[row];
+
+            [sharedCenter SpeakOut:sItem.text];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,10 +117,7 @@
 
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 
-    long row = [indexPath row];
-    TTSItemStruct *sItem = self.items[row];
-
-    [sharedCenter SpeakOut:sItem.text];
+    [sharedCenter SpeakOut:@"Please hold this button to make the selection"];
 
 }
 

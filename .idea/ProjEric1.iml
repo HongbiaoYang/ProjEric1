@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="CIDR_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libsqlite3.dylib">
-      <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libsqlite3.dylib" isTestSource="false" />
+    <content url="file:///Applications/Xcode_6.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libsqlite3.dylib">
+      <sourceFolder url="file:///Applications/Xcode_6.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libsqlite3.dylib" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/CognitiveTableViewController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CognitiveTableViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/AppDelegate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/AppDelegate.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/Base.lproj/Main.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/CognitiveItemTableViewCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/CognitiveItemTableViewCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/CognitiveTableViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/CognitiveTableViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/DBManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/DBManager.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/HearingViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/HearingViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/Images.xcassets" isTestSource="false" />
@@ -28,6 +30,8 @@
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/NonEnglishViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/ResourceCenter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/ResourceCenter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/SettingViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/SettingViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TTSItemStruct.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TTSItemStruct.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/ViewController.h" isTestSource="false" />
@@ -37,6 +41,7 @@
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/XMLListParser.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/XMLListParser.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/main.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/projEric.sql" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1Tests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1Tests/ProjEric1Tests.m" isTestSource="false" />
     </content>

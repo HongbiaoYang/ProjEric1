@@ -19,6 +19,8 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
+@property(nonatomic, strong) UITapGestureRecognizer *dpGesture;
+@property(nonatomic, strong) UILongPressGestureRecognizer *lpGesgure;
 @end
 
 @implementation MoreMenuTableViewController
@@ -85,7 +87,85 @@
     sharedCenter = [ResourceCenter sharedResource];
     
     [self.navigationController setToolbarHidden:YES];
+
+    self.dpGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+    self.dpGesture.numberOfTapsRequired = 2;
+
+    self.lpGesgure = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+
+    if ([self.from isEqualToString:@"cognitiveMore"]) {
+        [self.view addGestureRecognizer:self.lpGesgure];
+        NSLog(@"in lp from =%@", [self from]);
+
+    } else {
+        [self.view addGestureRecognizer:self.dpGesture];
+        NSLog(@"in dp from =%@", [self from]);
+
+    }
 }
+
+- (void)handleDoubleTap:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        // handling code
+
+        CGPoint dpLocation = [sender locationInView:self.tableView];
+        NSIndexPath  *dpIndexPath = [self.tableView indexPathForRowAtPoint:dpLocation];
+
+        [self handleItemAtRowOf:[dpIndexPath row]];
+    }
+}
+
+- (void)handleLongPress:(UILongPressGestureRecognizer *)sender
+{
+    if ([sender isEqual:self.lpGesgure]) {
+        if (sender.state == UIGestureRecognizerStateBegan)
+        {
+            CGPoint lpLocation = [sender locationInView:self.tableView];
+            NSIndexPath  *lpIndexPath = [self.tableView indexPathForRowAtPoint:lpLocation];
+
+            [self handleItemAtRowOf:[lpIndexPath row]];
+
+        }
+    }
+}
+
+
+- (void)handleItemAtRowOf:(NSInteger)row {
+
+    TTSItemStruct *sItem = self.items[row];
+
+    if ([sItem.imageV isEqualToString:@"input"]) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add..." message:@"Input Your Text" delegate:self
+                                               cancelButtonTitle:@"Save" otherButtonTitles:@"Speak", nil];
+
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+
+        [alert show];
+
+    } else  {
+        [sharedCenter SpeakOut:sItem.text];
+    }
+
+}
+
+
+- (void)handleLongPressGestures:(UILongPressGestureRecognizer *)sender
+{
+    if ([sender isEqual:self.lpGesgure]) {
+        if (sender.state == UIGestureRecognizerStateBegan)
+        {
+            CGPoint lpLocation = [sender locationInView:self.tableView];
+            NSIndexPath  *lpIndexPath = [self.tableView indexPathForRowAtPoint:lpLocation];
+            long row = [lpIndexPath row];
+            TTSItemStruct *sItem = self.items[row];
+
+            [sharedCenter SpeakOut:sItem.text];
+        }
+    }
+}
+
+
+
 
 - (NSMutableArray *)convertValueToItem:(NSMutableArray *)array {
     NSMutableArray *itemArray = [[NSMutableArray alloc] init];
@@ -164,28 +244,30 @@
 
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    long row = [indexPath row];
-    TTSItemStruct *sItem = self.items[row];
-
-
-    if ([sItem.imageV isEqualToString:@"input"]) {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add..." message:@"Input Your Text" delegate:self
-                                               cancelButtonTitle:@"Save" otherButtonTitles:@"Speak", nil];
-
-        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-
-        [alert show];
-
-    } else  {
-        [sharedCenter SpeakOut:sItem.text];
-    }
+//    long row = [indexPath row];
+//    TTSItemStruct *sItem = self.items[row];
+//
+//
+//    if ([sItem.imageV isEqualToString:@"input"]) {
+//        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add..." message:@"Input Your Text" delegate:self
+//                                               cancelButtonTitle:@"Save" otherButtonTitles:@"Speak", nil];
+//
+//        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+//
+//        [alert show];
+//
+//    } else  {
+//        [sharedCenter SpeakOut:sItem.text];
+//    }
 
 
 }
+
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSLog(@"Entered: %@ idx=%d",[[alertView textFieldAtIndex:0] text], buttonIndex);

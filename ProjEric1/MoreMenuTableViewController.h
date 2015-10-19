@@ -13,4 +13,5 @@
 @property(nonatomic, strong) NSMutableArray *items;
 @property NSMutableString *from;
 
+- (id)handleItemAtRow:(NSInteger)row;
 @end

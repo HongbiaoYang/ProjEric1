@@ -21,6 +21,11 @@ NSString *getPathByCategory(NSString *category);
     ResourceCenter *sharedCenter;
 }
 
+@property (nonatomic,strong) UITapGestureRecognizer *dpGesture;
+@property (nonatomic,strong) UITapGestureRecognizer *spGesture;
+
+
+
 @end
 
 NSString *getPathByCategory(NSString *category) {
@@ -81,6 +86,37 @@ NSString *getPathByCategory(NSString *category) {
     self.YesItem.width = width;
     self.NoItem.width = width;
     self.MoreItem.width = width;
+
+    self.dpGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+    self.dpGesture.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:self.dpGesture];
+
+    self.spGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    self.spGesture.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:self.spGesture];
+
+    [self.spGesture requireGestureRecognizerToFail:self.dpGesture];
+}
+
+- (void)handleDoubleTap:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        // handling code
+
+        CGPoint dpLocation = [sender locationInView:self.tableView];
+        NSIndexPath  *dpIndexPath = [self.tableView indexPathForRowAtPoint:dpLocation];
+        long row = [dpIndexPath row];
+
+        TTSItemStruct *sItem = self.items[row];
+
+        [sharedCenter SpeakOut:sItem.text];
+    }
+}
+
+- (void)handleSingleTap:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        // handling code
+        [sharedCenter SpeakOut:@"please double tap to make a selection"];
+    }
 }
 
 - (NSString *)fullTitle:(NSString *)menu category:(NSString *)category {
@@ -131,10 +167,9 @@ NSString *getPathByCategory(NSString *category) {
 
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 
-    long row = [indexPath row];
-    TTSItemStruct *sItem = self.items[row];
-
-    [sharedCenter SpeakOut:sItem.text];
+    //    long row = [indexPath row];
+    //    TTSItemStruct *sItem = self.items[row];
+    //    [sharedCenter SpeakOut:sItem.text];
 }
 
 
