@@ -1,26 +1,28 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  ProjEric1
 //
 //  Created by Bill on 7/17/15.
 //  Copyright (c) 2015 Bill. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "HearingViewController.h"
 #import "ResourceCenter.h"
 #import "SettingViewController.h"
 #import "MoreMenuTableViewController.h"
+#import "CognitiveTableViewController.h"
+#import "EmergencyTableViewController.h"
 #import <AVFoundation/AVSpeechSynthesis.h>
 
 
-@interface ViewController () {
+@interface MainViewController () {
     ResourceCenter *sharedCenter;
 }
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +34,13 @@
 
     self.navigationController.toolbar.barTintColor = [UIColor yellowColor];
 
+    // determine the page title according to source segue
+    if ([[self transit] isEqualToString:@"para"]) {
+        self.navigationItem.title = @"Para Transit";
+    } else {
+        self.navigationItem.title = @"Fixed Transit";
+    }
+
     CGFloat width = [ResourceCenter screenSize].width / 3;
     self.YesItem.width = width;
     self.NoItem.width = width;
@@ -40,20 +49,15 @@
     sharedCenter = [ResourceCenter sharedResource];
 
 
+    // add right up corner icons:     // add right up corner icons: setting and emergency
     UIImage *imgEmergency = [UIImage imageNamed:@"emergency_ico"];
     UIButton *btnEmergency = [UIButton buttonWithType:UIButtonTypeCustom];
     btnEmergency.bounds = CGRectMake(0, 0, imgEmergency.size.width, imgEmergency.size.height);
     [btnEmergency setImage:imgEmergency forState:UIControlStateNormal];
     UIBarButtonItem *iconEmergency = [[UIBarButtonItem alloc] initWithCustomView:btnEmergency];
+    [btnEmergency addTarget:self action:@selector(emergencyPage:) forControlEvents:UIControlEventTouchUpInside];
 
-    //
-    UIBarButtonItem *icoSetting = [[UIBarButtonItem alloc] initWithTitle:@"\u2699" style:UIBarButtonItemStylePlain target:self action:@selector(settingPage:)];
-    UIFont *customFont = [UIFont fontWithName:@"Helvetica" size:28.0];
-    NSDictionary *fontDict = @{NSFontAttributeName:customFont};
-    [icoSetting setTitleTextAttributes:fontDict forState:UIControlStateNormal];
-
-
-    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: icoSetting, iconEmergency, nil]];
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: iconEmergency, nil]];
 
 }
 - (IBAction)YesClicker:(id)sender {
@@ -64,6 +68,12 @@
     [sharedCenter SpeakOut:@"No"];
 }
 
+-(void) emergencyPage:(id)sender {
+    [sharedCenter SpeakOut:@"emergency"];
+
+    EmergencyTableViewController *eViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"emergency"];
+    [self.navigationController pushViewController:eViewController animated:YES];
+}
 
 -(void) settingPage:(id)sender {
     [sharedCenter SpeakOut:@"setting"];
@@ -84,12 +94,17 @@
     if ([[segue identifier] isEqualToString:@"hearing"] || [[segue identifier]isEqualToString:@"nonenglish"]) {
         HearingViewController *subViewController = [segue destinationViewController];
         subViewController.subMenu = [segue identifier];
+        subViewController.transit = [self transit];
+
     } else if ([[segue identifier] isEqualToString:@"mainMore"]) {
         MoreMenuTableViewController *destinationViewController = [segue destinationViewController];
         destinationViewController.from = [segue identifier];
+    } else if ([[segue identifier] isEqualToString:@"cognitive"]) {
+        CognitiveTableViewController *destinationVC = [segue destinationViewController];
+        destinationVC.transit = [self transit];
     }
     
-    NSLog(@"segue = %@", [segue identifier]);
+    NSLog(@"segue in main = %@", [segue identifier]);
 }
 
 

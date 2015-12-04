@@ -12,6 +12,8 @@
 #import "CognitiveItemTableViewCell.h"
 #import "ResourceCenter.h"
 #import "MoreMenuTableViewController.h"
+#import "DBManager.h"
+#import "EmergencyTableViewController.h"
 
 
 @interface CognitiveTableViewController () {
@@ -42,7 +44,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSArray *paths = [[NSArray alloc] initWithObjects:[[NSBundle mainBundle] pathForResource:@"xml/gettingonoff" ofType:@"xml"],
+   /* NSArray *paths = [[NSArray alloc] initWithObjects:[[NSBundle mainBundle] pathForResource:@"xml/gettingonoff" ofType:@"xml"],
                     [[NSBundle mainBundle] pathForResource:@"xml/ridingbus" ofType:@"xml"],
                     [[NSBundle mainBundle] pathForResource:@"xml/safety" ofType:@"xml"],
                     [[NSBundle mainBundle] pathForResource:@"xml/emergency" ofType:@"xml"], nil];
@@ -52,15 +54,31 @@
 
 
     XMLListParser *xmlParser = [[XMLListParser alloc]init];
-    [self setItems:[xmlParser loadMultiXML:paths withElements:elements]];
+    [self setItems:[xmlParser loadMultiXML:paths withElements:elements]];*/
+
+    sharedCenter = [ResourceCenter sharedResource];
+
+    // get database manager
+    self.dbManager = [sharedCenter dbManager];
+
+    NSString *table = [[NSString alloc] initWithFormat:@"%@Table", [self transit]];
+    NSLog(@"transit in cognitive=%@ table=%@", [self transit], table);
+
+    // cognitive list include everything except response
+    NSString *query = [[NSString alloc] initWithFormat:
+            @"select * from %@ where menu != 'response' order by cognitive desc", table];
+
+    NSLog(@"query in cognitive=%@", query);
+    // obtain and flatten the list
+    NSMutableArray *customArray = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    NSMutableArray *customArrayItems = [self.dbManager convertValueToItem:customArray];
+    self.items = customArrayItems;
 
     self.view.backgroundColor = [UIColor blackColor];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
     [self.navigationController.navigationBar setTranslucent:NO];
 
 
-    sharedCenter = [ResourceCenter sharedResource];
-    
     CGFloat width = [ResourceCenter screenSize].width / 3;
     self.YesItem.width = width;
     self.NoItem.width = width;
@@ -72,6 +90,26 @@
     self.lpgr.allowableMovement = 100.0f;
     [self.view addGestureRecognizer:self.lpgr];
 
+
+    // add right up corner icons: setting and emergency
+    UIImage *imgEmergency = [UIImage imageNamed:@"emergency_ico"];
+    UIButton *btnEmergency = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnEmergency.bounds = CGRectMake(0, 0, imgEmergency.size.width, imgEmergency.size.height);
+    [btnEmergency setImage:imgEmergency forState:UIControlStateNormal];
+    UIBarButtonItem *iconEmergency = [[UIBarButtonItem alloc] initWithCustomView:btnEmergency];
+    [btnEmergency addTarget:self action:@selector(emergencyPage:) forControlEvents:UIControlEventTouchUpInside];
+
+
+
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: iconEmergency, [sharedCenter iconSound], nil]];
+}
+
+-(void) emergencyPage:(id)sender {
+    [sharedCenter SpeakOut:@"emergency"];
+
+    EmergencyTableViewController *eViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"emergency"];
+    eViewController.from = @"cognitive";
+    [self.navigationController pushViewController:eViewController animated:YES];
 }
 
 - (void)handleLongPressGestures:(UILongPressGestureRecognizer *)sender
@@ -117,7 +155,7 @@
 
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 
-    [sharedCenter SpeakOut:@"Please hold this button to make the selection"];
+    [sharedCenter SpeakOut:@"Please hold this button to make a selection"];
 
 }
 
@@ -138,15 +176,19 @@
     cell.itemImage.image = [UIImage imageNamed:imageName];
 
     // blackground color of each cell
-    UIColor *blueBack = [UIColor colorWithRed: 64.0/255.0f green:147.0/255.0f blue:223.0/255.0f alpha:1.0];
-    cell.itemLabel.backgroundColor = blueBack;
+    //UIColor *blueBack = [UIColor colorWithRed: 64.0/255.0f green:147.0/255.0f blue:223.0/255.0f alpha:1.0];
+    UIColor *bgColor = [ResourceCenter colorFromHexString:[tItem color]];
+
+    cell.itemLabel.backgroundColor = bgColor;
     cell.itemLabel.textColor = [UIColor whiteColor];
     [cell.itemLabel setFont:[UIFont fontWithName:@"ArialMT" size:20]];
 
-    cell.itemImage.backgroundColor = [UIColor blueColor];
+//    cell.itemImage.backgroundColor = [UIColor blueColor];
 
     return cell;
 }
+
+
 
 
 /*

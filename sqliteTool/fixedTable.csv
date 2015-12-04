@@ -1,0 +1,49 @@
+itemID,Title,Text,Titulo,Texto,Image,ImageV,Color,Menu,Customize,Hearing,NonEnglish,Cognitive
+,I need help,I need help,Necesito ayuda,Necesito ayuda,picture48,picture48_v,#e7402e,emergency,normal,0,0,0
+,Another passenger in the bus needs help,Another passenger in the bus needs help,Un pasajero necesita ayuda,Un pasajero necesita ayuda,picture52,picture52_v,#e7402e,emergency,normal,0,0,0
+,Please call 911,Please call 911,Por favor llame al 911,Por favor llame al 911,picture51,picture51_v,#e7402e,emergency,normal,0,0,0
+,There has been a personal accident on the bus,There has been a personal accident on the bus,Hubo un accidente personal en el transporte,Hubo un accidente personal en el transporte,picture148,picture148_v,#e7402e,emergency,normal,0,0,0
+,There is an immediate danger on the bus,There is an immediate danger on the bus,Hay un peligro inmediato en el transporte,Hay un peligro inmediato en el transporte,picture149,picture149_v,#e7402e,emergency,normal,0,0,0
+,I feel scared,I feel scared,Me siento con miedo,Me siento con miedo,picture25,picture25_v,#e7402e,emergency,normal,0,0,0
+,What is your name ?,What is your name ?,¿Cuál es su nombre?,¿Cuál es su nombre?,picture13,picture13_v,#fdbd35,emergency,normal,0,0,0
+,"Hello, How are you?","Hello, How are you?",¡Hola! ¿Cómo está?,¡Hola! ¿Cómo está?,picture107,picture107_v,#fdbd35,gettingonoff,normal,0,0,0
+,I don’t feel good today,I don’t feel good today,No me siento bien hoy,No me siento bien hoy,picture179,picture179_v,#fdbd35,gettingonoff,normal,0,0,0
+,Can you lower the lift for me?,Can you lower the lift for me?,¿Puede bajar el elevador por mí?,¿Puede bajar el elevador por mí?,picture35,picture35_v,#fdbd35,gettingonoff,normal,0,0,0
+,Can you help me board the bus?,Can you help me board the bus?,¿Me puede ayudar a subir al transporte?,¿Me puede ayudar a subir al transporte?,picture181,picture181_v,#fdbd35,gettingonoff,normal,0,0,0
+,How much does it cost to ride?,How much does it cost to ride?,¿Cuánto cuesta el pasaje?,¿Cuánto cuesta el pasaje?,picture183,picture183_v,#fdbd35,gettingonoff,normal,0,0,0
+,How do I buy a ticket or pay my fare?,How do I buy a ticket or pay my fare?,¿Cómo compro un pasaje o pago la tarifa?,¿Cómo compro un pasaje o pago la tarifa?,picture184,picture184_v,#fdbd35,gettingonoff,normal,0,0,0
+,Can you help me use the ticket machine?,Can you help me use the ticket machine?,¿Me puede ayudar a usar la máquina de boletos?,¿Me puede ayudar a usar la máquina de boletos?,picture185,picture185_v,#fdbd35,gettingonoff,normal,0,0,0
+,I don’t have money today,I don’t have money today,Hoy no traigo dinero,Hoy no traigo dinero,picture186,picture186_v,#fdbd35,gettingonoff,normal,0,0,0
+,I am not sure which bus I need.Can you please help me?,I am not sure which bus I need.Can you please help me?,"No estoy seguro cuál ruta necesito, ¿me podría ayudar?","No estoy seguro cuál ruta necesito, ¿me podría ayudar?",picture187,picture187_v,#fdbd35,gettingonoff,normal,0,0,0
+,Where is the STOP pull chord or button?,Where is the STOP pull chord or button?,¿Dónde se encuentra el cordón o botón para hacer la parada?,¿Dónde se encuentra el cordón o botón para hacer la parada?,picture80,picture80_v,#fdbd35,gettingonoff,normal,0,0,0
+,Are we close to my house or stop?,Are we close to my house or stop?,¿Estamos cerca de mi casa/bajada?,¿Estamos cerca de mi casa/bajada?,picture193,picture193_v,#8661a6,gettingonoff,normal,0,0,0
+,This is not the stop where I want to get off at,This is not the stop where I want to get off at,Esta no es la parada en la que yo quiero bajar,Esta no es la parada en la que yo quiero bajar,picture98,picture98_v,#8661a6,gettingonoff,normal,0,0,0
+,When will we arrive at the next stop?,When will we arrive at the next stop?,¿Qué tan lejos estamos de la parada?,¿Qué tan lejos estamos de la parada?,picture99,picture99_v,#8661a6,gettingonoff,normal,0,0,0
+,Thank you very much,Thank you very much,Muchas gracias,Muchas gracias,picture109,picture109_v,0,response,normal,0,0,0
+,I don't understand,I don't understand,No entiendo,No entiendo,picture110,picture110_v,0,response,normal,0,0,0
+,Goodbye,Goodbye,Adiós,Adiós,picture177,picture177_v,0,response,normal,0,0,0
+,Could you repeat that,Could you repeat that,Podría repetir,Podría repetir,picture113,picture113_v,0,response,normal,0,0,0
+,Could you talk slower,Could you talk slower,Podría repetir,Podría repetir,picture174,picture174_v,0,response,normal,0,0,0
+,I don't know,I don't know,No lo sé,No lo sé,picture112,picture112_v,0,response,normal,0,0,0
+,Could you talk louder,Could you talk louder,Podría hablar mas fuerte,Podría hablar mas fuerte,picture166,picture166_v,0,response,normal,0,0,0
+,Can you help me ?,Can you help me ?,"Podría ayudarme, por favor","Podría ayudarme, por favor",picture165,picture165_v,0,response,normal,0,0,0
+,Will you please get in touch with my emergency contact?,Will you please get in touch with my emergency contact?,¿Podría por favor llamar a mi contacto de emergencia?,¿Podría por favor llamar a mi contacto de emergencia?,picture198,picture198_v,0,response,normal,0,0,0
+,Can you get the driver for me?,Can you get the driver for me?,¿Puede llamar al conductor por mí?,¿Puede llamar al conductor por mí?,picture15,picture15_v,#4ea554,ridingthebus,normal,0,0,0
+,Could you please help me?,Could you please help me?,¿Me podría ayudar por favor?,¿Me podría ayudar por favor?,picture94,picture94_v,#4ea554,ridingthebus,normal,0,0,0
+,I am afraid of dogs,I am afraid of dogs,Le tengo miedo a los perros,Le tengo miedo a los perros,picture89,picture89_v,#4ea554,ridingthebus,normal,0,0,0
+,I am allergic to smells,I am allergic to smells,Soy alérgico a los aromas,Soy alérgico a los aromas,picture90,picture90_v,#4ea554,ridingthebus,normal,0,0,0
+,Please adjust the heater or airconditioner,Please adjust the heater or airconditioner,¿Por favor podría ajustar el aire acondicionado,¿Por favor podría ajustar el aire acondicionado,picture190,picture190_v,#4ea554,ridingthebus,normal,0,0,0
+,Please adjust the music,Please adjust the music,¿Por favor podría ajustar la música?,¿Por favor podría ajustar la música?,picture191,picture191_v,#4ea554,ridingthebus,normal,0,0,0
+,I cannot reach the STOP pull chord or button,I cannot reach the STOP pull chord or button,No alcanzo el cordón-botón para hacer la parada,No alcanzo el cordón-botón para hacer la parada,picture192,picture192_v,#4ea554,ridingthebus,normal,0,0,0
+,Please do not use your cell phone while driving,Please do not use your cell phone while driving,Por favor no use su teléfono celular mientras conduce,Por favor no use su teléfono celular mientras conduce,picture57,picture57_v,#00B0ED,safety,normal,0,0,0
+,Please go slower,Please go slower,Por favor vaya mas despacio,Por favor vaya mas despacio,picture58,picture58_v,#00B0ED,safety,normal,0,0,0
+,"Please do not smoke and come into the bus, I have health issues","Please do not smoke and come into the bus, I have health issues","Por favor no fume y regrese al transporte, tengo problemas de salud","Por favor no fume y regrese al transporte, tengo problemas de salud",picture60,picture60_v,#00B0ED,safety,normal,0,0,0
+,This is not a safe place for me to get on or off the bus,This is not a safe place for me to get on or off the bus,Este no es un lugar seguro para subirme al or bajarme del transporte,Este no es un lugar seguro para subirme al or bajarme del transporte,picture195,picture195_v,#00B0ED,safety,normal,0,0,0
+,The bus steps are slippery,The bus steps are slippery,Los escalones del transporte están resbalosos,Los escalones del transporte están resbalosos,picture130,picture130_v,#00B0ED,safety,normal,0,0,0
+,The bus floors are slippery,The bus floors are slippery,El piso del transporte está resbaloso,El piso del transporte está resbaloso,picture41,picture41_v,#00B0ED,safety,normal,0,0,0
+,These seats are wet,These seats are wet,El asiento está mojado,El asiento está mojado,picture117,picture117_v,#00B0ED,safety,normal,0,0,0
+,The bus is leaking,The bus is leaking,El transporte está goteando,El transporte está goteando,picture196,picture196_v,#00B0ED,safety,normal,0,0,0
+,This STOP pull chord or button is broken,This STOP pull chord or button is broken,El cordón o botón para hacer la parada no funciona,El cordón o botón para hacer la parada no funciona,picture96,picture96_v,#00B0ED,safety,normal,0,0,0
+,The seatbelt is not working,The seatbelt is not working,El cinturón no está funcionando,El cinturón no está funcionando,picture97,picture97_v,#00B0ED,safety,normal,0,0,0
+,The tie-downs are not working,The tie-downs are not working,El ajuste no está funcionando,El ajuste no está funcionando,picture116,picture116_v,#00B0ED,safety,normal,0,0,0
+,My shoulder harness and lap belt are not secure,My shoulder harness and lap belt are not secure,Mis cinturones de seguridad no están bien abrochados,Mis cinturones de seguridad no están bien abrochados,picture197,picture197_v,#00B0ED,safety,normal,0,0,0

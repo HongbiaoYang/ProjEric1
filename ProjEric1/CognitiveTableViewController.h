@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class XMLListParser;
+@class DBManager;
 
 @interface CognitiveTableViewController : UITableViewController
 
@@ -18,4 +19,6 @@
 
 @property  XMLListParser *xmlParser;
 @property(nonatomic, strong) NSMutableArray *items;
+@property(nonatomic, strong) DBManager *dbManager;
+@property(nonatomic, strong) NSObject *transit;
 @end

@@ -1,0 +1,19 @@
+ID,Desc,Voice,Image,Progress,Type
+101,Welcome to Hearing Tutorial.Please double tap on your selected point of transit.Swipe to continue,Welcome to Hearing Tutorial. Please double tap on your selected point of transit. Swipe to continue.,tutorial1_e,progressbar1_e,hearing
+102,Choose the type of information you need to ask driver by Double Tapping,Choose the type of information you need to ask driver by Double Tapping.,tutorial2_e,progressbar2_e,hearing
+103,Double Tap on Back Button to go to previous screen.,Double Tap on Back Button to go to previous screen.,tutorial3_e,progressbar3_e,hearing
+104,Double Tap on Home Button to go to Home screen.,Double Tap on Home Button to go to Home screen,tutorial4_e,progressbar4_e,hearing
+105,Double Tap on Yes or No Button to respond.,Double Tap on Yes or No Button to respond.,tutorial5_e,progressbar5_e,hearing
+106,Double Tap on More Button to go to Response screen.,Double Tap on More Button to go to Response screen.,tutorial6_e,progressbar6_e,hearing
+107,In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.,In the Response screen Double Tap on 'Input your Text' to open Text to Voice Box.,tutorial7_e,progressbar7_e,hearing
+108,Use the on screen keyboard to type in your text.,Use the on screen keyboard to type in your text.,tutorial8_e,progressbar8_e,hearing
+109,Press 'Done' on the On screen keyboard when you are finished typing.,Press 'Done' on the On screen keyboard when you are finished typing.,tutorial9_e,progressbar9_e,hearing
+110,Use 'Speak' Button to speak your text. Use 'Save' Button to save your text. Use 'Cancel' Button to cancel the box when your are done,Use 'Speak' Button to speak your text. Use 'Save' Button to save your text. Use 'Cancel' Button to cancel the box when your are done,tutorial10_e,progressbar10_e,hearing
+111,Scroll up and down and make your selection by Double Tapping.,Scroll up and down and make your selection by Double Tapping.,tutorial11_e,progressbar11_e,hearing
+201,Bienvenido al Tutorial Auditivo. Por favor presione dos veces en su punto de transporte seleccionado.Deslizar para continuar,Welcome to Hearing Tutorial. Please Double Tap on your selected point of transit. Swipe to continue.,tutorial1_s,progressbar2_e,nonenglish
+202,Desplace la pantalla hacia abajo y seleccione sus preguntas presionando dos veces.,Scroll up and down and make your selection by Double Tapping.,tutorial2_s,progressbar2_s,nonenglish
+203,Presione dos veces en el botón de la flecha apuntando hacia la izquierda para regresar a la pantalla anterior.,Double Tap on Back Button to go to previous screen.,tutorial3_s,progressbar3_s,nonenglish
+204,Presione dos veces en el botón de la casa para ir a la pantalla principal.,Double Tap on Home Button to go to Home screen.,tutorial4_s,progressbar4_s,nonenglish
+205,Presione dos veces en el botón de “Sí” o “No” para responder.,Double Tap on Yes or No Button to respond,tutorial5_s,progressbar5_s,nonenglish
+206,Presione dos veces en el botón de “Más” para ir a la pantalla de respuestas.,Double Tap on More Button to go to Response screen.,tutorial6_s,progressbar6_s,nonenglish
+207,Desplace la pantalla y presione dos veces cualquier botón para responder.,Scroll up and down and make your selection by Double Tapping.,tutorial7_s,progressbar7_s,nonenglish

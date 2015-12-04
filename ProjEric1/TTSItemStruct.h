@@ -18,6 +18,11 @@
 @property (nonatomic, retain)   NSString *texto;
 @property (nonatomic, retain)   NSString *image;
 @property (nonatomic, retain)   NSString *imageV;
+@property (nonatomic, retain)   NSString *color;
+@property (nonatomic, retain)   NSString *customize;
 
 
+@property(nonatomic) int hearing;
+@property(nonatomic) int nonenglish;
+@property(nonatomic) int cognitive;
 @end

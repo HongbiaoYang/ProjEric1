@@ -14,8 +14,14 @@
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/CognitiveTableViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/DBManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/DBManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/EmergencyTableViewCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/EmergencyTableViewCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/EmergencyTableViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/EmergencyTableViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/HearingViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/HearingViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/HomeViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/HomeViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/Images.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/ItemTableViewCell.h" isTestSource="false" />
@@ -32,10 +38,14 @@
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/ResourceCenter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/SettingViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/SettingViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/SlideTutorialViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/SlideTutorialViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TTSItemStruct.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TTSItemStruct.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/ViewController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/ViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TutorialViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TutorialViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/MainViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/MainViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/XMLListParser.h" isTestSource="false" />

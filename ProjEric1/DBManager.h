@@ -13,7 +13,7 @@
 
 -(instancetype) initWithDatabaseFilename:(NSString *)dbFilenamne;
 -(void)copyDatabaseIntoDocumentsDirectory;
-
+- (NSMutableArray *)convertValueToItem:(NSMutableArray *)array;
 -(NSArray *)loadDataFromDB:(NSString *)query;
 -(void)executeQuery:(NSString *)query;
 

@@ -10,6 +10,7 @@
 
 @class TTSItemStruct;
 @class XMLListParser;
+@class DBManager;
 
 @interface ItemTableViewController : UITableViewController {
 
@@ -25,4 +26,6 @@
     @property NSString *subMenu;
     @property NSMutableArray *items;
 
+@property(nonatomic, strong) DBManager *dbManager;
+@property(nonatomic, copy) NSString *transit;
 @end

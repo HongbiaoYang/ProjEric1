@@ -33,8 +33,24 @@
     self.YesItem.width = width;
     self.NoItem.width = width;
     self.MoreItem.width = width;
+
+    // add right up corner icons: sound animation and home
+    UIImage *imgHome = [UIImage imageNamed:@"home"];
+    UIButton *btnHome = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnHome.bounds = CGRectMake(0, 0, imgHome.size.width, imgHome.size.height);
+    [btnHome setImage:imgHome forState:UIControlStateNormal];
+    UIBarButtonItem *iconHome = [[UIBarButtonItem alloc] initWithCustomView:btnHome];
+    [btnHome addTarget:self action:@selector(goHomePage:) forControlEvents:UIControlEventTouchUpInside];
+
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: iconHome, [sharedCenter iconSound], nil]];
 }
 
+
+-(void) goHomePage:(id)sender {
+    NSLog(@"goHomePage");
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
+}
 
 
 - (IBAction)YesClicker:(id)sender {
@@ -67,7 +83,10 @@
         ItemTableViewController *destinationViewController = [segue destinationViewController];
         destinationViewController.category = [segue identifier];
         destinationViewController.subMenu = [self subMenu];
+        destinationViewController.transit = [self transit];
     }
+
+
 
 }
 

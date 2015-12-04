@@ -21,6 +21,7 @@
 
 @property(nonatomic, strong) UITapGestureRecognizer *dpGesture;
 @property(nonatomic, strong) UILongPressGestureRecognizer *lpGesgure;
+@property(nonatomic, strong) UITapGestureRecognizer *spGesture;
 @end
 
 @implementation MoreMenuTableViewController
@@ -33,49 +34,49 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSArray *paths = [[NSArray alloc] initWithObjects:
-                    [[NSBundle mainBundle] pathForResource:@"xml/response" ofType:@"xml"],
-                      nil];
-    
-    NSArray *elements = [[NSArray alloc] initWithObjects:@"Title",@"Text",
-                         @"Titulo",@"Texto",@"Image",@"ImageV",@"Customize",nil];
-    
-    
-    XMLListParser *xmlParser = [[XMLListParser alloc]init];
-    //[self setItems:[xmlParser loadMultiXML:paths withElements:elements]];
 
-    NSMutableArray *xmlItems = [xmlParser loadMultiXML:paths withElements:elements];
-    NSLog(@"more from %@", [self from]);
+    // get sharedCenter
+    sharedCenter = [ResourceCenter sharedResource];
 
-    // create dbManager
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"projEric.sql"];
 
-    // customized array from user input
-    NSString *query = @"select itemDesc from CustomItem order by itemID desc";
+    // ge dbManager from sharedCenter
+    self.dbManager = [sharedCenter dbManager]; 
+//            [[DBManager alloc] initWithDatabaseFilename:@"projEric.sql"];
+    NSLog(@"db=%@ is from:%@", [self dbManager], [self from]);
+
+
+    // get array with or without user input items
+    NSString *query;
+    if ([[self from] isEqualToString:@"displayMore-hearing"]|| [[self from] isEqualToString:@"hearingMore"] ||
+            [[self from] isEqualToString:@"mainMore"] || [[self from] isEqualToString:@"homeMore"]) {
+        query = [[NSString alloc] initWithFormat:
+                @"select * from %@Table where menu = 'response' order by hearing desc", [sharedCenter transit]];
+    } else {
+        query = [[NSString alloc] initWithFormat:
+                @"select * from %@Table where menu = 'response' and customize = 'normal' order by hearing desc"
+                , [sharedCenter transit]];
+    }
+
+    // obtain and flatten the list
     NSMutableArray *customArray = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    NSMutableArray *customArrayItems = [self convertValueToItem:customArray];
+    NSMutableArray *customArrayItems = [self.dbManager convertValueToItem:customArray];
+
 
     // add input option if from hearing/main
     NSLog(@"from %@", [self from]);
     if ([[self from] isEqualToString:@"displayMore-hearing"]|| [[self from] isEqualToString:@"hearingMore"] ||
-            [[self from] isEqualToString:@"mainMore"]) {
+            [[self from] isEqualToString:@"mainMore"] || [[self from] isEqualToString:@"homeMore"]) {
 
         TTSItemStruct *aItem = [[TTSItemStruct alloc] init];
         aItem.title = @"Input Your Text...";
         aItem.image = @"picture108.png";
-        aItem.imageV = @"input";
+        aItem.customize = @"input";
 
         [customArrayItems insertObject:aItem atIndex:0];
 
-        NSLog(@"input item= %@", aItem);
-
-        // combine the arrays together
-        [customArrayItems addObjectsFromArray:xmlItems];
-        NSLog(@"array = %@", customArrayItems);
-
         [self setItems:customArrayItems];
     } else {
-        [self setItems:xmlItems];
+        [self setItems:customArrayItems];
     }
 
 
@@ -83,16 +84,23 @@
 
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
-    
-    sharedCenter = [ResourceCenter sharedResource];
-    
-    [self.navigationController setToolbarHidden:YES];
 
+    // show the toolbar, set it to transparent. If set it to hidden, goHome button will go wrong
+    [self.navigationController setToolbarHidden:NO];
+
+
+    // handle hand gesture
     self.dpGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
     self.dpGesture.numberOfTapsRequired = 2;
 
     self.lpGesgure = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
 
+    self.spGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    self.spGesture.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:self.spGesture];
+
+
+    // set long press or double tap according to where it comes from
     if ([self.from isEqualToString:@"cognitiveMore"]) {
         [self.view addGestureRecognizer:self.lpGesgure];
         NSLog(@"in lp from =%@", [self from]);
@@ -100,6 +108,37 @@
     } else {
         [self.view addGestureRecognizer:self.dpGesture];
         NSLog(@"in dp from =%@", [self from]);
+    }
+
+    [self.spGesture requireGestureRecognizerToFail:self.dpGesture];
+
+    // add right up corner icons: sound animation and home
+    UIImage *imgHome = [UIImage imageNamed:@"home"];
+    UIButton *btnHome = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnHome.bounds = CGRectMake(0, 0, imgHome.size.width, imgHome.size.height);
+    [btnHome setImage:imgHome forState:UIControlStateNormal];
+    UIBarButtonItem *iconHome = [[UIBarButtonItem alloc] initWithCustomView:btnHome];
+    [btnHome addTarget:self action:@selector(goHomePage:) forControlEvents:UIControlEventTouchUpInside];
+
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: iconHome, [sharedCenter iconSound], nil]];
+}
+
+-(void) goHomePage:(id)sender {
+    NSLog(@"goHomePage");
+
+//    [self setToolbarItems:[[NSArray alloc] init] animated:NO];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
+}
+
+- (void)handleSingleTap:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        // handling code
+        if ([self.from isEqualToString:@"cognitiveMore"]) {
+            [sharedCenter SpeakOut:@"please hold this button to make a selection"];
+        } else {
+            [sharedCenter SpeakOut:@"please double tap to make a selection"];
+        }
 
     }
 }
@@ -134,7 +173,7 @@
 
     TTSItemStruct *sItem = self.items[row];
 
-    if ([sItem.imageV isEqualToString:@"input"]) {
+    if ([sItem.customize isEqualToString:@"input"]) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add..." message:@"Input Your Text" delegate:self
                                                cancelButtonTitle:@"Save" otherButtonTitles:@"Speak", nil];
 
@@ -162,22 +201,6 @@
             [sharedCenter SpeakOut:sItem.text];
         }
     }
-}
-
-
-
-
-- (NSMutableArray *)convertValueToItem:(NSMutableArray *)array {
-    NSMutableArray *itemArray = [[NSMutableArray alloc] init];
-
-    for (NSArray *textArr in array) {
-        NSLog(@"array=%@ test=%@",array, [textArr objectAtIndex:0]);
-        TTSItemStruct *aItem = [[TTSItemStruct alloc] initItemWithText:[textArr objectAtIndex:0]];
-        [itemArray addObject:aItem];
-    }
-
-    NSLog(@"itemarray=%@", itemArray);
-    return itemArray;
 }
 
 
@@ -230,10 +253,13 @@
     
     NSString *imageName = [NSString stringWithFormat:@"sym/%@", [tItem image]];
     cell.MoreImage.image = [UIImage imageNamed:imageName];
+    NSLog(@"image in more:%@", imageName);
     
     
     // blackground color of each cell
     UIColor *blueBack = [UIColor colorWithRed: 64.0/255.0f green:147.0/255.0f blue:223.0/255.0f alpha:1.0];
+
+
     cell.MoreLabel.backgroundColor = blueBack;
     cell.MoreLabel.textColor = [UIColor whiteColor];
     [cell.MoreLabel setFont:[UIFont fontWithName:@"ArialMT" size:20]];
@@ -274,7 +300,9 @@
     if (buttonIndex == 1) {
         [sharedCenter SpeakOut:[[alertView textFieldAtIndex:0] text]];
     } else if (buttonIndex == 0) {
+
         [self addCustomItem:[[alertView textFieldAtIndex:0] text]];
+        [sharedCenter SpeakOut:[[alertView textFieldAtIndex:0] text]];
     } else {
         NSLog(@"Something is wrong, index=%d", buttonIndex);
     }
@@ -283,7 +311,9 @@
 
 - (void)addCustomItem:(NSString *)text {
 
-    NSString *query = [NSString stringWithFormat:@"insert into customItem values (null, '%@');", text];
+    NSString *query = [NSString stringWithFormat:
+            @"insert into %@Table values (null, '%@', '%@', 0,0, 'customize', 'customize', "
+                    "'#00ffff','response','added', 0,0,0);", [sharedCenter transit], text, text];
 
     // NSLog(@"query=%@", query);
 
@@ -311,16 +341,20 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     NSLog(@"will disappear");
-    [[self navigationController] setToolbarHidden:NO];
+    [[self navigationController] setToolbarHidden:NO animated:animated];
 
 }
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
+
     long row = [indexPath row];
     TTSItemStruct *sItem = self.items[row];
-    if (sItem.imageV == @"added") {
+    NSLog(@"can edit in more:%@|%@", sItem.customize, sItem.title);
+
+
+    if ([sItem.customize isEqualToString:@"added"]) {
         return YES;
     } else {
         return NO;
@@ -348,7 +382,8 @@
 
 - (void)updateDeleteItems:(TTSItemStruct *)aStruct {
 
-    NSString *query = [NSString stringWithFormat:@"delete from customItem where itemDesc= '%@';", aStruct.title];
+    NSString *query = [NSString stringWithFormat:
+            @"delete from %@Table where title = '%@';", [sharedCenter transit], aStruct.title];
 
     // Execute the query.
     [self.dbManager executeQuery:query];

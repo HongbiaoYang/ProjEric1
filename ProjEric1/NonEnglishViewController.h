@@ -13,6 +13,7 @@
 
 
 @property NSString* subMenu;
+@property(nonatomic, copy) NSString *transit;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *YesItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *NoItem;

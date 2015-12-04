@@ -168,35 +168,73 @@
 -(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
 
 
-    if (recognizer.direction == UISwipeGestureRecognizerDirectionUp) {
-        NSLog(@"swipe up");
-        if ([self level] == 0)
-            self.level += 1;
-
-        self.index2 = 0;
-    }
-
     if (recognizer.direction == UISwipeGestureRecognizerDirectionDown) {
         NSLog(@"swipe down");
+        if ([self level] == 0) {
+            self.level += 1;
+
+            self.index2 = 0;
+        } else {
+            [sharedCenter SpeakOut:@"There are no more questions beyound this point, "
+                    "please swipe up to access questions"];
+            return;
+        }
+    }
+
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionUp) {
+        NSLog(@"swipe up");
         if ([self level]  == 1) {
             self.level -= 1;
+
+            self.index1 = 0;
+        } else {
+            [sharedCenter SpeakOut:@"There are no more categories beyond this point, "
+                    "please swipe down to access categories"];
+            return;
+        }
+
+    }
+
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
+        NSLog(@"swipe left");
+        if ([self level] == 0) {
+            if (self.index1 < 3) {
+                self.index1 += 1;
+            } else {
+                [sharedCenter SpeakOut:@"There are no more categories beyond this point, "
+                        "please swipe right to access the previous category"];
+                return;
+            }
+        } else if ([self level] == 1) {
+            if ([self index2] < [[self getArrayOfLevel:[self index1]] count] - 1) {
+                self.index2 += 1;
+            } else {
+                [sharedCenter SpeakOut:@"There are no more questions beyond this point, "
+                        "please swipe right to access the previous question"];
+                return;
+            }
         }
     }
 
     if (recognizer.direction == UISwipeGestureRecognizerDirectionRight) {
         NSLog(@"swipe right");
-        if ([self level] == 0 && self.index1 < 3) {
-            self.index1 += 1;
-        } else if ([self level] == 1 && [self index2] < [[self getArrayOfLevel:[self index1]] count] - 1)
-            self.index2 += 1;
-    }
-
-    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
-        NSLog(@"swipe left");
-        if ([self level] == 0 && self.index1 > 0) {
-            self.index1 -= 1;
-        } else if ([self level]  == 1 && [self index2] > 0)
-            self.index2 -= 1;
+        if ([self level] == 0) {
+             if(self.index1 > 0) {
+                 self.index1 -= 1;
+             } else {
+                 [sharedCenter SpeakOut:@"There are no more categories beyond this point, "
+                         "please swipe left to access the next categories"];
+                 return;
+             }
+        } else if ([self level]  == 1) {
+            if ([self index2] > 0) {
+                self.index2 -= 1;
+            } else {
+                [sharedCenter SpeakOut:@"There are no more questions beyond this point, "
+                        "please swipe left to access the next question"];
+                return;
+            }
+        }
     }
     
 

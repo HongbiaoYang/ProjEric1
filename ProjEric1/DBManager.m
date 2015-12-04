@@ -7,6 +7,8 @@
 //
 
 #import "DBManager.h"
+#import "TTSItemStruct.h"
+
 @interface  DBManager()
 
 -(void)runQuery:(const char *)query isQueryExecutable:(BOOL)queryExecutable;
@@ -138,6 +140,7 @@
     // The query string is converted to a char* object.
     [self runQuery:[query UTF8String] isQueryExecutable:NO];
 
+    NSLog(@"queyr in load data from db:%@", query);
     return (NSArray *) self.arrResults;
 }
 
@@ -182,5 +185,55 @@
     }
 
 }
+
+
+- (NSMutableArray *)convertValueToItem:(NSMutableArray *)array {
+    NSMutableArray *itemArray = [[NSMutableArray alloc] init];
+
+    NSInteger indexOfTitle = [self.arrColumnNames indexOfObject:@"title"];
+    NSInteger indexOfText = [self.arrColumnNames indexOfObject:@"text"];
+    NSInteger indexOfTitulo = [self.arrColumnNames indexOfObject:@"titulo"];
+    NSInteger indexOfTexto = [self.arrColumnNames indexOfObject:@"texto"];
+    NSInteger indexOfImage = [self.arrColumnNames indexOfObject:@"image"];
+    NSInteger indexOfImageV = [self.arrColumnNames indexOfObject:@"imageV"];
+    NSInteger indexOfColor = [self.arrColumnNames indexOfObject:@"color"];
+
+
+    NSInteger indexOfCustomize= [self.arrColumnNames indexOfObject:@"customize"];
+    NSInteger indexOfHearing = [self.arrColumnNames indexOfObject:@"hearing"];
+    NSInteger indexOfNonenglish = [self.arrColumnNames indexOfObject:@"nonenglish"];
+    NSInteger indexOfCognitive = [self.arrColumnNames indexOfObject:@"cognitive"];
+
+
+//    NSLog(@"indexOfTitle= %ld and %ld %ld", indexOfTitle, indexOfText, indexOfCustomize);
+
+
+//    NSLog(@"array in DBManager=%@ ",array);
+
+    for (NSArray *itemArr in array) {
+//        NSLog(@"itemArr in array of DBManager =%@", [itemArr objectAtIndex:indexOfTitle]);
+
+        TTSItemStruct *aItem = [[TTSItemStruct alloc] init];
+        aItem.title = [itemArr objectAtIndex:indexOfTitle];
+        aItem.text = [itemArr objectAtIndex:indexOfText];
+        aItem.titulo = [itemArr objectAtIndex:indexOfTitulo];
+        aItem.texto = [itemArr objectAtIndex:indexOfTexto];
+        aItem.image = [itemArr objectAtIndex:indexOfImage];
+        aItem.imageV = [itemArr objectAtIndex:indexOfImageV];
+        aItem.color = [itemArr objectAtIndex:indexOfColor];
+        aItem.customize = [itemArr objectAtIndex:indexOfCustomize];
+        aItem.hearing = [[itemArr objectAtIndex:indexOfHearing] intValue];
+        aItem.nonenglish = [[itemArr objectAtIndex:indexOfNonenglish] intValue];
+        aItem.cognitive = [[itemArr objectAtIndex:indexOfCognitive] intValue];
+
+
+        [itemArray addObject:aItem];
+    }
+
+//    NSLog(@"itemarray=%@", itemArray);
+    return itemArray;
+}
+
+
 
 @end

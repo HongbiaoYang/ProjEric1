@@ -11,18 +11,29 @@
 
 
 @class AVSpeechSynthesizer;
+@class DBManager;
 
 @interface ResourceCenter : NSObject {
 
-    AVSpeechSynthesizer *synthesizer;
+//    AVSpeechSynthesizer *synthesizer;
+//    UIBarButtonItem *iconSound;
+//    UIImageView *imgViewSound;
 }
+
+@property UIBarButtonItem *iconSound;
+@property UIImageView *imgViewSound;
 @property AVSpeechSynthesizer *synthesizer;
 @property float talkSpeed;
 
- +(id) sharedResource;
+@property(nonatomic, strong) DBManager *dbManager;
 
- -(void)SpeakOut:(NSString *)text;
+@property(nonatomic, copy) NSString *transit;
+
++(id) sharedResource;
+
+-(void)SpeakOut:(NSString *)text;
 + (CGSize)screenSize;
++ (UIColor *)colorFromHexString:(NSString *)hexString;
 
 
 @end

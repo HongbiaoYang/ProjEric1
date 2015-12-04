@@ -1,0 +1,10 @@
+itemID,title,text,titulo,texto,image,imageV,color,menu,customize,hearing,nonenglish,cognitive
+1,What is your name ? getting,What is your name ?,¿Cuál es su nombre?,¿Cuál es su nombre?,picture13,picture13_v,#0000ff,gettingonoff,,,,
+2,What is your name ? riding,What is your name ?,¿Cuál es su nombre?,¿Cuál es su nombre?,picture13,picture13_v,#00ffff,ridingthebus,,,,
+3,What is your name ? safety,What is your name ?,¿Cuál es su nombre?,¿Cuál es su nombre?,picture13,picture13_v,#7f00ff,safety,,,,
+4,What is your name ?emer,What is your name ?,¿Cuál es su nombre?,¿Cuál es su nombre?,picture13,picture13_v,#ff00ff,emergency,,,,
+5,What is your name ?response,What is your name ?,¿Cuál es su nombre?,¿Cuál es su nombre?,picture13,picture13_v,#fdb135,response,,,,
+6,What is your name ? added,What is your name ?,¿Cuál es su nombre?,¿Cuál es su nombre?,picture13,picture13_v,#ff0000,response,added,,,
+7,,,,,,,,,,,,
+8,,,,,,,,,,,,
+9,,,,,,,,,,,,

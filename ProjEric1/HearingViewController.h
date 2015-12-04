@@ -16,4 +16,5 @@
 
 
 @property NSString* subMenu;
+@property(nonatomic, copy) NSString *transit;
 @end
