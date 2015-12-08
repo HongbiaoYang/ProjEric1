@@ -11,7 +11,7 @@
 @interface MoreMenuTableViewController : UITableViewController
 
 @property(nonatomic, strong) NSMutableArray *items;
-@property NSMutableString *from;
+@property NSString *from;
+@property(nonatomic, copy) NSString *transit;
 
-- (id)handleItemAtRow:(NSInteger)row;
 @end

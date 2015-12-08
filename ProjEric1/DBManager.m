@@ -140,7 +140,6 @@
     // The query string is converted to a char* object.
     [self runQuery:[query UTF8String] isQueryExecutable:NO];
 
-    NSLog(@"queyr in load data from db:%@", query);
     return (NSArray *) self.arrResults;
 }
 
@@ -208,7 +207,7 @@
 //    NSLog(@"indexOfTitle= %ld and %ld %ld", indexOfTitle, indexOfText, indexOfCustomize);
 
 
-//    NSLog(@"array in DBManager=%@ ",array);
+    NSLog(@"array in DBManager=%@ ",array);
 
     for (NSArray *itemArr in array) {
 //        NSLog(@"itemArr in array of DBManager =%@", [itemArr objectAtIndex:indexOfTitle]);
@@ -228,6 +227,8 @@
 
 
         [itemArray addObject:aItem];
+
+        NSLog(@"aItem=%@, %d", aItem.title, aItem.hearing);
     }
 
 //    NSLog(@"itemarray=%@", itemArray);

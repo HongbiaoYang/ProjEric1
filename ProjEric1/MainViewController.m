@@ -13,7 +13,6 @@
 #import "MoreMenuTableViewController.h"
 #import "CognitiveTableViewController.h"
 #import "EmergencyTableViewController.h"
-#import <AVFoundation/AVSpeechSynthesis.h>
 
 
 @interface MainViewController () {
@@ -60,6 +59,7 @@
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: iconEmergency, nil]];
 
 }
+
 - (IBAction)YesClicker:(id)sender {
     [sharedCenter SpeakOut:@"Yes"];
 }

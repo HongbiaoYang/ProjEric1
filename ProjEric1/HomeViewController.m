@@ -21,6 +21,14 @@
     ResourceCenter *sharedCenter;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    // set transit to para by default, in the very first page
+    [sharedCenter setTransit:@"para"];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -58,6 +66,8 @@
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: icoSetting, iconEmergency, nil]];
 
 }
+
+
 
 -(void) settingPage:(id)sender {
     [sharedCenter SpeakOut:@"setting"];

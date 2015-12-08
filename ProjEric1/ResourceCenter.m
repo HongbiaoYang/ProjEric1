@@ -63,18 +63,26 @@
     return self;
 }
 
+// speak that interrupts the previous speaking
 - (void)SpeakOut:(NSString *)text {
     if ([[self synthesizer] isSpeaking]) {
         [[self synthesizer] stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
     }
 
+    [self SpeakContinue:text];
+}
+
+// speak that does not interrupt previous speaking
+- (void)SpeakContinue:(NSString *)text {
+
     AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:text];
     [utterance setRate:[self talkSpeed]];
     [[self synthesizer] speakUtterance:utterance];
 
-
     [[self imgViewSound] startAnimating];
 }
+
+
 
 + (CGSize)screenSize {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;

@@ -112,6 +112,7 @@
     if ([[segue identifier] isEqualToString:@"hearingMore"]) {
         MoreMenuTableViewController *destinationViewController = [segue destinationViewController];
         destinationViewController.from = [segue identifier];
+        destinationViewController.transit = [segue identifier];
 
     } else {
         ItemTableViewController *destinationViewController = [segue destinationViewController];
@@ -119,7 +120,6 @@
         destinationViewController.subMenu = [self subMenu];
         destinationViewController.transit = [self transit];
     }
-
 
 }
 

@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		8107CADA1C0F81FC0082314B /* EmergencyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8107CAD91C0F81FC0082314B /* EmergencyTableViewController.m */; };
 		8107CADD1C0F82590082314B /* EmergencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8107CADC1C0F82590082314B /* EmergencyTableViewCell.m */; };
+		811387771C17254C007264AF /* TutorialStruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 811387761C17254C007264AF /* TutorialStruct.m */; };
 		813FCAFC1BB2EF4E00E038CA /* ResourceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 813FCAFB1BB2EF4E00E038CA /* ResourceCenter.m */; };
 		814B94311C110051001ECFA7 /* SlideTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B94301C110051001ECFA7 /* SlideTutorialViewController.m */; };
+		814B94341C164021001ECFA7 /* VisionTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B94331C164021001ECFA7 /* VisionTutorialViewController.m */; };
 		815557091C0FBD62009102C2 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815557081C0FBD62009102C2 /* TutorialViewController.m */; };
 		815BF9DF1BAF18B6009566B5 /* VisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815BF9DE1BAF18B6009566B5 /* VisionViewController.m */; };
-		8167DF1E1B6982520055D891 /* KissXML in Resources */ = {isa = PBXBuildFile; fileRef = 8167DF1D1B6982520055D891 /* KissXML */; };
-		81D6FA021B6AC3310072693F /* xml in Resources */ = {isa = PBXBuildFile; fileRef = 81D6FA011B6AC3310072693F /* xml */; };
 		81D6FA051B6ACCBD0072693F /* TTSItemStruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D6FA041B6ACCBC0072693F /* TTSItemStruct.m */; };
 		81DE2E991C0E194400EB7277 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DE2E981C0E194400EB7277 /* HomeViewController.m */; };
 		81DFD3F11B72A7470039EFA6 /* ItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DFD3F01B72A7470039EFA6 /* ItemTableViewController.m */; };
@@ -35,7 +35,6 @@
 		AE099A3F1BC7536D00C9B24A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE099A3E1BC7536D00C9B24A /* libsqlite3.dylib */; };
 		AE099A451BC753F500C9B24A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE099A441BC753F500C9B24A /* DBManager.m */; };
 		AE1952431BC77158009DD9F6 /* CognitiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1952421BC77158009DD9F6 /* CognitiveTableViewController.m */; };
-		AE5C8A7F1B8023AF00D0FE5F /* XMLListParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5C8A7E1B8023AF00D0FE5F /* XMLListParser.m */; };
 		AE5C8A821B803C4F00D0FE5F /* CognitiveItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5C8A811B803C4F00D0FE5F /* CognitiveItemTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -54,16 +53,18 @@
 		8107CAD91C0F81FC0082314B /* EmergencyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyTableViewController.m; sourceTree = "<group>"; };
 		8107CADB1C0F82590082314B /* EmergencyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyTableViewCell.h; sourceTree = "<group>"; };
 		8107CADC1C0F82590082314B /* EmergencyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyTableViewCell.m; sourceTree = "<group>"; };
+		811387751C17254C007264AF /* TutorialStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialStruct.h; sourceTree = "<group>"; };
+		811387761C17254C007264AF /* TutorialStruct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialStruct.m; sourceTree = "<group>"; };
 		813FCAFA1BB2EF4E00E038CA /* ResourceCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceCenter.h; sourceTree = "<group>"; };
 		813FCAFB1BB2EF4E00E038CA /* ResourceCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceCenter.m; sourceTree = "<group>"; };
 		814B942F1C110051001ECFA7 /* SlideTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideTutorialViewController.h; sourceTree = "<group>"; };
 		814B94301C110051001ECFA7 /* SlideTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideTutorialViewController.m; sourceTree = "<group>"; };
+		814B94321C164021001ECFA7 /* VisionTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisionTutorialViewController.h; sourceTree = "<group>"; };
+		814B94331C164021001ECFA7 /* VisionTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisionTutorialViewController.m; sourceTree = "<group>"; };
 		815557071C0FBD62009102C2 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		815557081C0FBD62009102C2 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		815BF9DD1BAF18B6009566B5 /* VisionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisionViewController.h; sourceTree = "<group>"; };
 		815BF9DE1BAF18B6009566B5 /* VisionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisionViewController.m; sourceTree = "<group>"; };
-		8167DF1D1B6982520055D891 /* KissXML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = KissXML; sourceTree = "<group>"; };
-		81D6FA011B6AC3310072693F /* xml */ = {isa = PBXFileReference; lastKnownFileType = folder; name = xml; path = ProjEric1/xml; sourceTree = "<group>"; };
 		81D6FA031B6ACCBC0072693F /* TTSItemStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSItemStruct.h; sourceTree = "<group>"; };
 		81D6FA041B6ACCBC0072693F /* TTSItemStruct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSItemStruct.m; sourceTree = "<group>"; };
 		81DE2E971C0E194400EB7277 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -101,8 +102,6 @@
 		AE099A441BC753F500C9B24A /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		AE1952411BC77158009DD9F6 /* CognitiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CognitiveTableViewController.h; sourceTree = "<group>"; };
 		AE1952421BC77158009DD9F6 /* CognitiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CognitiveTableViewController.m; sourceTree = "<group>"; };
-		AE5C8A7D1B8023AF00D0FE5F /* XMLListParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLListParser.h; sourceTree = "<group>"; };
-		AE5C8A7E1B8023AF00D0FE5F /* XMLListParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLListParser.m; sourceTree = "<group>"; };
 		AE5C8A801B803C4F00D0FE5F /* CognitiveItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CognitiveItemTableViewCell.h; sourceTree = "<group>"; };
 		AE5C8A811B803C4F00D0FE5F /* CognitiveItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CognitiveItemTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +130,6 @@
 			children = (
 				AE00F7721BC8ADCB00D75048 /* projEric.sql */,
 				AE099A3E1BC7536D00C9B24A /* libsqlite3.dylib */,
-				81D6FA011B6AC3310072693F /* xml */,
 				A99AEAB01B597F7900BBBD08 /* ProjEric1 */,
 				A99AEACA1B597F7900BBBD08 /* ProjEric1Tests */,
 				A99AEAAF1B597F7900BBBD08 /* Products */,
@@ -151,16 +149,17 @@
 			isa = PBXGroup;
 			children = (
 				81DFD3F71B72B1380039EFA6 /* sym */,
-				8167DF1D1B6982520055D891 /* KissXML */,
 				A99AEAB51B597F7900BBBD08 /* AppDelegate.h */,
 				A99AEAB61B597F7900BBBD08 /* AppDelegate.m */,
-				AE5C8A7D1B8023AF00D0FE5F /* XMLListParser.h */,
-				AE5C8A7E1B8023AF00D0FE5F /* XMLListParser.m */,
 				81D6FA031B6ACCBC0072693F /* TTSItemStruct.h */,
 				81D6FA041B6ACCBC0072693F /* TTSItemStruct.m */,
 				A99AEAB81B597F7900BBBD08 /* MainViewController.h */,
 				A99AEAB91B597F7900BBBD08 /* MainViewController.m */,
 				A99AEABB1B597F7900BBBD08 /* Main.storyboard */,
+				811387751C17254C007264AF /* TutorialStruct.h */,
+				811387761C17254C007264AF /* TutorialStruct.m */,
+				814B94321C164021001ECFA7 /* VisionTutorialViewController.h */,
+				814B94331C164021001ECFA7 /* VisionTutorialViewController.m */,
 				814B942F1C110051001ECFA7 /* SlideTutorialViewController.h */,
 				814B94301C110051001ECFA7 /* SlideTutorialViewController.m */,
 				815557071C0FBD62009102C2 /* TutorialViewController.h */,
@@ -310,8 +309,6 @@
 			files = (
 				AE00F7731BC8ADCB00D75048 /* projEric.sql in Resources */,
 				81DFD3F81B72B1380039EFA6 /* sym in Resources */,
-				81D6FA021B6AC3310072693F /* xml in Resources */,
-				8167DF1E1B6982520055D891 /* KissXML in Resources */,
 				A99AEABD1B597F7900BBBD08 /* Main.storyboard in Resources */,
 				A99AEABF1B597F7900BBBD08 /* Images.xcassets in Resources */,
 			);
@@ -343,14 +340,15 @@
 				815BF9DF1BAF18B6009566B5 /* VisionViewController.m in Sources */,
 				A99AEAB71B597F7900BBBD08 /* AppDelegate.m in Sources */,
 				A99AEAB41B597F7900BBBD08 /* main.m in Sources */,
+				811387771C17254C007264AF /* TutorialStruct.m in Sources */,
 				A99AEAFB1B59954C00BBBD08 /* HearingViewController.m in Sources */,
 				81E49F171BC2054A006E7DE8 /* MoreItemTableViewCell.m in Sources */,
+				814B94341C164021001ECFA7 /* VisionTutorialViewController.m in Sources */,
 				AE1952431BC77158009DD9F6 /* CognitiveTableViewController.m in Sources */,
 				815557091C0FBD62009102C2 /* TutorialViewController.m in Sources */,
 				AE5C8A821B803C4F00D0FE5F /* CognitiveItemTableViewCell.m in Sources */,
 				813FCAFC1BB2EF4E00E038CA /* ResourceCenter.m in Sources */,
 				81D6FA051B6ACCBD0072693F /* TTSItemStruct.m in Sources */,
-				AE5C8A7F1B8023AF00D0FE5F /* XMLListParser.m in Sources */,
 				A99AEAFE1B59956E00BBBD08 /* NonEnglishViewController.m in Sources */,
 				AE099A3D1BC6F71D00C9B24A /* SettingViewController.m in Sources */,
 			);

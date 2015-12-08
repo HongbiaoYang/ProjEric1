@@ -44,15 +44,21 @@
 
     NSLog(@"from emer ico:%@", self.dbManager);
 
-    NSString *query = [[NSString alloc] initWithFormat:
-            @"select * from paraTable where menu = 'emergency' order by hearing desc"];
+    NSString *type;
+    if ([[self from] isEqualToString:@"cognitive"]) {
+        type = [self from];
+    } else {
+        type = @"hearing";
+    }
 
+    NSString *query = [[NSString alloc] initWithFormat:
+            @"select * from %@Table where menu = 'emergency' order by %@ desc", [sharedCenter transit], type];
+
+    NSLog(@"query in emer=%@", query);
     // obtain and flatten the list
     NSMutableArray *customArray = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     NSMutableArray *customArrayItems = [self.dbManager convertValueToItem:customArray];
     self.items = customArrayItems;
-
-//    NSLog(@"item array in items:%@", customArray);
 
     self.view.backgroundColor = [UIColor blackColor];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
@@ -94,12 +100,46 @@
 
         CGPoint dpLocation = [sender locationInView:self.tableView];
         NSIndexPath  *dpIndexPath = [self.tableView indexPathForRowAtPoint:dpLocation];
-        long row = [dpIndexPath row];
 
-        TTSItemStruct *sItem = self.items[row];
+        [self handleItemAtRowOf:[dpIndexPath row]];
 
-        [sharedCenter SpeakOut:sItem.text];
     }
+}
+
+- (void)handleItemAtRowOf:(NSInteger)row {
+    TTSItemStruct *sItem = self.items[row];
+
+    int freq;
+    NSString *subMenu = nil;
+
+    if ([[self from] isEqualToString:@"cognitive"]) {
+        sItem.cognitive += 1;
+        freq = sItem.cognitive;
+        subMenu = @"cognitive";
+
+    } else  {
+        sItem.hearing += 1;
+        freq = sItem.hearing;
+        subMenu = @"hearing";
+    }
+
+    // database stuff: update the frequency value in database
+    NSString *updateQuery = [[NSString alloc] initWithFormat:
+            @"update %@Table set %@ = %d where title = '%@'", [sharedCenter transit], subMenu, freq,
+            [sItem.title stringByReplacingOccurrencesOfString:@"'" withString:@"''"]];
+
+    // Execute the query.
+    [self.dbManager executeQuery:updateQuery];
+
+    // If the query was successfully executed then pop the view controller.
+    if (self.dbManager.affectedRows != 0) {
+        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+    }
+    else {
+        NSLog(@"Could not execute the query.");
+    }
+
+    [sharedCenter SpeakOut: sItem.text];
 }
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)sender {
@@ -202,7 +242,7 @@
 }
 */
 
-/*
+/*d
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
 }

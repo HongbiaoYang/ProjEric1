@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @class TTSItemStruct;
-@class XMLListParser;
 @class DBManager;
 
 @interface ItemTableViewController : UITableViewController {

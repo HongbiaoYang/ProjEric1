@@ -1,11 +1,10 @@
 itemID,Title,Text,Titulo,Texto,Image,ImageV,Color,Menu,Customize,Hearing,NonEnglish,Cognitive
 ,I need help,I need help,Necesito ayuda,Necesito ayuda,picture48,picture48_v,#e7402e,emergency,normal,0,0,0
 ,Another passenger in the bus needs help,Another passenger in the bus needs help,Un pasajero necesita ayuda,Un pasajero necesita ayuda,picture52,picture52_v,#e7402e,emergency,normal,0,0,0
-,Please call 911,Please call 911,Por favor llame al 911,Por favor llame al 911,picture51,picture51_v,#e7402e,emergency,normal,0,0,0
+,Please call 911,Please call 9 one 1,Por favor llame al 911,Por favor llame al 911,picture51,picture51_v,#e7402e,emergency,normal,0,0,0
 ,There has been a personal accident on the bus,There has been a personal accident on the bus,Hubo un accidente personal en el transporte,Hubo un accidente personal en el transporte,picture148,picture148_v,#e7402e,emergency,normal,0,0,0
 ,There is an immediate danger on the bus,There is an immediate danger on the bus,Hay un peligro inmediato en el transporte,Hay un peligro inmediato en el transporte,picture149,picture149_v,#e7402e,emergency,normal,0,0,0
 ,I feel scared,I feel scared,Me siento con miedo,Me siento con miedo,picture25,picture25_v,#e7402e,emergency,normal,0,0,0
-,What is your name ?,What is your name ?,¿Cuál es su nombre?,¿Cuál es su nombre?,picture13,picture13_v,#fdbd35,emergency,normal,0,0,0
 ,"Hello, How are you?","Hello, How are you?",¡Hola! ¿Cómo está?,¡Hola! ¿Cómo está?,picture107,picture107_v,#fdbd35,gettingonoff,normal,0,0,0
 ,I don’t feel good today,I don’t feel good today,No me siento bien hoy,No me siento bien hoy,picture179,picture179_v,#fdbd35,gettingonoff,normal,0,0,0
 ,Can you lower the lift for me?,Can you lower the lift for me?,¿Puede bajar el elevador por mí?,¿Puede bajar el elevador por mí?,picture35,picture35_v,#fdbd35,gettingonoff,normal,0,0,0
@@ -16,9 +15,9 @@ itemID,Title,Text,Titulo,Texto,Image,ImageV,Color,Menu,Customize,Hearing,NonEngl
 ,I don’t have money today,I don’t have money today,Hoy no traigo dinero,Hoy no traigo dinero,picture186,picture186_v,#fdbd35,gettingonoff,normal,0,0,0
 ,I am not sure which bus I need.Can you please help me?,I am not sure which bus I need.Can you please help me?,"No estoy seguro cuál ruta necesito, ¿me podría ayudar?","No estoy seguro cuál ruta necesito, ¿me podría ayudar?",picture187,picture187_v,#fdbd35,gettingonoff,normal,0,0,0
 ,Where is the STOP pull chord or button?,Where is the STOP pull chord or button?,¿Dónde se encuentra el cordón o botón para hacer la parada?,¿Dónde se encuentra el cordón o botón para hacer la parada?,picture80,picture80_v,#fdbd35,gettingonoff,normal,0,0,0
-,Are we close to my house or stop?,Are we close to my house or stop?,¿Estamos cerca de mi casa/bajada?,¿Estamos cerca de mi casa/bajada?,picture193,picture193_v,#8661a6,gettingonoff,normal,0,0,0
-,This is not the stop where I want to get off at,This is not the stop where I want to get off at,Esta no es la parada en la que yo quiero bajar,Esta no es la parada en la que yo quiero bajar,picture98,picture98_v,#8661a6,gettingonoff,normal,0,0,0
-,When will we arrive at the next stop?,When will we arrive at the next stop?,¿Qué tan lejos estamos de la parada?,¿Qué tan lejos estamos de la parada?,picture99,picture99_v,#8661a6,gettingonoff,normal,0,0,0
+,Are we close to my house or stop?,Are we close to my house or stop?,¿Estamos cerca de mi casa/bajada?,¿Estamos cerca de mi casa/bajada?,picture193,picture193_v,#fdbd35,gettingonoff,normal,0,0,0
+,This is not the stop where I want to get off at,This is not the stop where I want to get off at,Esta no es la parada en la que yo quiero bajar,Esta no es la parada en la que yo quiero bajar,picture98,picture98_v,#fdbd35,gettingonoff,normal,0,0,0
+,When will we arrive at the next stop?,When will we arrive at the next stop?,¿Qué tan lejos estamos de la parada?,¿Qué tan lejos estamos de la parada?,picture99,picture99_v,#fdbd35,gettingonoff,normal,0,0,0
 ,Thank you very much,Thank you very much,Muchas gracias,Muchas gracias,picture109,picture109_v,0,response,normal,0,0,0
 ,I don't understand,I don't understand,No entiendo,No entiendo,picture110,picture110_v,0,response,normal,0,0,0
 ,Goodbye,Goodbye,Adiós,Adiós,picture177,picture177_v,0,response,normal,0,0,0

@@ -15,7 +15,7 @@
 @property(nonatomic, strong) DBManager *dbManager;
 @property(nonatomic, strong) NSMutableArray *tutorialArray;
 @property(nonatomic) int indexPage;
-@property(nonatomic) int maxPage;
+@property(nonatomic) unsigned int maxPage;
 @end
 
 @implementation SlideTutorialViewController {
@@ -63,7 +63,7 @@
     // obtain and flatten the list
     self.tutorialArray = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
 
-    self.maxPage = self.tutorialArray.count;
+    self.maxPage = (int) self.tutorialArray.count;
     self.indexPage = 0;
 
     // set first page
@@ -117,7 +117,7 @@
 }
 
 - (void)slideNext {
-    NSLog(@"in next: %ld/%ld", [self indexPage], [self maxPage]);
+    NSLog(@"in next: %d/%ud", [self indexPage], [self maxPage]);
 
     if ([self indexPage] < [self maxPage] - 1) {
         self.indexPage += 1;
@@ -133,7 +133,7 @@
     NSArray *currentPage = [self.tutorialArray objectAtIndex:page];
 
     NSInteger indexOfDesc       = [self.dbManager.arrColumnNames indexOfObject:@"desc"];
-    NSInteger indexOfVoice      = [self.dbManager.arrColumnNames indexOfObject:@"voice"];
+//    NSInteger indexOfVoice      = [self.dbManager.arrColumnNames indexOfObject:@"voice"];
     NSInteger indexOfImage      = [self.dbManager.arrColumnNames indexOfObject:@"image"];
     NSInteger indexOfProgress   = [self.dbManager.arrColumnNames indexOfObject:@"progress"];
 

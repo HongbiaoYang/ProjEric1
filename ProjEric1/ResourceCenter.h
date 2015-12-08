@@ -32,6 +32,8 @@
 +(id) sharedResource;
 
 -(void)SpeakOut:(NSString *)text;
+-(void)SpeakContinue:(NSString *)text;
+
 + (CGSize)screenSize;
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 

@@ -24,24 +24,6 @@
 
 @end
 
-/*
-NSString *getPathByCategory(NSString *category) {
-    if ([category isEqualToString:@"gettingonoff"]) {
-        return [[NSBundle mainBundle] pathForResource:@"xml/gettingonoff" ofType:@"xml"];
-
-    } else if ([category isEqualToString:@"riding"]) {
-        return [[NSBundle mainBundle] pathForResource:@"xml/ridingbus" ofType:@"xml"];
-
-    } else if ([category isEqualToString:@"safety"]) {
-        return [[NSBundle mainBundle] pathForResource:@"xml/safety" ofType:@"xml"];
-
-    } else if ([category isEqualToString:@"emergency"]) {
-        return [[NSBundle mainBundle] pathForResource:@"xml/emergency" ofType:@"xml"];
-    } else {
-        return NULL;
-    }
-
-}*/
 
 @implementation ItemTableViewController
 
@@ -62,15 +44,6 @@ NSString *getPathByCategory(NSString *category) {
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
-   /* elementToParse = [[NSArray alloc] initWithObjects:@"Title",@"Text",
-                      @"Titulo",@"Texto",@"Image",@"ImageV",nil];
-
-    NSString *path = getPathByCategory([self category]);
-
-    XMLListParser *xmlParser = [[XMLListParser alloc]init];
-    [self setItems:[xmlParser loadXML:path withElements:elementToParse]];*/
-
 
     sharedCenter = [ResourceCenter sharedResource];
 
@@ -175,7 +148,7 @@ NSString *getPathByCategory(NSString *category) {
             NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
         }
         else{
-            NSLog(@"Could not execute the query.", self.dbManager);
+            NSLog(@"Could not execute the query.");
         }
 
         // speak out the item

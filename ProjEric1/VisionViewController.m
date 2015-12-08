@@ -7,15 +7,18 @@
 //
 
 #import "VisionViewController.h"
-#import "XMLListParser.h"
 #import "TTSItemStruct.h"
 #import "ResourceCenter.h"
+#import "DBManager.h"
 
 @interface VisionViewController () {
     ResourceCenter *sharedCenter;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *VisionImage;
 
+@property(nonatomic, strong) UITapGestureRecognizer *dpGesture;
+@property(nonatomic, strong) UITapGestureRecognizer *tpGesture;
+@property(nonatomic, strong) DBManager *dbManager;
 @end
 
 
@@ -31,11 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    elementToParse = [[NSArray alloc] initWithObjects:@"Title",@"Text",@"ImageV",nil];
-
-    [[NSBundle mainBundle] pathForResource:@"xml/gettingonoff" ofType:@"xml"];
-
 
     TTSItemStruct *emergency = [[TTSItemStruct alloc] init];
     emergency.title = @"Emergency";
@@ -64,19 +62,39 @@
     [[self categories] addObject:ridingbus];
     [[self categories] addObject:safety];
 
-    NSLog(@"cat = %@", [self categories]);
 
-
-    NSString *pathE = [[NSBundle mainBundle] pathForResource:@"xml/emergency" ofType:@"xml"];
-    NSString *pathG = [[NSBundle mainBundle] pathForResource:@"xml/gettingonoff" ofType:@"xml"];
-    NSString *pathR = [[NSBundle mainBundle] pathForResource:@"xml/ridingbus" ofType:@"xml"];
-    NSString *pathS = [[NSBundle mainBundle] pathForResource:@"xml/safety" ofType:@"xml"];
+    // get sharedCenter
+    sharedCenter = [ResourceCenter sharedResource];
     
-    XMLListParser *xmlParser = [[XMLListParser alloc]init];
-    [self setItemsEmergency:[xmlParser loadXML:pathE withElements:elementToParse]];
-    [self setItemsGetting:[xmlParser loadXML:pathG withElements:elementToParse]];
-    [self setItemsRiding:[xmlParser loadXML:pathR withElements:elementToParse]];
-    [self setItemsSafety:[xmlParser loadXML:pathS withElements:elementToParse]];
+    // ge dbManager from sharedCenter
+    self.dbManager = [sharedCenter dbManager];
+
+    NSString *queryE = [[NSString alloc] initWithFormat:
+            @"select * from %@Table where menu = 'emergency' order by itemID asc"
+            , [sharedCenter transit]];
+    NSString *queryG = [[NSString alloc] initWithFormat:
+            @"select * from %@Table where menu = 'gettingonoff' order by itemID asc"
+            , [sharedCenter transit]];
+    NSString *queryR = [[NSString alloc] initWithFormat:
+            @"select * from %@Table where menu = 'ridingthebus' order by itemID asc"
+            , [sharedCenter transit]];
+    NSString *queryS = [[NSString alloc] initWithFormat:
+            @"select * from %@Table where menu = 'safety' order by itemID asc"
+            , [sharedCenter transit]];
+    NSString *queryM = [[NSString alloc] initWithFormat:
+            @"select * from %@Table where menu = 'response' and customize = 'normal' order by itemID asc"
+            , [sharedCenter transit]];
+
+    [self setItemsEmergency:[self.dbManager convertValueToItem:
+            [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:queryE]]]];
+    [self setItemsGetting:[self.dbManager convertValueToItem:
+            [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:queryG]]]];
+    [self setItemsRiding:[self.dbManager convertValueToItem:
+            [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:queryR]]]];
+    [self setItemsSafety:[self.dbManager convertValueToItem:
+            [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:queryS]]]];
+    [self setItemsResponse:[self.dbManager convertValueToItem:
+            [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:queryM]]]];
 
     self.view.backgroundColor = [UIColor blackColor];
     [self setLevel:0];
@@ -111,6 +129,28 @@
 
     sharedCenter = [ResourceCenter sharedResource];
 
+    UILongPressGestureRecognizer *threeHold = [[UILongPressGestureRecognizer alloc]
+            initWithTarget:self action:@selector(handleTripleHold:)];
+    threeHold.numberOfTouchesRequired = 3;
+    [self.view addGestureRecognizer:threeHold];
+
+    UILongPressGestureRecognizer *doubleHold = [[UILongPressGestureRecognizer alloc]
+            initWithTarget:self action:@selector(handleDoubleHold:)];
+    doubleHold.numberOfTouchesRequired = 2;
+    [self.view addGestureRecognizer:doubleHold];
+
+    // add double tap gesture
+    self.dpGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+    self.dpGesture.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:self.dpGesture];
+
+    // add triple tap gesture
+    self.tpGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTripleTap:)];
+    self.tpGesture.numberOfTapsRequired = 3;
+    [self.view addGestureRecognizer:self.tpGesture];
+
+    [self.dpGesture requireGestureRecognizerToFail:self.tpGesture];
+
 }
 
 - (void)presentCurrentImageWithLevel:(NSInteger) level withIndex1:(NSInteger)index1 withIndex2:(NSInteger)index2 {
@@ -122,20 +162,10 @@
         currentArray = [self categories];
         tItem = currentArray[index1];
     } else {
-
         currentArray = [self getArrayOfLevel:index1];
         tItem = currentArray[index2];
     }
 
-//    if (currentArray == nil) {
-//        NSLog(@"Find empty array! level=%d\n", index1);
-//        return;
-//    }
-//
-//    if (index2 < 0 || index2 >= currentArray.count) {
-//        NSLog(@"Find illegal index! index=%d\n", index2);
-//        return;
-//    }
 
     NSString *imageName = [NSString stringWithFormat:@"sym/%@", [tItem imageV]];
     [self VisonImage].image = [UIImage imageNamed:imageName];
@@ -147,19 +177,21 @@
     [sharedCenter SpeakOut:tItem.text];
 }
 
-- (NSArray *)getArrayOfLevel:(NSInteger)level {
+- (NSArray *)getArrayOfLevel:(NSInteger)index {
 
-    if (level == 0) {
+    if (index == 0) {
         return [self itemsEmergency];
     }
-    else if (level == 1) {
+    else if (index == 1) {
         return [self itemsGetting];
     }
-    else if (level  == 2) {
+    else if (index == 2) {
         return [self itemsRiding];
     }
-    else if (level == 3) {
+    else if (index == 3) {
         return [self itemsSafety];
+    } else if (index == 4) {
+        return [self itemsResponse];
     }
 
     return nil;
@@ -236,15 +268,46 @@
             }
         }
     }
-    
 
-
-    NSLog(@"level=%d and index = %d/%%d", self.level, self.index1, self.index2);
     [self presentCurrentImageWithLevel:[self level] withIndex1:[self index1] withIndex2:[self index2]];
 
 }
 
 
+- (void)handleDoubleTap:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+
+        // handling code
+        [sharedCenter SpeakContinue:@"Yes"];
+    }
+}
+
+- (void)handleTripleTap:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+
+        // handling code
+        [sharedCenter SpeakContinue:@"No"];
+    }
+}
+
+- (void)handleTripleHold:(UILongPressGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        // handling code
+        self.level = 1;
+        self.index1 = 4;
+        self.index2 = 0;
+
+        [self presentCurrentImageWithLevel:[self level] withIndex1:[self index1] withIndex2:[self index2]];
+    }
+}
+
+- (void)handleDoubleHold:(UILongPressGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        // handling code
+        [sharedCenter SpeakOut:@"Good Bye!"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
                   
 
 - (void)didReceiveMemoryWarning {

@@ -7,7 +7,6 @@
 //
 
 #import "MoreMenuTableViewController.h"
-#import "XMLListParser.h"
 #import "ResourceCenter.h"
 #import "MoreItemTableViewCell.h"
 #import "TTSItemStruct.h"
@@ -56,6 +55,8 @@
                 @"select * from %@Table where menu = 'response' and customize = 'normal' order by hearing desc"
                 , [sharedCenter transit]];
     }
+
+
 
     // obtain and flatten the list
     NSMutableArray *customArray = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
@@ -182,25 +183,47 @@
         [alert show];
 
     } else  {
+
+        int freq;
+        NSString *subMenu = nil;
+
+        if ([[self from] isEqualToString:@"nonenglishMore"] || [[self from] isEqualToString:@"displayMore-nonenglish"]) {
+            sItem.nonenglish += 10;
+            freq = sItem.nonenglish;
+            subMenu = @"nonenglish";
+
+        } else if ([[self from] isEqualToString:@"cognitiveMore"]) {
+            sItem.cognitive += 10;
+            freq = sItem.cognitive;
+            subMenu = @"cognitive";
+
+        } else  {
+            sItem.hearing += 10;
+            freq = sItem.hearing;
+            subMenu = @"hearing";
+        }
+
+        // database stuff: update the frequency value in database
+        NSString *updateQuery = [[NSString alloc] initWithFormat:
+                @"update %@Table set %@ = %d where title = '%@'", [sharedCenter transit], subMenu, freq,
+                        [sItem.title stringByReplacingOccurrencesOfString:@"'" withString:@"''"]];
+
+        // Execute the query.
+        [self.dbManager executeQuery:updateQuery];
+
+        // If the query was successfully executed then pop the view controller.
+        if (self.dbManager.affectedRows != 0) {
+            NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+        }
+        else {
+            NSLog(@"Could not execute the query.");
+        }
+
+
         [sharedCenter SpeakOut:sItem.text];
     }
 
-}
 
-
-- (void)handleLongPressGestures:(UILongPressGestureRecognizer *)sender
-{
-    if ([sender isEqual:self.lpGesgure]) {
-        if (sender.state == UIGestureRecognizerStateBegan)
-        {
-            CGPoint lpLocation = [sender locationInView:self.tableView];
-            NSIndexPath  *lpIndexPath = [self.tableView indexPathForRowAtPoint:lpLocation];
-            long row = [lpIndexPath row];
-            TTSItemStruct *sItem = self.items[row];
-
-            [sharedCenter SpeakOut:sItem.text];
-        }
-    }
 }
 
 
@@ -218,7 +241,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    NSLog(@"self items %d", [[self items] count]);
+    NSLog(@"self items %lu", (unsigned long)[[self items] count]);
 
     return [[self items] count];
 }
@@ -296,7 +319,7 @@
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"Entered: %@ idx=%d",[[alertView textFieldAtIndex:0] text], buttonIndex);
+
     if (buttonIndex == 1) {
         [sharedCenter SpeakOut:[[alertView textFieldAtIndex:0] text]];
     } else if (buttonIndex == 0) {
@@ -304,18 +327,27 @@
         [self addCustomItem:[[alertView textFieldAtIndex:0] text]];
         [sharedCenter SpeakOut:[[alertView textFieldAtIndex:0] text]];
     } else {
-        NSLog(@"Something is wrong, index=%d", buttonIndex);
+        NSLog(@"Something is wrong, index=%ld", (long)buttonIndex);
     }
 }
 
 
 - (void)addCustomItem:(NSString *)text {
 
+    // query the maximum value of frequency
+    NSString *queryMax = [NSString stringWithFormat:
+            @"select max(hearing) from %@Table where menu = 'response'", [sharedCenter transit]];
+    NSMutableArray *maxArray = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:queryMax]];
+
+    // get the maximum frequency in the list
+    int max = [[[maxArray objectAtIndex:0] objectAtIndex:0] intValue];
+
+    // replace the ' to eliminate the confusion
+    text = [text stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
+
     NSString *query = [NSString stringWithFormat:
             @"insert into %@Table values (null, '%@', '%@', 0,0, 'customize', 'customize', "
-                    "'#00ffff','response','added', 0,0,0);", [sharedCenter transit], text, text];
-
-    // NSLog(@"query=%@", query);
+                    "'#00ffff','response','added', %d, 0, 0);", [sharedCenter transit], text, text, max + 1];
 
     // Execute the query.
     [self.dbManager executeQuery:query];
@@ -333,7 +365,7 @@
         [[self tableView] reloadData];
     }
     else{
-        NSLog(@"Could not execute the query.", self.dbManager);
+        NSLog(@"Could not execute the query.");
     }
 
 }
@@ -394,7 +426,7 @@
 
     }
     else{
-        NSLog(@"Could not execute the query.", self.dbManager);
+        NSLog(@"Could not execute the query.");
     }
 
 

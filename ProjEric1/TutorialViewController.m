@@ -10,6 +10,7 @@
 #import "ResourceCenter.h"
 #import "SlideTutorialViewController.h"
 #import "EmergencyTableViewController.h"
+#import "TutorialStruct.h"
 
 @interface TutorialViewController ()
 
@@ -58,7 +59,6 @@
     [btnEmergency addTarget:self action:@selector(emergencyPage:) forControlEvents:UIControlEventTouchUpInside];
 
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: iconEmergency, nil]];
-
 
 }
 

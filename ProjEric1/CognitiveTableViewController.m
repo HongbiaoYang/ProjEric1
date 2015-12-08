@@ -7,7 +7,6 @@
 //
 
 #import "CognitiveTableViewController.h"
-#import "XMLListParser.h"
 #import "TTSItemStruct.h"
 #import "CognitiveItemTableViewCell.h"
 #import "ResourceCenter.h"
@@ -44,17 +43,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-   /* NSArray *paths = [[NSArray alloc] initWithObjects:[[NSBundle mainBundle] pathForResource:@"xml/gettingonoff" ofType:@"xml"],
-                    [[NSBundle mainBundle] pathForResource:@"xml/ridingbus" ofType:@"xml"],
-                    [[NSBundle mainBundle] pathForResource:@"xml/safety" ofType:@"xml"],
-                    [[NSBundle mainBundle] pathForResource:@"xml/emergency" ofType:@"xml"], nil];
-
-    NSArray *elements = [[NSArray alloc] initWithObjects:@"Title",@"Text",
-                                                      @"Titulo",@"Texto",@"Image",@"ImageV",nil];
-
-
-    XMLListParser *xmlParser = [[XMLListParser alloc]init];
-    [self setItems:[xmlParser loadMultiXML:paths withElements:elements]];*/
 
     sharedCenter = [ResourceCenter sharedResource];
 
@@ -66,7 +54,15 @@
 
     // cognitive list include everything except response
     NSString *query = [[NSString alloc] initWithFormat:
-            @"select * from %@ where menu != 'response' order by cognitive desc", table];
+            @"select * from %@ where menu != 'response' "
+                    "ORDER BY "
+                    "  CASE menu"
+                    "    WHEN 'emergency' THEN 0"
+                    "    WHEN 'gettingonoff' THEN 1"
+                    "    WHEN 'ridingthebus' THEN 2"
+                    "    WHEN 'safety' THEN 3"
+                    "  END"
+                    " asc, cognitive desc", table];
 
     NSLog(@"query in cognitive=%@", query);
     // obtain and flatten the list
@@ -100,7 +96,6 @@
     [btnEmergency addTarget:self action:@selector(emergencyPage:) forControlEvents:UIControlEventTouchUpInside];
 
 
-
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: iconEmergency, [sharedCenter iconSound], nil]];
 }
 
@@ -119,9 +114,27 @@
         {
             CGPoint lpLocation = [sender locationInView:self.tableView];
             NSIndexPath  *lpIndexPath = [self.tableView indexPathForRowAtPoint:lpLocation];
-//            UITableViewCell *lpCell = [self.tableView cellForRowAtIndexPath:lpIndexPath];
             long row = [lpIndexPath row];
             TTSItemStruct *sItem = self.items[row];
+
+            sItem.cognitive += 1;
+            int freq = sItem.cognitive;
+
+            // database stuff: update the frequency value in database
+            NSString *updateQuery = [[NSString alloc] initWithFormat:
+                    @"update %@Table set cognitive = %d where title = '%@'", [sharedCenter transit], freq,
+                    [sItem.title stringByReplacingOccurrencesOfString:@"'" withString:@"''"]];
+
+            // Execute the query.
+            [self.dbManager executeQuery:updateQuery];
+
+            // If the query was successfully executed then pop the view controller.
+            if (self.dbManager.affectedRows != 0) {
+                NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+            }
+            else {
+                NSLog(@"Could not execute the query.");
+            }
 
             [sharedCenter SpeakOut:sItem.text];
         }

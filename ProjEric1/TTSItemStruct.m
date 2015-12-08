@@ -17,12 +17,12 @@
 @synthesize image;
 @synthesize imageV;
 
-- (instancetype)initItemWithText:(NSString *)text {
+- (instancetype)initItemWithText:(NSString *)iText {
 
     self = [super init];
     if (self) {
-        self.title = text;
-        self.text = text;
+        self.title = iText;
+        self.text = iText;
         self.image = @"customize.png";
         self.imageV = @"added";
 

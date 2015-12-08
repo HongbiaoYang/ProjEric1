@@ -13,5 +13,4 @@
 @property (weak, nonatomic) IBOutlet UISlider *SpeedSlider;
 @property (weak, nonatomic) IBOutlet UILabel *speedDisplay;
 
-- (float)queryDataFromDB;
 @end
