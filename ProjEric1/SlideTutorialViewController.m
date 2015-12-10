@@ -49,6 +49,11 @@
     self.view.backgroundColor = [UIColor blackColor];   // view bg color
     self.title = [[self from] isEqualToString:@"hearing"] ? @"Hearing Tutorial" : @"Non-English Tutorial";
 
+    // change button font
+    [self resizeButtonText:self.PreviousBtn];
+    [self resizeButtonText:self.NextBtn];
+    [self resizeButtonText:self.SkipBtn];
+
     // prepare the image arrays
     sharedCenter = [ResourceCenter sharedResource];
 
@@ -86,6 +91,14 @@
     UITapGestureRecognizer *spGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     spGesture.numberOfTapsRequired = 1;
     [self.ScreenImg addGestureRecognizer:spGesture];
+
+}
+
+- (void)resizeButtonText:(UIButton *)button {
+
+    button.titleLabel.numberOfLines = 1;
+    button.titleLabel.adjustsFontSizeToFitWidth = YES;
+    button.titleLabel.lineBreakMode = NSLineBreakByClipping;
 
 }
 

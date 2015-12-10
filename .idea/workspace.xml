@@ -21,23 +21,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MoreMenuTableViewController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjEric1/MoreMenuTableViewController.m">
+      <file leaf-file-name="HomeViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjEric1/HomeViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="41" selection-end-column="47" />
-              <folding>
-                <element signature="e#147#186#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-4.553571">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="52" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VisionTutorialViewController.m" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ProjEric1/VisionTutorialViewController.m">
+      <file leaf-file-name="MainViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjEric1/MainViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6651885">
-              <caret line="130" column="63" selection-start-line="130" selection-start-column="63" selection-end-line="130" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CognitiveTableViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjEric1/CognitiveTableViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="86" column="46" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
               <folding>
                 <element signature="e#150#190#0" expanded="true" />
               </folding>
@@ -45,71 +53,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VisionViewController.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjEric1/VisionViewController.h">
+      <file leaf-file-name="NonEnglishViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjEric1/NonEnglishViewController.m">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="105" selection-start-line="17" selection-start-column="105" selection-end-line="17" selection-end-column="105" />
+              <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VisionViewController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjEric1/VisionViewController.m">
+      <file leaf-file-name="HomeViewController.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjEric1/HomeViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="52" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CognitiveTableViewController.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjEric1/CognitiveTableViewController.h">
+      <file leaf-file-name="SettingViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjEric1/SettingViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBManager.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjEric1/DBManager.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="188" column="20" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TutorialStruct.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjEric1/TutorialStruct.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VisionTutorialViewController.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjEric1/VisionTutorialViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemTableViewController.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjEric1/ItemTableViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="-29.444445">
+              <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -119,7 +87,37 @@
         <entry file="file://$PROJECT_DIR$/ProjEric1/ItemTableViewController.m">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+              <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmergencyTableViewController.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjEric1/EmergencyTableViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HearingViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjEric1/HearingViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmergencyTableViewController.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ProjEric1/EmergencyTableViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.45517242">
+              <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -131,7 +129,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ProjEric1/DisplayViewController.h" />
-        <option value="$PROJECT_DIR$/ProjEric1/ItemTableViewCell.m" />
         <option value="$PROJECT_DIR$/ProjEric1/HearingViewController.h" />
         <option value="$PROJECT_DIR$/ProjEric1/XMlParser.h" />
         <option value="$PROJECT_DIR$/ProjEric1/XMlParser.m" />
@@ -142,7 +139,6 @@
         <option value="$PROJECT_DIR$/ProjEric1/CognitiveItemTableViewCell.h" />
         <option value="$PROJECT_DIR$/ProjEric1/XMLListParser.m" />
         <option value="$PROJECT_DIR$/CognitiveTableViewController.m" />
-        <option value="$PROJECT_DIR$/ProjEric1/SettingViewController.m" />
         <option value="$PROJECT_DIR$/ProjEric1/HomeViewController.h" />
         <option value="$PROJECT_DIR$/ProjEric1/ViewController.h" />
         <option value="$PROJECT_DIR$/ProjEric1/TTSItemStruct.m" />
@@ -150,30 +146,32 @@
         <option value="$PROJECT_DIR$/ProjEric1/NonEnglishViewController.h" />
         <option value="$PROJECT_DIR$/ProjEric1/EmergencyTableViewController.h" />
         <option value="$PROJECT_DIR$/ProjEric1/ViewController.m" />
-        <option value="$PROJECT_DIR$/ProjEric1/NonEnglishViewController.m" />
-        <option value="$PROJECT_DIR$/ProjEric1/HearingViewController.m" />
         <option value="$PROJECT_DIR$/ProjEric1/DBManager.m" />
-        <option value="$PROJECT_DIR$/ProjEric1/MoreMenuTableViewController.m" />
-        <option value="$PROJECT_DIR$/ProjEric1/EmergencyTableViewController.m" />
-        <option value="$PROJECT_DIR$/ProjEric1/MainViewController.m" />
-        <option value="$PROJECT_DIR$/ProjEric1/HomeViewController.m" />
-        <option value="$PROJECT_DIR$/ProjEric1/CognitiveTableViewController.m" />
         <option value="$PROJECT_DIR$/ProjEric1/MoreMenuTableViewController.h" />
-        <option value="$PROJECT_DIR$/ProjEric1/SlideTutorialViewController.m" />
         <option value="$PROJECT_DIR$/ProjEric1/VisionTutorialViewController.h" />
         <option value="$PROJECT_DIR$/ProjEric1/TTSItemStruct.h" />
         <option value="$PROJECT_DIR$/ProjEric1/TutorialViewController.m" />
         <option value="$PROJECT_DIR$/ProjEric1/TutorialStruct.h" />
         <option value="$PROJECT_DIR$/ProjEric1/TutorialStruct.m" />
         <option value="$PROJECT_DIR$/ProjEric1/ResourceCenter.h" />
-        <option value="$PROJECT_DIR$/ProjEric1/ResourceCenter.m" />
         <option value="$PROJECT_DIR$/ProjEric1/VisionViewController.h" />
-        <option value="$PROJECT_DIR$/ProjEric1/VisionViewController.m" />
         <option value="$PROJECT_DIR$/ProjEric1/CognitiveTableViewController.h" />
         <option value="$PROJECT_DIR$/ProjEric1/DisplayViewController.m" />
         <option value="$PROJECT_DIR$/ProjEric1/ItemTableViewController.h" />
-        <option value="$PROJECT_DIR$/ProjEric1/ItemTableViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/ItemTableViewCell.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/SlideTutorialViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/VisionViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/ResourceCenter.m" />
         <option value="$PROJECT_DIR$/ProjEric1/VisionTutorialViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/MoreMenuTableViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/SettingViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/MainViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/HearingViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/EmergencyTableViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/CognitiveTableViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/NonEnglishViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/HomeViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/ItemTableViewController.m" />
       </list>
     </option>
   </component>
@@ -318,27 +316,28 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32802126" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32802126" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -354,7 +353,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -399,20 +398,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/SettingViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="53" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
-          <folding>
-            <element signature="e#143#176#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProjEric1/CognitiveItemTableViewCell.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -421,13 +411,6 @@
         <state vertical-scroll-proportion="0.37241378">
           <caret line="18" column="42" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/ItemTableViewCell.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -447,25 +430,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/NonEnglishViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/HomeViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProjEric1/MoreItemTableViewCell.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -473,6 +442,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -480,6 +450,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -491,81 +462,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/EmergencyTableViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/MainViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.481482">
-          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
-          <folding>
-            <element signature="e#131#161#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/HearingViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="55" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/HomeViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/CognitiveTableViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="71" selection-end-column="34" />
-          <folding>
-            <element signature="e#150#190#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProjEric1/MoreMenuTableViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/SlideTutorialViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/SlideTutorialViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/EmergencyTableViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="266" column="38" selection-start-line="266" selection-start-column="34" selection-end-line="266" selection-end-column="38" />
-          <folding>
-            <element signature="e#150#190#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -611,44 +512,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/ResourceCenter.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="50" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/ResourceCenter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/MoreMenuTableViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="41" selection-end-column="47" />
-          <folding>
-            <element signature="e#147#186#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProjEric1/CognitiveTableViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/DBManager.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="188" column="20" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -661,6 +528,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/VisionTutorialViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/ItemTableViewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ProjEric1/ItemTableViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -669,18 +552,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/ItemTableViewController.m">
+    <entry file="file://$PROJECT_DIR$/ProjEric1/SlideTutorialViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/VisionViewController.m">
+    <entry file="file://$PROJECT_DIR$/ProjEric1/SlideTutorialViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
+        <state vertical-scroll-proportion="-10.814815">
+          <caret line="100" column="60" selection-start-line="100" selection-start-column="60" selection-end-line="100" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -693,21 +576,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/VisionTutorialViewController.h">
+    <entry file="file://$PROJECT_DIR$/ProjEric1/VisionViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.814815">
+          <caret line="76" column="31" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/ResourceCenter.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/ResourceCenter.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="22" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ProjEric1/VisionTutorialViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6651885">
-          <caret line="130" column="63" selection-start-line="130" selection-start-column="63" selection-end-line="130" selection-end-column="63" />
+        <state vertical-scroll-proportion="-10.555555">
+          <caret line="133" column="50" selection-start-line="133" selection-start-column="50" selection-end-line="133" selection-end-column="50" />
           <folding>
             <element signature="e#150#190#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/MoreMenuTableViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.709678">
+          <caret line="63" column="0" selection-start-line="46" selection-start-column="3" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="e#147#186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/DBManager.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="208" column="0" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/SettingViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.444445">
+          <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/HomeViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="52" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/MainViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/HearingViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/CognitiveTableViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="46" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
+          <folding>
+            <element signature="e#150#190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/NonEnglishViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/HomeViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.553571">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="52" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/ItemTableViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/EmergencyTableViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/EmergencyTableViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45517242">
+          <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>

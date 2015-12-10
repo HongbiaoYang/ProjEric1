@@ -45,13 +45,16 @@
     self.navigationController.toolbar.barTintColor = [UIColor yellowColor];
     
     sharedCenter = [ResourceCenter sharedResource];
+    [sharedCenter SpeakOut:@"hearing"];
 
     // Do any additional setup after loading the view.
     CGFloat width = [ResourceCenter screenSize].width / 3;
     self.YesItem.width = width;
     self.NoItem.width = width;
     self.MoreItem.width = width;
-
+    self.YesItem.title = @"Yes      \u2714";
+    self.NoItem.title = @"No      \u2716";
+    self.MoreItem.title = @"More      \u2605";
 
 
 
@@ -62,22 +65,6 @@
     [btnHome setImage:imgHome forState:UIControlStateNormal];
     UIBarButtonItem *iconHome = [[UIBarButtonItem alloc] initWithCustomView:btnHome];
     [btnHome addTarget:self action:@selector(goHomePage:) forControlEvents:UIControlEventTouchUpInside];
-
-/*
-    UIImageView*imgViewSound = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,imgHome.size.width, imgHome.size.height)];
-    imgViewSound.animationImages = [NSArray arrayWithObjects:
-            [UIImage imageNamed:@"sound0.png"],
-            [UIImage imageNamed:@"sound1.png"],
-            [UIImage imageNamed:@"sound2.png"],
-            [UIImage imageNamed:@"sound3.png"], nil];
-
-    imgViewSound.image = [UIImage imageNamed:@"sound0.png"];
-
-    imgViewSound.animationDuration = 1.0f;
-    imgViewSound.animationRepeatCount = 1;
-    [imgViewSound startAnimating];
-
-    UIBarButtonItem *iconSound = [[UIBarButtonItem alloc] initWithCustomView:imgViewSound];*/
 
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: iconHome, [sharedCenter iconSound], nil] animated:YES];
 

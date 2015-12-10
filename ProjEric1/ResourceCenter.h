@@ -35,6 +35,9 @@
 -(void)SpeakContinue:(NSString *)text;
 
 + (CGSize)screenSize;
+
+- (NSString *)decyperToReadable:(NSString *)category;
+
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 
 

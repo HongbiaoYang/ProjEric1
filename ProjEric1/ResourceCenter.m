@@ -82,8 +82,6 @@
     [[self imgViewSound] startAnimating];
 }
 
-
-
 + (CGSize)screenSize {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
@@ -107,6 +105,14 @@
 }
 
 
+- (NSString *)decyperToReadable:(NSString *)category {
+    if ([category isEqualToString:@"gettingonoff"]) {
+        return @"getting on and off the bus";
+    } else if ([category isEqualToString:@"ridingthebus"]) {
+        return @"riding the bus";
+    } else {
+        return category;
+    }
 
-
+}
 @end

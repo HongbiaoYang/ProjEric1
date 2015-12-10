@@ -28,11 +28,15 @@
     self.navigationController.toolbar.barTintColor = [UIColor yellowColor];
 
     sharedCenter = [ResourceCenter sharedResource];
-    
+    [sharedCenter SpeakOut:@"Non English"];
+
     CGFloat width = [ResourceCenter screenSize].width / 3;
     self.YesItem.width = width;
     self.NoItem.width = width;
     self.MoreItem.width = width;
+    self.YesItem.title = @"Yes      \u2714";
+    self.NoItem.title = @"No      \u2716";
+    self.MoreItem.title = @"More      \u2605";
 
     // add right up corner icons: sound animation and home
     UIImage *imgHome = [UIImage imageNamed:@"home"];

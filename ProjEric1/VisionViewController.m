@@ -25,6 +25,15 @@
 
 @implementation VisionViewController
 
+
+
+- (void)handleDoubleTap:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        // handling code
+        NSLog(@"double clicked");
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[self navigationController] setToolbarHidden:NO];
@@ -65,7 +74,8 @@
 
     // get sharedCenter
     sharedCenter = [ResourceCenter sharedResource];
-    
+    [sharedCenter SpeakContinue:@"vision"];
+
     // ge dbManager from sharedCenter
     self.dbManager = [sharedCenter dbManager];
 
@@ -126,8 +136,6 @@
     [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
 
     [self.navigationController setToolbarHidden:YES];
-
-    sharedCenter = [ResourceCenter sharedResource];
 
     UILongPressGestureRecognizer *threeHold = [[UILongPressGestureRecognizer alloc]
             initWithTarget:self action:@selector(handleTripleHold:)];
@@ -274,7 +282,7 @@
 }
 
 
-- (void)handleDoubleTap:(UITapGestureRecognizer *)sender {
+- (void)handleDoubleTapXXX:(UITapGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateRecognized) {
 
         // handling code

@@ -49,6 +49,7 @@
 
     // get database manager
     self.dbManager = [sharedCenter dbManager];
+    [sharedCenter SpeakOut:[sharedCenter decyperToReadable:[self category]]];
 
     NSString *table = [[NSString alloc] initWithFormat:@"%@Table", [self transit]];
 
@@ -64,11 +65,12 @@
 
 //    NSLog(@"item array in items:%@", customArray);
 
-    // change background of page and navigation bar
+    // change background of page and navigation bar, and separator line disappear
     self.view.backgroundColor = [UIColor blackColor];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
     [self.navigationController.navigationBar setTranslucent:NO];
-    
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+
     self.title = [self fullTitle:[self subMenu] category:[self category] ];
 
     // width of the buttons in the bottom
@@ -76,6 +78,9 @@
     self.YesItem.width = width;
     self.NoItem.width = width;
     self.MoreItem.width = width;
+    self.YesItem.title = @"Yes      \u2714";
+    self.NoItem.title = @"No      \u2716";
+    self.MoreItem.title = @"More      \u2605";
 
     // add double tap gesture
     self.dpGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
@@ -249,6 +254,8 @@
 
     NSString *cellIdentifier = @"ItemTableCell";
     ItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor blackColor];
+
 
     long row = [indexPath row];
     

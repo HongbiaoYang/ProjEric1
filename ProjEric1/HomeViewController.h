@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class DBManager;
+
 @interface HomeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *YesItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *NoItem;

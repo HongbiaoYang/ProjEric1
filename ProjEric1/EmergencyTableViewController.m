@@ -61,6 +61,7 @@
     self.items = customArrayItems;
 
     self.view.backgroundColor = [UIColor blackColor];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
     [self.navigationController.navigationBar setTranslucent:NO];
 
@@ -68,6 +69,9 @@
     self.YesItem.width = width;
     self.NoItem.width = width;
     self.MoreItem.width = width;
+    self.YesItem.title = @"Yes      \u2714";
+    self.NoItem.title = @"No      \u2716";
+    self.MoreItem.title = @"More      \u2605";
 
     // hide 'more' button if comes from cognitive
     if ([[self from] isEqualToString:@"cognitive"]) {
@@ -180,6 +184,7 @@
     // Configure the cell...
     NSString *cellIdentifier = @"EmergencyTableCell";
     EmergencyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor blackColor];
 
     long row = [indexPath row];
 

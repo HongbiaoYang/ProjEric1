@@ -45,6 +45,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     sharedCenter = [ResourceCenter sharedResource];
+    [sharedCenter SpeakOut:@"cognitive"];
 
     // get database manager
     self.dbManager = [sharedCenter dbManager];
@@ -71,6 +72,8 @@
     self.items = customArrayItems;
 
     self.view.backgroundColor = [UIColor blackColor];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
     [self.navigationController.navigationBar setTranslucent:NO];
 
@@ -79,6 +82,9 @@
     self.YesItem.width = width;
     self.NoItem.width = width;
     self.MoreItem.width = width;
+    self.YesItem.title = @"Yes      \u2714";
+    self.NoItem.title = @"No      \u2716";
+    self.MoreItem.title = @"More      \u2605";
 
 
     self.lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGestures:)];
@@ -177,6 +183,7 @@
 
     NSString *cellIdentifier = @"CognitiveItemCell";
     CognitiveItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor blackColor];
 
     long row = [indexPath row];
 

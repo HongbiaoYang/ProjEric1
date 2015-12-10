@@ -21,6 +21,10 @@
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tAG-yw-Ur8">
                                 <rect key="frame" x="287" y="30" width="257" height="31"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="minimumTrackTintColor" red="0.96862745100000003" green="0.78823529410000004" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.97647058819999999" green="0.81960784310000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.96862745100000003" green="0.78823529410000004" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="speakWithTestSpeed:" destination="hS7-61-bYO" eventType="touchUpOutside" id="0PY-xP-Dst"/>
                                     <action selector="speakWithTestSpeed:" destination="hS7-61-bYO" eventType="touchUpInside" id="IZI-a6-rpr"/>
@@ -30,7 +34,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42s-6L-vR3">
                                 <rect key="frame" x="26" y="30" width="253" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.97647058819999999" green="0.81960784310000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -66,13 +70,13 @@
                         <viewControllerLayoutGuide type="bottom" id="DES-Z3-Qr1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9wh-s8-fxJ">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="276"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hST-A5-OmV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hST-A5-OmV">
                                 <rect key="frame" x="26" y="74" width="516" height="146"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhz-0z-Qlm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhz-0z-Qlm">
                                 <rect key="frame" x="26" y="230" width="516" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.78823529410000004" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -192,36 +196,36 @@
                         <viewControllerLayoutGuide type="bottom" id="qRt-27-c06"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QXi-4O-v8q">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="276"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwa-bV-QrE">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwa-bV-QrE">
                                 <rect key="frame" x="26" y="74" width="248" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" backgroundImage="para"/>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="para" id="KuF-5z-tdJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="KtO-KH-poL" appends="YES" id="R1s-jY-u4j"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFF-ps-ob6">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFF-ps-ob6">
                                 <rect key="frame" x="294" y="74" width="248" height="91"/>
                                 <state key="normal" backgroundImage="fixed.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="fixed" id="yyW-11-dDk"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8Y-7m-fcq">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8Y-7m-fcq">
                                 <rect key="frame" x="26" y="175" width="516" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" backgroundImage="tut.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="URh-aE-3RN" kind="push" id="CcP-oa-dYO"/>
+                                    <outletCollection property="gestureRecognizers" destination="vOI-Nf-57v" appends="YES" id="AEs-km-CnA"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="j8Y-7m-fcq" firstAttribute="top" secondItem="Zwa-bV-QrE" secondAttribute="bottom" constant="10" id="1bD-fJ-hTI"/>
                             <constraint firstItem="Zwa-bV-QrE" firstAttribute="centerY" secondItem="pFF-ps-ob6" secondAttribute="centerY" id="KZG-t7-c1f"/>
@@ -238,6 +242,9 @@
                             <constraint firstItem="Zwa-bV-QrE" firstAttribute="width" secondItem="pFF-ps-ob6" secondAttribute="width" id="p0i-eO-lqr"/>
                             <constraint firstItem="Zwa-bV-QrE" firstAttribute="top" secondItem="7QJ-DR-iVf" secondAttribute="bottom" constant="10" id="u1Q-e8-Khr"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="edy-Rh-jwe" appends="YES" id="eAj-b9-NZr"/>
+                        </connections>
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Yes" width="150" id="8ub-zh-tfB">
@@ -285,6 +292,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZO-VO-moU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="KtO-KH-poL" userLabel="Tap Gesture Recognizer para">
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="push" identifier="para" id="XlQ-BU-GeM"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="edy-Rh-jwe" userLabel="Tap Gesture Recognizer fixed">
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="push" identifier="fixed" id="2pE-Jz-3jf"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="vOI-Nf-57v" userLabel="Tap Gesture Recognizer tut">
+                    <connections>
+                        <segue destination="URh-aE-3RN" kind="push" id="2lx-Dx-W23"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-374" y="-162"/>
         </scene>
@@ -297,47 +319,48 @@
                         <viewControllerLayoutGuide type="bottom" id="2us-Mr-xqv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="276"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2T-QD-Yxi">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2T-QD-Yxi">
                                 <rect key="frame" x="26" y="74" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="1" image="vision">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Jhh-FK-Lbk" kind="push" id="afY-dg-bVF"/>
+                                    <outletCollection property="gestureRecognizers" destination="M2N-tH-ctZ" appends="YES" id="Ha0-as-ga3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-o0-XvV">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-o0-XvV">
                                 <rect key="frame" x="289" y="74" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="4" image="hearing">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Nng-Mr-Qy3" kind="push" identifier="hearing" id="CDc-WS-pVA"/>
+                                    <outletCollection property="gestureRecognizers" destination="6hN-Me-O3Y" appends="YES" id="Ep8-qY-S7h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IF0-rK-nVq">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IF0-rK-nVq">
                                 <rect key="frame" x="26" y="175" width="253" height="91"/>
                                 <state key="normal" title="3" image="cognitive">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="eZ1-I4-YRw" kind="push" identifier="cognitive" id="3vx-xq-gPH"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09G-Ve-MkJ">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09G-Ve-MkJ">
                                 <rect key="frame" x="289" y="175" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="4" image="nonenglishspeaking">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="X3g-jI-cOh" kind="push" identifier="nonenglish" id="aaB-gY-rf4"/>
+                                    <outletCollection property="gestureRecognizers" destination="bdu-uG-PQN" appends="YES" id="O4W-1Z-0SK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="V5h-o0-XvV" firstAttribute="height" secondItem="x2T-QD-Yxi" secondAttribute="height" id="7Y4-SF-O9P"/>
                             <constraint firstItem="IF0-rK-nVq" firstAttribute="top" secondItem="x2T-QD-Yxi" secondAttribute="bottom" constant="10" id="CyA-kz-LCM"/>
@@ -357,6 +380,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="09G-Ve-MkJ" secondAttribute="trailing" constant="10" id="mjj-4n-mw1"/>
                             <constraint firstItem="IF0-rK-nVq" firstAttribute="width" secondItem="x2T-QD-Yxi" secondAttribute="width" id="xga-Wa-Qtt"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Qgy-of-RtP" appends="YES" id="6TC-O9-1kX"/>
+                        </connections>
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Yes" width="150" id="Gy6-3v-h4W">
@@ -390,15 +416,35 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="6hN-Me-O3Y" userLabel="Tap Gesture Recognizer hearing">
+                    <connections>
+                        <segue destination="Nng-Mr-Qy3" kind="push" identifier="hearing" id="ubs-Rs-M9W"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="bdu-uG-PQN" userLabel="Tap Gesture Recognizer nonenglish">
+                    <connections>
+                        <segue destination="X3g-jI-cOh" kind="push" identifier="hearing" id="rYX-Xg-wCr"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="M2N-tH-ctZ" userLabel="Tap Gesture Recognizer vision">
+                    <connections>
+                        <segue destination="Jhh-FK-Lbk" kind="push" id="LNr-Yb-gch"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="Qgy-of-RtP" userLabel="Tap Gesture Recognizer cognitive">
+                    <connections>
+                        <segue destination="eZ1-I4-YRw" kind="push" identifier="cognitive" id="6qw-Jj-iiH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="364" y="134"/>
+            <point key="canvasLocation" x="609" y="500"/>
         </scene>
         <!--Cognitive-->
         <scene sceneID="vmx-5K-Mfg">
             <objects>
                 <tableViewController id="eZ1-I4-YRw" customClass="CognitiveTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5oN-C2-BPV">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="276"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -471,14 +517,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wy-fW-Swp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="436" y="1209"/>
+            <point key="canvasLocation" x="244" y="1248"/>
         </scene>
         <!--More-->
         <scene sceneID="9Qj-T3-MNK">
             <objects>
                 <tableViewController title="More" id="uYm-9r-mAE" customClass="MoreMenuTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sdg-Pr-1iA">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="276"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -539,43 +585,47 @@
                         <viewControllerLayoutGuide type="bottom" id="AtU-w3-tFQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Bec-5F-mHx">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="276"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnJ-7T-Omx">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnJ-7T-Omx">
                                 <rect key="frame" x="289" y="74" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="2" image="safety">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SQJ-az-dFG" kind="push" identifier="safety" id="fPy-52-JVH"/>
+                                    <outletCollection property="gestureRecognizers" destination="daa-me-bHa" appends="YES" id="pco-5C-CMa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdV-CQ-7z6">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdV-CQ-7z6">
                                 <rect key="frame" x="26" y="74" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="1" image="gettingonandoffthebus">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SQJ-az-dFG" kind="push" identifier="gettingonoff" id="OvM-ZS-PME"/>
+                                    <outletCollection property="gestureRecognizers" destination="fFJ-K7-6Mv" appends="YES" id="68E-pj-Q25"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sh-Zh-x4s">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sh-Zh-x4s">
                                 <rect key="frame" x="26" y="175" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="3" image="ridingthebus">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SQJ-az-dFG" kind="push" identifier="ridingthebus" id="gyz-VI-CmD"/>
+                                    <outletCollection property="gestureRecognizers" destination="b5k-YN-uzu" appends="YES" id="Ik5-er-XJj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-0x-hgf">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-0x-hgf">
                                 <rect key="frame" x="289" y="175" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="4" image="emergency">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SQJ-az-dFG" kind="push" identifier="emergency" id="AyO-S4-bPA"/>
+                                    <outletCollection property="gestureRecognizers" destination="qkw-5c-PaN" appends="YES" id="88M-gQ-iLp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -643,15 +693,35 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFc-4D-wmU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="fFJ-K7-6Mv" userLabel="Tap Gesture Recognizer gettingonoff">
+                    <connections>
+                        <segue destination="SQJ-az-dFG" kind="push" identifier="gettingonoff" id="aD3-Sm-0Sr"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="daa-me-bHa" userLabel="Tap Gesture Recognizer safety">
+                    <connections>
+                        <segue destination="SQJ-az-dFG" kind="push" identifier="safety" id="OL2-TZ-1Jm"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="b5k-YN-uzu" userLabel="Tap Gesture Recognizer ridingthebus">
+                    <connections>
+                        <segue destination="SQJ-az-dFG" kind="push" identifier="ridingthebus" id="el7-3f-xcg"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="qkw-5c-PaN" userLabel="Tap Gesture Recognizer emergency">
+                    <connections>
+                        <segue destination="SQJ-az-dFG" kind="push" identifier="emergency" id="W6V-YK-Qpk"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1043" y="48"/>
+            <point key="canvasLocation" x="1574" y="164"/>
         </scene>
         <!--Project Eric-->
         <scene sceneID="MGP-VI-UsT">
             <objects>
                 <tableViewController id="SQJ-az-dFG" customClass="ItemTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kIa-h8-A9B">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="276"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -663,10 +733,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mhH-Sp-gnc">
-                                            <rect key="frame" x="9" y="9" width="90" height="61"/>
+                                            <rect key="frame" x="9" y="8" width="92" height="63"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8d-cg-qkP">
-                                            <rect key="frame" x="109" y="9" width="450" height="61"/>
+                                            <rect key="frame" x="102" y="8" width="457" height="63"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -677,10 +747,10 @@
                                         <constraint firstItem="mhH-Sp-gnc" firstAttribute="width" secondItem="p8d-cg-qkP" secondAttribute="width" multiplier="0.2" id="BYc-K6-NNQ"/>
                                         <constraint firstItem="mhH-Sp-gnc" firstAttribute="height" secondItem="p8d-cg-qkP" secondAttribute="height" id="Eb6-Ga-THS"/>
                                         <constraint firstItem="mhH-Sp-gnc" firstAttribute="leading" secondItem="ng8-G2-qg3" secondAttribute="leadingMargin" constant="1" id="G68-lf-3ih"/>
-                                        <constraint firstItem="mhH-Sp-gnc" firstAttribute="top" secondItem="ng8-G2-qg3" secondAttribute="topMargin" constant="1" id="IIb-pX-YQg"/>
-                                        <constraint firstItem="p8d-cg-qkP" firstAttribute="leading" secondItem="mhH-Sp-gnc" secondAttribute="trailing" priority="750" constant="10" id="YvB-Ac-ma8"/>
+                                        <constraint firstItem="mhH-Sp-gnc" firstAttribute="top" secondItem="ng8-G2-qg3" secondAttribute="topMargin" id="IIb-pX-YQg"/>
+                                        <constraint firstItem="p8d-cg-qkP" firstAttribute="leading" secondItem="mhH-Sp-gnc" secondAttribute="trailing" priority="750" constant="1" id="YvB-Ac-ma8"/>
                                         <constraint firstItem="mhH-Sp-gnc" firstAttribute="centerY" secondItem="p8d-cg-qkP" secondAttribute="centerY" id="hEq-sS-ygu"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="mhH-Sp-gnc" secondAttribute="bottom" constant="1" id="l0z-V9-2cX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="mhH-Sp-gnc" secondAttribute="bottom" id="l0z-V9-2cX"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -724,7 +794,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sN8-7E-lhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="327"/>
+            <point key="canvasLocation" x="2122" y="747"/>
         </scene>
         <!--Español-->
         <scene sceneID="NU0-Gg-OwY">
@@ -735,43 +805,47 @@
                         <viewControllerLayoutGuide type="bottom" id="7bL-qf-5JM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TIC-5T-DHj">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="276"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhd-LP-iVP" userLabel="2">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhd-LP-iVP" userLabel="2">
                                 <rect key="frame" x="289" y="74" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" image="safety_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SQJ-az-dFG" kind="push" identifier="safety" id="ahp-Cm-7Yy"/>
+                                    <outletCollection property="gestureRecognizers" destination="1dk-Zp-qL7" appends="YES" id="GAB-fB-sfV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPg-6x-JOF" userLabel="3">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPg-6x-JOF" userLabel="3">
                                 <rect key="frame" x="26" y="175" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" image="ridingthebus_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SQJ-az-dFG" kind="push" identifier="ridingthebus" id="Ej0-wu-Sg6"/>
+                                    <outletCollection property="gestureRecognizers" destination="fhp-2b-CpF" appends="YES" id="v9l-Mo-PwW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pr-Mc-49N" userLabel="4">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pr-Mc-49N" userLabel="4">
                                 <rect key="frame" x="289" y="175" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" image="emergency_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SQJ-az-dFG" kind="push" identifier="emergency" id="xhI-nb-nFS"/>
+                                    <outletCollection property="gestureRecognizers" destination="Ksk-5V-6Py" appends="YES" id="6uA-7v-anR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="button1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vo1-ir-CvP" userLabel="1">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="button1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vo1-ir-CvP" userLabel="1">
                                 <rect key="frame" x="26" y="74" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" image="gettingonandoffthebus_s">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SQJ-az-dFG" kind="push" identifier="gettingonoff" id="zgV-VD-auN"/>
+                                    <outletCollection property="gestureRecognizers" destination="jNM-oE-WEU" appends="YES" id="LcB-Pv-8Hn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -825,6 +899,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEg-Cy-yF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="jNM-oE-WEU" userLabel="Tap Gesture Recognizer gettingonoff">
+                    <connections>
+                        <segue destination="SQJ-az-dFG" kind="push" identifier="gettingonoff" id="pbU-UX-bpa"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="1dk-Zp-qL7" userLabel="Tap Gesture Recognizer safety">
+                    <connections>
+                        <segue destination="SQJ-az-dFG" kind="push" identifier="safety" id="Pq0-r9-ADO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="fhp-2b-CpF" userLabel="Tap Gesture Recognizer ridingthebus">
+                    <connections>
+                        <segue destination="SQJ-az-dFG" kind="push" identifier="ridingthebus" id="KDW-xO-Wui"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="Ksk-5V-6Py" userLabel="Tap Gesture Recognizer emergency">
+                    <connections>
+                        <segue destination="SQJ-az-dFG" kind="push" identifier="emergency" id="W0p-uz-aRG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1258" y="737"/>
         </scene>
@@ -860,34 +954,37 @@
                         <viewControllerLayoutGuide type="bottom" id="tMA-P8-ich"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="q5a-xW-D5n">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="276"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S91-xH-T68">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S91-xH-T68">
                                 <rect key="frame" x="26" y="74" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" backgroundImage="vision">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="M9u-7H-WQA" kind="push" id="S04-Q7-1qL"/>
+                                    <outletCollection property="gestureRecognizers" destination="Qny-8L-pqG" appends="YES" id="zOi-O1-IaZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7M-Dv-r86">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7M-Dv-r86">
                                 <rect key="frame" x="289" y="74" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" backgroundImage="hearing">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uSE-ar-7H8" kind="push" identifier="hearing" id="L4g-g1-iNQ"/>
+                                    <outletCollection property="gestureRecognizers" destination="68E-yF-d8m" appends="YES" id="Zfd-S2-ODY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ew-Mc-jqg">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ew-Mc-jqg">
                                 <rect key="frame" x="158" y="175" width="253" height="91"/>
+                                <gestureRecognizers/>
                                 <state key="normal" backgroundImage="nonenglishspeaking">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uSE-ar-7H8" kind="push" identifier="nonenglish" id="mKu-vs-sn4"/>
+                                    <outletCollection property="gestureRecognizers" destination="LpA-ZB-oAr" appends="YES" id="Prw-AS-LMH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -933,6 +1030,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vC-V5-e9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="Qny-8L-pqG" userLabel="Tap Gesture Recognizer vision">
+                    <connections>
+                        <segue destination="M9u-7H-WQA" kind="push" id="j8K-Ch-8co"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="68E-yF-d8m" userLabel="Tap Gesture Recognizer hearing">
+                    <connections>
+                        <segue destination="uSE-ar-7H8" kind="push" identifier="hearing" id="YYu-j9-UfA"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="LpA-ZB-oAr" userLabel="Tap Gesture Recognizer nonenglish">
+                    <connections>
+                        <segue destination="uSE-ar-7H8" kind="push" identifier="nonenglish" id="jDW-C5-fqg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-745" y="338"/>
         </scene>
@@ -945,14 +1057,14 @@
                         <viewControllerLayoutGuide type="bottom" id="CwJ-J1-6B0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Q0f-je-3Q5">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="276"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pc0-sY-h08">
-                                <rect key="frame" x="26" y="10" width="516" height="197"/>
+                                <rect key="frame" x="26" y="10" width="516" height="232"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEv-ts-yvq">
-                                <rect key="frame" x="26" y="217" width="516" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEv-ts-yvq">
+                                <rect key="frame" x="26" y="252" width="516" height="58"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.78823529410000004" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -990,22 +1102,22 @@
                         <viewControllerLayoutGuide type="bottom" id="OiC-aF-xHt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Tk0-8n-ttH">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="276"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obo-yq-Rt8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obo-yq-Rt8">
                                 <rect key="frame" x="26" y="74" width="117" height="192"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.96862745098039216" green="0.78823529411764703" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BhU-le-dSg">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BhU-le-dSg">
                                 <rect key="frame" x="153" y="74" width="389" height="122"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aqd-hb-9Ea">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aqd-hb-9Ea">
                                 <rect key="frame" x="153" y="223" width="126" height="24"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-FM-XmB">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASd-FM-XmB">
                                 <rect key="frame" x="289" y="227" width="85" height="16"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.81960784310000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="PREVIOUS">
@@ -1016,7 +1128,7 @@
                                     <action selector="PreviousClicker:" destination="uSE-ar-7H8" eventType="touchUpInside" id="Ril-Cr-oRV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zv9-Uh-zwD">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zv9-Uh-zwD">
                                 <rect key="frame" x="384" y="227" width="84" height="16"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.81960784310000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="NEXT">
@@ -1027,7 +1139,7 @@
                                     <action selector="NextClicker:" destination="uSE-ar-7H8" eventType="touchUpInside" id="pq5-2A-sj4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Duw-OB-Wae">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Duw-OB-Wae">
                                 <rect key="frame" x="478" y="227" width="84" height="16"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="SKIP">
@@ -1107,11 +1219,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KuF-5z-tdJ"/>
-        <segue reference="fdK-WP-C9C"/>
-        <segue reference="L4g-g1-iNQ"/>
-        <segue reference="SEN-7Z-TcF"/>
-        <segue reference="AyO-S4-bPA"/>
+        <segue reference="2pE-Jz-3jf"/>
+        <segue reference="w8g-nJ-6oQ"/>
+        <segue reference="vEo-Uk-Nk4"/>
+        <segue reference="jDW-C5-fqg"/>
+        <segue reference="W0p-uz-aRG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

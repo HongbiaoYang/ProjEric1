@@ -28,6 +28,8 @@ ResourceCenter *sharedCenter;
     self.SpeedSlider.continuous = YES;
 
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"projEric.sql"];
+    self.view.backgroundColor = [UIColor blackColor];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {

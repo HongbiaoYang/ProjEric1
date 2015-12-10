@@ -45,6 +45,10 @@
     self.NoItem.width = width;
     self.MoreItem.width = width;
 
+    self.YesItem.title = @"Yes      \u2714";
+    self.NoItem.title = @"No      \u2716";
+    self.MoreItem.title = @"More      \u2605";
+
     sharedCenter = [ResourceCenter sharedResource];
 
 

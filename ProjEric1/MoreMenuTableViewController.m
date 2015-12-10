@@ -85,6 +85,8 @@
 
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:252.0 green:218.0 blue:75.0 alpha:1.0f]];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+
 
     // show the toolbar, set it to transparent. If set it to hidden, goHome button will go wrong
     [self.navigationController setToolbarHidden:NO];
@@ -262,7 +264,8 @@
     
     NSString *cellIdentifier = @"MoreTableCell";
     MoreItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    
+    cell.backgroundColor = [UIColor blackColor];
+
     long row = [indexPath row];
     
     TTSItemStruct *tItem = self.items[row];

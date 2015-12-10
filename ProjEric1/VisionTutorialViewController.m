@@ -123,7 +123,21 @@
     tutorialObject8.next = nil;
 
     currentStruct = tutorialObject1;
-    [self performStruct:currentStruct];
+    [self performStruct:currentStruct initial:YES];
+}
+
+- (void)performStruct:(TutorialStruct *)aStruct initial:(BOOL)initial {
+
+    self.tutImage.image = [UIImage imageNamed:aStruct.picture];
+    self.tutText.text = aStruct.text;
+
+    // only speak when it's not the first sentence
+    if (initial == NO) {
+        [sharedCenter SpeakContinue:@"Good job, you made it"];
+    }
+
+    [sharedCenter SpeakContinue:aStruct.voice];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -132,11 +146,10 @@
 }
 
 - (void)performStruct:(TutorialStruct *)aStruct {
-    self.tutImage.image = [UIImage imageNamed:aStruct.picture];
-    self.tutText.text = aStruct.text;
-
-    [sharedCenter SpeakContinue:aStruct.voice];
+    [self performStruct:aStruct initial:NO];
 }
+
+
 
 
 - (void)handleDoubleTap:(UITapGestureRecognizer *)sender {
@@ -147,6 +160,8 @@
 
         if ([currentStruct.gesture isEqualToString:@"double"]) {
             currentStruct = currentStruct.next;
+
+
             [self performStruct:currentStruct];
         } else {
             [sharedCenter SpeakOut:currentStruct.voice];
