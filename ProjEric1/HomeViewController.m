@@ -14,6 +14,8 @@
 #import "MoreMenuTableViewController.h"
 #import "DBManager.h"
 
+#define freeVersion NO
+
 @interface HomeViewController ()
 
 @property(nonatomic, strong) DBManager *dbManager;
@@ -73,64 +75,73 @@
 
 
 
+    //*****************************************************************************************************//
+    //*****************************************************************************************************//
+    //***********                                                                  ************************//
     // premium stuff
-    self.dbManager = [sharedCenter dbManager];
-    // get array with or without user input items
-    NSString *query = [[NSString alloc] initWithFormat:@"select fieldValue from appInfo where fieldKey = 'startTime'"];
+    if (freeVersion) {
+        self.dbManager = [sharedCenter dbManager];
+        // get array with or without user input items
+        NSString *query = [[NSString alloc] initWithFormat:@"select fieldValue from appInfo where fieldKey = 'startTime'"];
 
-    NSArray *arrInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    long startTime =  [[[arrInfo objectAtIndex:0] objectAtIndex:0] intValue];
+        NSArray *arrInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+        long startTime = [[[arrInfo objectAtIndex:0] objectAtIndex:0] intValue];
 
-    if (startTime == 0) {
-        long now = (long) [[NSDate date] timeIntervalSince1970];
-        NSString *query = [NSString stringWithFormat:
-                @"update appInfo set fieldValue='%d' where fieldKey='startTime';", now];
+        if (startTime == 0) {
+            long now = (long) [[NSDate date] timeIntervalSince1970];
+            NSString *query = [NSString stringWithFormat:
+                    @"update appInfo set fieldValue='%d' where fieldKey='startTime';", now];
 
-        // Execute the query.
-        [self.dbManager executeQuery:query];
+            // Execute the query.
+            [self.dbManager executeQuery:query];
 
-        // If the query was successfully executed then pop the view controller.
-        if (self.dbManager.affectedRows != 0) {
-            NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+            // If the query was successfully executed then pop the view controller.
+            if (self.dbManager.affectedRows != 0) {
+                NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+            }
+            else {
+                NSLog(@"Could not execute the query.");
+            }
+
+            startTime = now;
         }
-        else{
-            NSLog(@"Could not execute the query.");
-        }
 
-        startTime = now;
-    }
-
-    long interval = (long) [[NSDate date] timeIntervalSince1970] - startTime;
+        long interval = (long) [[NSDate date] timeIntervalSince1970] - startTime;
 
 //    NSLog(@"now= %ld intervel=%ld", startTime, interval);
 
-    if (interval < 24 * 60 * 60) {
+        if (interval < 24 * 60 * 60) {
 //    if (interval < 24 ) {
 
-        int remain = 24 * 60 * 60 - interval;
-        
-        int hour = remain / (60*60);
-        int second = remain % 60;
-        int minute = (remain - hour * 60 * 60)/60;
+            int remain = 24 * 60 * 60 - interval;
 
-        NSString *message = [[NSString alloc] initWithFormat:
-                @"Your trial has %d hours, %d minutes, %d seconds remaining", hour, minute, second];
+            int hour = remain / (60 * 60);
+            int second = remain % 60;
+            int minute = (remain - hour * 60 * 60) / 60;
 
-        UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"\u231B Trial Version"
-                                                         message:message
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            NSString *message = [[NSString alloc] initWithFormat:
+                    @"Your trial has %d hours, %d minutes, %d seconds remaining", hour, minute, second];
 
-        alert.alertViewStyle = UIAlertViewStyleDefault;
-        alert.tag = 200;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"\u231B Trial Version"
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK" otherButtonTitles:nil];
+
+            alert.alertViewStyle = UIAlertViewStyleDefault;
+            alert.tag = 200;
 
 
-        [alert show];
-    } else {
+            [alert show];
+        } else {
 
-        [self displayAlertView];
+            [self displayAlertView];
 
+        }
     }
+    //***********                                                                  ************************//
+    //*****************************************************************************************************//
+    //*****************************************************************************************************//
+
 }
 
 - (void)displayAlertView {
