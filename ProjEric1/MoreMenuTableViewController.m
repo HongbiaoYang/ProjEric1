@@ -362,7 +362,10 @@
         aItem.title = text;
         aItem.text = text;
         aItem.image = @"customize.png";
-        aItem.imageV = @"added";
+        aItem.imageV = @"customize.png";
+        aItem.color = @"00ffff";
+        aItem.customize = @"added";
+        aItem.hearing = max + 1;
 
         [[self items] insertObject:aItem atIndex:1];
         [[self tableView] reloadData];
@@ -386,7 +389,7 @@
 
     long row = [indexPath row];
     TTSItemStruct *sItem = self.items[row];
-    NSLog(@"can edit in more:%@|%@", sItem.customize, sItem.title);
+    NSLog(@"can edit in more:%@|%@|", sItem.customize, sItem.title);
 
 
     if ([sItem.customize isEqualToString:@"added"]) {
@@ -399,7 +402,8 @@
 
 
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+                                                            forRowAtIndexPath:(NSIndexPath *)indexPath {
 
     long row = [indexPath row];
     TTSItemStruct *sItem = self.items[row];
@@ -408,8 +412,6 @@
 
     [self updateDeleteItems:sItem];
     [[self tableView] reloadData];
-
-
 
     NSLog(@"delete");
 

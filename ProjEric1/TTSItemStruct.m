@@ -24,7 +24,9 @@
         self.title = iText;
         self.text = iText;
         self.image = @"customize.png";
-        self.imageV = @"added";
+        self.imageV = @"customize.png";
+        self.color = @"00ffff";
+        self.customize = @"added";
 
     }
     return self;
