@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		810681651C56CF5D00C36DF2 /* ResourceCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 810681641C56CF5D00C36DF2 /* ResourceCenterTests.m */; };
 		8107CADA1C0F81FC0082314B /* EmergencyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8107CAD91C0F81FC0082314B /* EmergencyTableViewController.m */; };
 		8107CADD1C0F82590082314B /* EmergencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8107CADC1C0F82590082314B /* EmergencyTableViewCell.m */; };
 		811387771C17254C007264AF /* TutorialStruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 811387761C17254C007264AF /* TutorialStruct.m */; };
+		812333B91C73D0C70036C6C5 /* Default-568.png in Resources */ = {isa = PBXBuildFile; fileRef = 812333B81C73D0C70036C6C5 /* Default-568.png */; };
 		813FCAFC1BB2EF4E00E038CA /* ResourceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 813FCAFB1BB2EF4E00E038CA /* ResourceCenter.m */; };
 		814B94311C110051001ECFA7 /* SlideTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B94301C110051001ECFA7 /* SlideTutorialViewController.m */; };
 		814B94341C164021001ECFA7 /* VisionTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B94331C164021001ECFA7 /* VisionTutorialViewController.m */; };
@@ -22,6 +24,7 @@
 		81DFD3F81B72B1380039EFA6 /* sym in Resources */ = {isa = PBXBuildFile; fileRef = 81DFD3F71B72B1380039EFA6 /* sym */; };
 		81E49F141BC20398006E7DE8 /* MoreMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E49F131BC20398006E7DE8 /* MoreMenuTableViewController.m */; };
 		81E49F171BC2054A006E7DE8 /* MoreItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E49F161BC2054A006E7DE8 /* MoreItemTableViewCell.m */; };
+		81EE567B1C73C28300AD330F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81EE567A1C73C28300AD330F /* Default-568h@2x.png */; };
 		A99AEAB41B597F7900BBBD08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99AEAB31B597F7900BBBD08 /* main.m */; };
 		A99AEAB71B597F7900BBBD08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A99AEAB61B597F7900BBBD08 /* AppDelegate.m */; };
 		A99AEABA1B597F7900BBBD08 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99AEAB91B597F7900BBBD08 /* MainViewController.m */; };
@@ -49,12 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		810681641C56CF5D00C36DF2 /* ResourceCenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceCenterTests.m; sourceTree = "<group>"; };
 		8107CAD81C0F81FC0082314B /* EmergencyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyTableViewController.h; sourceTree = "<group>"; };
 		8107CAD91C0F81FC0082314B /* EmergencyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyTableViewController.m; sourceTree = "<group>"; };
 		8107CADB1C0F82590082314B /* EmergencyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyTableViewCell.h; sourceTree = "<group>"; };
 		8107CADC1C0F82590082314B /* EmergencyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyTableViewCell.m; sourceTree = "<group>"; };
 		811387751C17254C007264AF /* TutorialStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialStruct.h; sourceTree = "<group>"; };
 		811387761C17254C007264AF /* TutorialStruct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialStruct.m; sourceTree = "<group>"; };
+		812333B81C73D0C70036C6C5 /* Default-568.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568.png"; path = "ProjEric1/Default-568.png"; sourceTree = "<group>"; };
 		813FCAFA1BB2EF4E00E038CA /* ResourceCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceCenter.h; sourceTree = "<group>"; };
 		813FCAFB1BB2EF4E00E038CA /* ResourceCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceCenter.m; sourceTree = "<group>"; };
 		814B942F1C110051001ECFA7 /* SlideTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideTutorialViewController.h; sourceTree = "<group>"; };
@@ -78,6 +83,7 @@
 		81E49F131BC20398006E7DE8 /* MoreMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreMenuTableViewController.m; sourceTree = "<group>"; };
 		81E49F151BC2054A006E7DE8 /* MoreItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreItemTableViewCell.h; sourceTree = "<group>"; };
 		81E49F161BC2054A006E7DE8 /* MoreItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreItemTableViewCell.m; sourceTree = "<group>"; };
+		81EE567A1C73C28300AD330F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "ProjEric1/Default-568h@2x.png"; sourceTree = "<group>"; };
 		A99AEAAE1B597F7900BBBD08 /* ProjEric1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjEric1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99AEAB21B597F7900BBBD08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99AEAB31B597F7900BBBD08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -128,6 +134,8 @@
 		A99AEAA51B597F7900BBBD08 = {
 			isa = PBXGroup;
 			children = (
+				812333B81C73D0C70036C6C5 /* Default-568.png */,
+				81EE567A1C73C28300AD330F /* Default-568h@2x.png */,
 				AE00F7721BC8ADCB00D75048 /* projEric.sql */,
 				AE099A3E1BC7536D00C9B24A /* libsqlite3.dylib */,
 				A99AEAB01B597F7900BBBD08 /* ProjEric1 */,
@@ -214,6 +222,7 @@
 			children = (
 				A99AEACD1B597F7900BBBD08 /* ProjEric1Tests.m */,
 				A99AEACB1B597F7900BBBD08 /* Supporting Files */,
+				810681641C56CF5D00C36DF2 /* ResourceCenterTests.m */,
 			);
 			path = ProjEric1Tests;
 			sourceTree = "<group>";
@@ -270,7 +279,7 @@
 		A99AEAA61B597F7900BBBD08 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Bill;
 				TargetAttributes = {
 					A99AEAAD1B597F7900BBBD08 = {
@@ -308,8 +317,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE00F7731BC8ADCB00D75048 /* projEric.sql in Resources */,
+				812333B91C73D0C70036C6C5 /* Default-568.png in Resources */,
 				81DFD3F81B72B1380039EFA6 /* sym in Resources */,
 				A99AEABD1B597F7900BBBD08 /* Main.storyboard in Resources */,
+				81EE567B1C73C28300AD330F /* Default-568h@2x.png in Resources */,
 				A99AEABF1B597F7900BBBD08 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				810681651C56CF5D00C36DF2 /* ResourceCenterTests.m in Sources */,
 				A99AEACE1B597F7900BBBD08 /* ProjEric1Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +417,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -425,7 +438,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/include/libxml2/,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
@@ -468,7 +481,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/include/libxml2/,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
@@ -480,15 +493,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ProjEric1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ttsproj.ProjEric;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos8.4;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -497,15 +511,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ProjEric1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ttsproj.ProjEric;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos8.4;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -524,6 +539,7 @@
 				);
 				INFOPLIST_FILE = ProjEric1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ttsproj.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjEric1.app/ProjEric1";
 			};
@@ -539,6 +555,7 @@
 				);
 				INFOPLIST_FILE = ProjEric1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ttsproj.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjEric1.app/ProjEric1";
 			};

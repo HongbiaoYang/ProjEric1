@@ -52,12 +52,11 @@
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionTutorialViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionViewController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/XMLListParser.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/XMLListParser.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/main.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/projEric.sql" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1Tests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1Tests/ProjEric1Tests.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1Tests/ResourceCenterTests.m" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
