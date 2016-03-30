@@ -13,13 +13,19 @@
 #import "EmergencyTableViewController.h"
 #import "MoreMenuTableViewController.h"
 #import "DBManager.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <GoogleSignIn/GoogleSignIn.h>
 
-#define freeVersion NO
+static NSString* const kBaseURL = @"http://mydesk.desktops.utk.edu:3009/";
+static NSString* const kCollection = @"eric";
 
 @interface HomeViewController ()
 
 @property(nonatomic, strong) DBManager *dbManager;
 @end
+
+#define safeSet(d,k,v) if (v) d[k] = v;
+
 
 @implementation HomeViewController {
     ResourceCenter *sharedCenter;
@@ -31,6 +37,36 @@
     // set transit to para by default, in the very first page
     [sharedCenter setTransit:@"para"];
 
+    
+    [[self tutSingleTap] requireGestureRecognizerToFail:
+     [self tutDoubleTap]];
+    
+    [[self paraSingleTap] requireGestureRecognizerToFail:
+     [self paraDoubleTap]];
+    
+    [[self fixSingleTap] requireGestureRecognizerToFail:
+     [self fixDoubleTap]];
+    
+}
+
+- (IBAction)SingleTapAnywhere:(id)sender {
+    [sharedCenter SpeakOut:@"please double tap to make a selection"];
+}
+
+- (void)signInWillDispatch:(GIDSignIn *)signIn error:(NSError *)error {
+    NSLog(@"signInWillDispatch");
+
+}
+
+- (void)signIn:(GIDSignIn *)signIn presentViewController:(UIViewController *)viewController
+{
+    [self presentViewController:viewController animated:YES completion:nil];
+    NSLog(@"presentViewController");
+}
+
+- (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"dismissViewController");
 }
 
 - (void)viewDidLoad {
@@ -73,111 +109,154 @@
 
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: icoSetting, iconEmergency, nil]];
 
+    // google login stuff
+    [GIDSignIn sharedInstance].uiDelegate = self;
+    [GIDSignIn sharedInstance].delegate = self;
 
-
-    //*****************************************************************************************************//
-    //*****************************************************************************************************//
-    //***********                                                                  ************************//
-    // premium stuff
-    if (freeVersion) {
-        self.dbManager = [sharedCenter dbManager];
-        // get array with or without user input items
-        NSString *query = [[NSString alloc] initWithFormat:@"select fieldValue from appInfo where fieldKey = 'startTime'"];
-
-        NSArray *arrInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-        long startTime = [[[arrInfo objectAtIndex:0] objectAtIndex:0] intValue];
-
-        if (startTime == 0) {
-            long now = (long) [[NSDate date] timeIntervalSince1970];
-            NSString *query = [NSString stringWithFormat:
-                    @"update appInfo set fieldValue='%d' where fieldKey='startTime';", now];
-
-            // Execute the query.
-            [self.dbManager executeQuery:query];
-
-            // If the query was successfully executed then pop the view controller.
-            if (self.dbManager.affectedRows != 0) {
-                NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-            }
-            else {
-                NSLog(@"Could not execute the query.");
-            }
-
-            startTime = now;
-        }
-
-        long interval = (long) [[NSDate date] timeIntervalSince1970] - startTime;
-
-//    NSLog(@"now= %ld intervel=%ld", startTime, interval);
-
-        if (interval < 24 * 60 * 60) {
-//    if (interval < 24 ) {
-
-            int remain = 24 * 60 * 60 - interval;
-
-            int hour = remain / (60 * 60);
-            int second = remain % 60;
-            int minute = (remain - hour * 60 * 60) / 60;
-
-            NSString *message = [[NSString alloc] initWithFormat:
-                    @"Your trial has %d hours, %d minutes, %d seconds remaining", hour, minute, second];
-
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"\u231B Trial Version"
-                                                            message:message
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK" otherButtonTitles:nil];
-
-            alert.alertViewStyle = UIAlertViewStyleDefault;
-            alert.tag = 200;
-
-
-            [alert show];
-        } else {
-
-            [self displayAlertView];
-
-        }
+    if ([sharedCenter isFbLogged] == NO && [sharedCenter isGgLogged] == NO) {
+        [self DisplayLoginDialog];
     }
-    //***********                                                                  ************************//
-    //*****************************************************************************************************//
-    //*****************************************************************************************************//
+
 
 }
+- (IBAction)TryMeClick:(id)sender {
+    [[GIDSignIn sharedInstance] signIn];
+    NSLog(@"tried me");
+}
 
-- (void)displayAlertView {
-    UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"\u26D4 Trial Version"
-                                                     message:@" Your trial has expired!"
+- (void)DisplayLoginDialog {
+    UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"Please Login"
+                                                     message:@" Login to Continue!"
                                                     delegate:self
-                                           cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                           cancelButtonTitle:@"Facebook Login" otherButtonTitles:@"Google Login", nil];
 
     alert.alertViewStyle = UIAlertViewStyleDefault;
-    alert.tag = 404;
-
+    alert.tag = 201;
 
     [alert show];
-
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 
-    if (alertView.tag == 404) {
+    if (alertView.tag == 201) {
         // 1st Other Button
 
         if (buttonIndex == 0) {
 
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:
-                    @"http://projectericutk.blogspot.com/p/welcome-to-project-eric.html"]];
+            NSLog(@"fb login");
 
-            NSLog(@"you are expired=%ld tag=%d", (long)buttonIndex, alertView.tag);
+            FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
 
+            [login logInWithReadPermissions: @[@"public_profile", @"email", @"user_friends"]
+                   fromViewController:self
+                   handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                     if (error || result.isCancelled) {
+                         NSLog(@"FB login error || cancelled");
+                         [self DisplayLoginDialog];
 
-            [self displayAlertView];
+                     } else {
+                         NSLog(@"FB Logged in");
 
+                         [sharedCenter updateFBLoginStatus:YES];
+                         [self prepareDataForServerFB];
+                     }
+                 }];
+        } else if (buttonIndex == 1) {
+            // google login
+
+            [[GIDSignIn sharedInstance] signIn];
         }
     }
 
 }
 
+// after google login
+- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
+
+
+    if (error != nil) {
+        NSLog(@"GG login error || cancelled");
+        [self DisplayLoginDialog];
+    }
+
+    // update gg status in both db and variable
+    [sharedCenter updateGGLoginStatus:YES];
+
+    // send the data to server
+    NSString *fullName = user.profile.name;
+    NSString *email = user.profile.email;
+
+//    NSLog(@"did SignIn in homeview: %@ %@ ggloged %@ %@", fullName, email, [sharedCenter ggLogin], error);
+    NSLog(@"did signin in homeview");
+
+    NSMutableDictionary* jsonable = [NSMutableDictionary dictionary];
+
+    safeSet(jsonable, @"name", fullName);
+    safeSet(jsonable, @"email", email);
+    safeSet(jsonable, @"platform", @"google");
+
+    [self sendDataToServer:jsonable];
+}
+
+- (void)prepareDataForServerFB {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setValue:@"id, name, email, gender, friends" forKey:@"fields"];
+
+
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:parameters]
+            startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                [self handleDataRequestFB:result Error:error];
+            }];
+}
+
+
+- (void)handleDataRequestFB:(id)result Error:(NSError *)error {
+    if (error == nil) {
+        NSLog(@"result=%@", result);
+        NSString *email = result[@"email"];
+        NSString *name = result[@"name"];
+
+        NSMutableDictionary* jsonable = [NSMutableDictionary dictionary];
+        safeSet(jsonable, @"name", name);
+        safeSet(jsonable, @"email", email);
+        safeSet(jsonable, @"platform", @"facebook");
+
+        [self sendDataToServer:jsonable];
+    }
+
+}
+
+- (void)sendDataToServer:(NSMutableDictionary *)jsonable {
+
+
+    NSString *dbAddress = [kBaseURL stringByAppendingPathComponent:kCollection];
+
+    NSURL* url = [NSURL URLWithString:dbAddress]; //1
+
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST"; //2
+
+
+    NSData* data = [NSJSONSerialization dataWithJSONObject:jsonable options:0 error:NULL]; //3
+
+    request.HTTPBody = data;
+
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"]; //4
+
+    NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession* session = [NSURLSession sessionWithConfiguration:config];
+
+    NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:request
+            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) { //5
+                if (!error) {
+                    NSArray* responseArray = @[[NSJSONSerialization JSONObjectWithData:data options:0 error:NULL]];
+                    NSLog(@"responseArray=%@", responseArray);
+                }
+            }];
+
+    [dataTask resume];
+
+}
 
 -(void) settingPage:(id)sender {
     [sharedCenter SpeakOut:@"setting"];

@@ -6,9 +6,12 @@
 //  Copyright (c) 2015 Bill. All rights reserved.
 //
 
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "SettingViewController.h"
 #import "ResourceCenter.h"
 #import "DBManager.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <Google/SignIn.h>
 
 ResourceCenter *sharedCenter;
 
@@ -20,28 +23,191 @@ ResourceCenter *sharedCenter;
 
 @end
 
+
+
 @implementation SettingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    // UI work
+    self.view.backgroundColor = [UIColor blackColor];
     self.SpeedSlider.continuous = YES;
 
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"projEric.sql"];
-    self.view.backgroundColor = [UIColor blackColor];
-
+    // all initialization work
+    [self initPrep];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)initPrep {
 
+    // initialize the sharedCenter singleton and db stuff
     sharedCenter = [ResourceCenter sharedResource];
+    self.dbManager = [sharedCenter dbManager];
 
     float speedValueFromDB = [self loadSpeedFromDB];
 
     [sharedCenter setTalkSpeed:speedValueFromDB];
     self.SpeedSlider.value = [sharedCenter talkSpeed];
     self.speedDisplay.text = [NSString stringWithFormat:@"Talking Speed(%.2f)", [sharedCenter talkSpeed]];
+
+
+    // update FB login text
+    NSString *fbBtnText = [sharedCenter isFbLogged] == YES ? @"Facebook Logout" : @"Facebook Login";
+    [self.fbLoginBtn setTitle:fbBtnText forState:UIControlStateNormal];
+
+
+    NSString *ggBtnText = [sharedCenter isGgLogged] == YES ? @"Google Logout" : @"Google Login";
+    [self.ggLoginBtn setTitle:ggBtnText forState:UIControlStateNormal];
+
+    [GIDSignIn sharedInstance].delegate = self;
+    [GIDSignIn sharedInstance].uiDelegate = self;
+
+
+//    NSLog(@"fb login=%@ %@", fbBtnText, [sharedCenter fbLogin]);
+
+}
+
+/*- (void)signInWillDispatch:(GIDSignIn *)signIn error:(NSError *)error {
+    NSLog(@"signInWillDispatch");
+
+}
+
+- (void)signIn:(GIDSignIn *)signIn presentViewController:(UIViewController *)viewController
+{
+    [self presentViewController:viewController animated:YES completion:nil];
+    NSLog(@"presentViewController");
+}
+
+- (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"dismissViewController");
+}*/
+
+
+// after google login
+- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
+
+    NSString *fullName = user.profile.name;
+    NSString *email = user.profile.email;
+
+    NSLog(@"did SignIn in setting: %@ %@ ggloged %@ %@", fullName, email, [sharedCenter ggLogin], error);
+
+    if (sharedCenter.ggLogin == NO) {
+        [[self ggLoginBtn] setTitle:@"Google Logout" forState:UIControlStateNormal];
+
+        // update fb status in both db and variable
+        [sharedCenter updateGGLoginStatus:YES];
+    }
+
+}
+
+- (IBAction)ggLoginClicked:(id)sender {
+    if (sharedCenter.ggLogin == YES) {
+        [self displayLogoutConf:@"Google"];
+        return;
+    }
+
+    [[GIDSignIn sharedInstance] signIn];
+}
+
+
+// Once the button is clicked, show the login dialog    
+- (IBAction)fbLoginClicked:(id)sender {
+
+    if (sharedCenter.fbLogin == YES) {
+        [self displayLogoutConf:@"Facebook"];
+        return;
+    }
+
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions: @[@"public_profile", @"email", @"user_friends"]
+    fromViewController:self
+    handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             NSLog(@"Process error");
+         } else if (result.isCancelled) {
+             NSLog(@"Cancelled");
+         } else {
+             NSLog(@"Logged in");
+             [self handleLoginResult];
+         }
+     }];
+}
+
+- (void)displayLogoutConf:(NSString *)type {
+
+    UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"Log Out"
+                                                     message:[NSString stringWithFormat:
+                                                             @"Are you sure you want to logout %@?", type]
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+
+    alert.alertViewStyle = UIAlertViewStyleDefault;
+
+    if ([type isEqualToString:@"Facebook"]) {
+        alert.tag = 202;    // logout facebook
+    } else {
+        alert.tag = 203;    // logout google
+    }
+
+    [alert show];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+    if (alertView.tag == 202) {
+        // 1st Other Button
+
+        NSLog(@"btn clicked %d", buttonIndex);
+        if (buttonIndex == 0) {
+            [self handleFBLogout];
+        } else {
+            return;
+        }
+    } else if (alertView.tag == 203) {
+
+        if (buttonIndex == 0) {
+            [self handleGGLogout];
+        } else {
+            return;
+        }
+    }
+
+}
+
+- (void)handleGGLogout {
+
+    if (sharedCenter.ggLogin == YES) {
+        [[self ggLoginBtn] setTitle:@"Google Login" forState:UIControlStateNormal];
+        [sharedCenter updateGGLoginStatus:NO];
+        [[GIDSignIn sharedInstance] signOut];
+
+    }
+}
+
+// handle logout
+- (void)handleFBLogout {
+    if (sharedCenter.fbLogin == YES) {
+        [[self fbLoginBtn] setTitle:@"Facebook Login" forState:UIControlStateNormal];
+        [sharedCenter updateFBLoginStatus:NO];
+        [FBSDKAccessToken setCurrentAccessToken:nil];
+    }
+}
+
+// handle login
+-(void) handleLoginResult {
+
+    if (sharedCenter.fbLogin == NO) {
+        [[self fbLoginBtn] setTitle:@"Facebook Logout" forState:UIControlStateNormal];
+
+        // update fb status in both db and variable
+        [sharedCenter updateFBLoginStatus:YES];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 
 }
 

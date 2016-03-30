@@ -11,11 +11,13 @@
 #import "MoreItemTableViewCell.h"
 #import "TTSItemStruct.h"
 #import "DBManager.h"
+#include "constant.h"
 
 @interface MoreMenuTableViewController () {
     ResourceCenter *sharedCenter;
 }
 
+@property  BOOL drill;
 @property (nonatomic, strong) DBManager *dbManager;
 
 @property(nonatomic, strong) UITapGestureRecognizer *dpGesture;
@@ -75,6 +77,8 @@
 
         [customArrayItems insertObject:aItem atIndex:0];
 
+        
+        
         [self setItems:customArrayItems];
     } else {
         [self setItems:customArrayItems];
@@ -177,12 +181,30 @@
     TTSItemStruct *sItem = self.items[row];
 
     if ([sItem.customize isEqualToString:@"input"]) {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add..." message:@"Input Your Text" delegate:self
+        
+        if (freeVersion == NO) {
+        
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add..." message:@"Input Your Text" delegate:self
                                                cancelButtonTitle:@"Save" otherButtonTitles:@"Speak", nil];
 
-        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+            alert.alertViewStyle = UIAlertViewStylePlainTextInput;
 
-        [alert show];
+            [alert show];
+        } else {
+            
+            NSString *message = @"This feature is only available in premium version";
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"\u266B Lite Version"
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            alert.alertViewStyle = UIAlertViewStyleDefault;
+            alert.tag = 200;
+            self.drill = YES;
+            
+            [alert show];
+        }
 
     } else  {
 
@@ -323,6 +345,10 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 
+    if ([self drill] == YES) {
+        return;
+    }
+    
     if (buttonIndex == 1) {
         [sharedCenter SpeakOut:[[alertView textFieldAtIndex:0] text]];
     } else if (buttonIndex == 0) {

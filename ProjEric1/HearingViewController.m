@@ -37,8 +37,6 @@
 }
 
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
@@ -55,8 +53,6 @@
     self.YesItem.title = @"Yes      \u2714";
     self.NoItem.title = @"No      \u2716";
     self.MoreItem.title = @"More      \u2605";
-
-
 
     // add right up corner icons: setting and emergency
     UIImage *imgHome = [UIImage imageNamed:@"home"];

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleSignIn/GIDSignIn.h>
 
-@interface SettingViewController : UIViewController
+@interface SettingViewController : UIViewController<GIDSignInDelegate>
 
 @property (weak, nonatomic) IBOutlet UISlider *SpeedSlider;
 @property (weak, nonatomic) IBOutlet UILabel *speedDisplay;
+@property (weak, nonatomic) IBOutlet UIButton *fbLoginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *ggLoginBtn;
 
 @end

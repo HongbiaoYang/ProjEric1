@@ -13,6 +13,8 @@
 #import "MoreMenuTableViewController.h"
 #import "CognitiveTableViewController.h"
 #import "EmergencyTableViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 
 @interface MainViewController () {
@@ -61,6 +63,8 @@
     [btnEmergency addTarget:self action:@selector(emergencyPage:) forControlEvents:UIControlEventTouchUpInside];
 
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: iconEmergency, nil]];
+
+
 
 }
 

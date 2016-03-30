@@ -28,6 +28,23 @@
     return sharedResource;
 }
 
+- (BOOL)isFbLogged {
+    if ([self fbLogin] == YES) {
+        return YES;
+    } else {
+        return [self readLoginStatusFromDB:@"fbLogin"];
+    }
+}
+
+- (BOOL)isGgLogged {
+    if ([self ggLogin] == YES) {
+        return YES;
+    } else {
+        return [self readLoginStatusFromDB:@"ggLogin"];
+    }
+}
+
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -58,9 +75,64 @@
 
         // init some other global variable.
         [self setTransit:@"para"];
+
+        [self setFbLogin:[self readLoginStatusFromDB:@"FBLogin"]];
+        [self setGgLogin:[self readLoginStatusFromDB:@"GGLogin"]];
     }
 
     return self;
+}
+
+- (BOOL)readLoginStatusFromDB:(NSString *)loginType {
+
+    NSString *query = [NSString stringWithFormat:
+            @"select fieldValue from appInfo where fieldKey = '%@';", loginType];
+
+    NSArray *loginArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+
+
+/*    // if there is no record in the database
+    if (self.arrInfo == nil) {
+        NSString *query = [NSString stringWithFormat:@"insert into appInfo values (null, 'speakSpeed', 0.3);", self.SpeedSlider.value];
+        [self.dbManager executeQuery:query];
+
+        // If the query was successfully executed then pop the view controller.
+        if (self.dbManager.affectedRows != 0) {
+            NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+        }
+        else{
+            NSLog(@"Could not execute the query.");
+        }
+
+        return 0.3f;
+    }*/
+
+    // empty array, no login for sure, insert a record with NO
+    if (loginArray == nil || loginArray.count == 0) {
+        [self insertDefaultValue:[NSString stringWithFormat:
+                @"insert into appInfo values (null, '%@', 'NO');", loginType]];
+
+        return NO;
+    }
+
+    NSString *loginValue = (NSString *) [[loginArray objectAtIndex:0] objectAtIndex:0];
+
+
+    return [loginValue boolValue];
+}
+
+- (void)insertDefaultValue:(NSString *)insertQuery {
+
+    [self.dbManager executeQuery:insertQuery];
+
+    // If the query was successfully executed then pop the view controller.
+    if (self.dbManager.affectedRows != 0) {
+        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+    }
+    else{
+        NSLog(@"Could not execute the query.");
+    }
+
 }
 
 // speak that interrupts the previous speaking
@@ -114,4 +186,45 @@
     }
 
 }
+
+// update facebook login status and db
+- (void)updateFBLoginStatus:(BOOL)status {
+
+    NSString *query = [[NSString alloc] initWithFormat:
+            @"update appInfo set fieldValue='%@' "
+                    "where fieldKey='FBLogin';", status ? @"YES":@"NO"];
+
+    [self setFbLogin:status];
+    [self updateDbWithSQL:query];
+
+}
+
+// update google login status and db
+- (void)updateGGLoginStatus:(BOOL)status {
+    NSString *query = [[NSString alloc] initWithFormat:
+            @"update appInfo set fieldValue='%@' "
+                    "where fieldKey='GGLogin';", status ? @"YES":@"NO"];
+
+    [self setGgLogin:status];
+    [self updateDbWithSQL:query];
+}
+
+
+- (void)updateDbWithSQL:(NSString *)query {
+
+    // Execute the query.
+    [self.dbManager executeQuery:query];
+
+    // If the query was successfully executed then pop the view controller.
+    if (self.dbManager.affectedRows != 0) {
+        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+    }
+    else{
+        NSLog(@"Could not execute the query.");
+    }
+
+}
+
+
+
 @end

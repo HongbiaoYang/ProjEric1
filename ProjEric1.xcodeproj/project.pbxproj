@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		810681651C56CF5D00C36DF2 /* ResourceCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 810681641C56CF5D00C36DF2 /* ResourceCenterTests.m */; };
+		810792FC1CAAE2500033850D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 810792FB1CAAE2500033850D /* GoogleService-Info.plist */; };
 		8107CADA1C0F81FC0082314B /* EmergencyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8107CAD91C0F81FC0082314B /* EmergencyTableViewController.m */; };
 		8107CADD1C0F82590082314B /* EmergencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8107CADC1C0F82590082314B /* EmergencyTableViewCell.m */; };
 		811387771C17254C007264AF /* TutorialStruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 811387761C17254C007264AF /* TutorialStruct.m */; };
@@ -17,6 +18,9 @@
 		814B94341C164021001ECFA7 /* VisionTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 814B94331C164021001ECFA7 /* VisionTutorialViewController.m */; };
 		815557091C0FBD62009102C2 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815557081C0FBD62009102C2 /* TutorialViewController.m */; };
 		815BF9DF1BAF18B6009566B5 /* VisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815BF9DE1BAF18B6009566B5 /* VisionViewController.m */; };
+		81BF1E221CA07CEF0056F01D /* AppIcon-lite.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 81BF1E211CA07CEF0056F01D /* AppIcon-lite.appiconset */; };
+		81C780501CA47B780033C5AF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C7804F1CA47B780033C5AF /* FBSDKCoreKit.framework */; };
+		81C780521CA4813E0033C5AF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C780511CA4813E0033C5AF /* FBSDKLoginKit.framework */; };
 		81D6FA051B6ACCBD0072693F /* TTSItemStruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D6FA041B6ACCBC0072693F /* TTSItemStruct.m */; };
 		81DE2E991C0E194400EB7277 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DE2E981C0E194400EB7277 /* HomeViewController.m */; };
 		81DFD3F11B72A7470039EFA6 /* ItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DFD3F01B72A7470039EFA6 /* ItemTableViewController.m */; };
@@ -39,6 +43,7 @@
 		AE099A451BC753F500C9B24A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE099A441BC753F500C9B24A /* DBManager.m */; };
 		AE1952431BC77158009DD9F6 /* CognitiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1952421BC77158009DD9F6 /* CognitiveTableViewController.m */; };
 		AE5C8A821B803C4F00D0FE5F /* CognitiveItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5C8A811B803C4F00D0FE5F /* CognitiveItemTableViewCell.m */; };
+		E3488328073438932CD175EC /* libPods-ProjEric1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49824EC88A94A215D0B8E5C /* libPods-ProjEric1.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53AD7143C21D3D0EA91A86B1 /* Pods-ProjEric1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjEric1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjEric1/Pods-ProjEric1.debug.xcconfig"; sourceTree = "<group>"; };
+		769A93E409E505F5735FC8D5 /* Pods-ProjEric1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjEric1.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjEric1/Pods-ProjEric1.release.xcconfig"; sourceTree = "<group>"; };
 		810681641C56CF5D00C36DF2 /* ResourceCenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceCenterTests.m; sourceTree = "<group>"; };
+		810792FB1CAAE2500033850D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8107CAD81C0F81FC0082314B /* EmergencyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyTableViewController.h; sourceTree = "<group>"; };
 		8107CAD91C0F81FC0082314B /* EmergencyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyTableViewController.m; sourceTree = "<group>"; };
 		8107CADB1C0F82590082314B /* EmergencyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyTableViewCell.h; sourceTree = "<group>"; };
@@ -70,6 +78,10 @@
 		815557081C0FBD62009102C2 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		815BF9DD1BAF18B6009566B5 /* VisionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisionViewController.h; sourceTree = "<group>"; };
 		815BF9DE1BAF18B6009566B5 /* VisionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisionViewController.m; sourceTree = "<group>"; };
+		8195E7281C77AFCC00EBD9E1 /* constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
+		81BF1E211CA07CEF0056F01D /* AppIcon-lite.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "AppIcon-lite.appiconset"; path = "ProjEric1/Images.xcassets/AppIcon-lite.appiconset"; sourceTree = "<group>"; };
+		81C7804F1CA47B780033C5AF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		81C780511CA4813E0033C5AF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Downloads/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		81D6FA031B6ACCBC0072693F /* TTSItemStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSItemStruct.h; sourceTree = "<group>"; };
 		81D6FA041B6ACCBC0072693F /* TTSItemStruct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSItemStruct.m; sourceTree = "<group>"; };
 		81DE2E971C0E194400EB7277 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -110,6 +122,7 @@
 		AE1952421BC77158009DD9F6 /* CognitiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CognitiveTableViewController.m; sourceTree = "<group>"; };
 		AE5C8A801B803C4F00D0FE5F /* CognitiveItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CognitiveItemTableViewCell.h; sourceTree = "<group>"; };
 		AE5C8A811B803C4F00D0FE5F /* CognitiveItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CognitiveItemTableViewCell.m; sourceTree = "<group>"; };
+		E49824EC88A94A215D0B8E5C /* libPods-ProjEric1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjEric1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +131,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE099A3F1BC7536D00C9B24A /* libsqlite3.dylib in Frameworks */,
+				81C780501CA47B780033C5AF /* FBSDKCoreKit.framework in Frameworks */,
+				81C780521CA4813E0033C5AF /* FBSDKLoginKit.framework in Frameworks */,
+				E3488328073438932CD175EC /* libPods-ProjEric1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,9 +147,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DD6307E3C28D01E796BEA6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E49824EC88A94A215D0B8E5C /* libPods-ProjEric1.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81EB73B11CA475F9000EA9B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81C780511CA4813E0033C5AF /* FBSDKLoginKit.framework */,
+				81C7804F1CA47B780033C5AF /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A99AEAA51B597F7900BBBD08 = {
 			isa = PBXGroup;
 			children = (
+				810792FB1CAAE2500033850D /* GoogleService-Info.plist */,
+				81BF1E211CA07CEF0056F01D /* AppIcon-lite.appiconset */,
 				812333B81C73D0C70036C6C5 /* Default-568.png */,
 				81EE567A1C73C28300AD330F /* Default-568h@2x.png */,
 				AE00F7721BC8ADCB00D75048 /* projEric.sql */,
@@ -141,6 +176,8 @@
 				A99AEAB01B597F7900BBBD08 /* ProjEric1 */,
 				A99AEACA1B597F7900BBBD08 /* ProjEric1Tests */,
 				A99AEAAF1B597F7900BBBD08 /* Products */,
+				C6DB32A7B7648A2A972A9D28 /* Pods */,
+				4DD6307E3C28D01E796BEA6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +193,7 @@
 		A99AEAB01B597F7900BBBD08 /* ProjEric1 */ = {
 			isa = PBXGroup;
 			children = (
+				81EB73B11CA475F9000EA9B9 /* Frameworks */,
 				81DFD3F71B72B1380039EFA6 /* sym */,
 				A99AEAB51B597F7900BBBD08 /* AppDelegate.h */,
 				A99AEAB61B597F7900BBBD08 /* AppDelegate.m */,
@@ -178,6 +216,7 @@
 				8107CAD91C0F81FC0082314B /* EmergencyTableViewController.m */,
 				81DE2E971C0E194400EB7277 /* HomeViewController.h */,
 				81DE2E981C0E194400EB7277 /* HomeViewController.m */,
+				8195E7281C77AFCC00EBD9E1 /* constant.h */,
 				AE099A3B1BC6F71D00C9B24A /* SettingViewController.h */,
 				AE099A3C1BC6F71D00C9B24A /* SettingViewController.m */,
 				815BF9DD1BAF18B6009566B5 /* VisionViewController.h */,
@@ -235,6 +274,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C6DB32A7B7648A2A972A9D28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53AD7143C21D3D0EA91A86B1 /* Pods-ProjEric1.debug.xcconfig */,
+				769A93E409E505F5735FC8D5 /* Pods-ProjEric1.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,9 +290,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A99AEAD11B597F7900BBBD08 /* Build configuration list for PBXNativeTarget "ProjEric1" */;
 			buildPhases = (
+				A0ACC9563115218E1EA41EA4 /* Check Pods Manifest.lock */,
 				A99AEAAA1B597F7900BBBD08 /* Sources */,
 				A99AEAAB1B597F7900BBBD08 /* Frameworks */,
 				A99AEAAC1B597F7900BBBD08 /* Resources */,
+				2110E5C560759B5510C38D0E /* Embed Pods Frameworks */,
+				4D2C8F8B231A2DFB511FEB9B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -316,6 +367,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BF1E221CA07CEF0056F01D /* AppIcon-lite.appiconset in Resources */,
+				810792FC1CAAE2500033850D /* GoogleService-Info.plist in Resources */,
 				AE00F7731BC8ADCB00D75048 /* projEric.sql in Resources */,
 				812333B91C73D0C70036C6C5 /* Default-568.png in Resources */,
 				81DFD3F81B72B1380039EFA6 /* sym in Resources */,
@@ -333,6 +386,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2110E5C560759B5510C38D0E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjEric1/Pods-ProjEric1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D2C8F8B231A2DFB511FEB9B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjEric1/Pods-ProjEric1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0ACC9563115218E1EA41EA4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A99AEAAA1B597F7900BBBD08 /* Sources */ = {
@@ -491,11 +592,17 @@
 		};
 		A99AEAD21B597F7900BBBD08 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53AD7143C21D3D0EA91A86B1 /* Pods-ProjEric1.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-lite";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Hongbiao/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = ProjEric1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -509,11 +616,17 @@
 		};
 		A99AEAD31B597F7900BBBD08 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 769A93E409E505F5735FC8D5 /* Pods-ProjEric1.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-lite";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Hongbiao/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = ProjEric1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -29,6 +29,10 @@
 
 @property(nonatomic, copy) NSString *transit;
 
+@property(nonatomic) BOOL fbLogin;
+
+@property(nonatomic) BOOL ggLogin;
+
 +(id) sharedResource;
 
 -(void)SpeakOut:(NSString *)text;
@@ -40,5 +44,11 @@
 
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 
+- (BOOL *) isFbLogged;
 
+- (BOOL *) isGgLogged;
+
+- (void)updateFBLoginStatus:(BOOL)status;
+
+- (void)updateGGLoginStatus:(BOOL)status;
 @end
