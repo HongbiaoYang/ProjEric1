@@ -38,7 +38,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjI-H1-gXh">
-                                <rect key="frame" x="101" y="100" width="108" height="30"/>
+                                <rect key="frame" x="89" y="100" width="132" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <state key="normal" title="Facebook Login">
                                     <color key="titleColor" red="0.054472473682639522" green="0.37909209617707729" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.97647058819999999" green="0.81960784310000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,7 +49,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOn-oc-dmo">
-                                <rect key="frame" x="360" y="100" width="108" height="30"/>
+                                <rect key="frame" x="348" y="100" width="132" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <state key="normal" title="Google Login">
                                     <color key="titleColor" red="0.13333333333333333" green="0.36078431372549019" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -322,8 +324,10 @@
                         <outlet property="MoreItem" destination="xQ1-HF-Zmg" id="eav-pX-M0A"/>
                         <outlet property="NoItem" destination="mYY-Qs-gyU" id="oQW-LC-LJc"/>
                         <outlet property="YesItem" destination="8ub-zh-tfB" id="z9u-mY-O5X"/>
+                        <outlet property="fixButton" destination="pFF-ps-ob6" id="aiz-Ok-sTl"/>
                         <outlet property="fixDoubleTap" destination="edy-Rh-jwe" id="Pms-bk-5kh"/>
                         <outlet property="fixSingleTap" destination="DKV-iI-Nig" id="5Qe-Ju-iar"/>
+                        <outlet property="paraButton" destination="Zwa-bV-QrE" id="24F-Sb-4Hc"/>
                         <outlet property="paraDoubleTap" destination="KtO-KH-poL" id="oMm-gh-lG6"/>
                         <outlet property="paraSingleTap" destination="egM-0q-f20" id="a2T-y9-Es5"/>
                         <outlet property="tutDoubleTap" destination="vOI-Nf-57v" id="BX0-4e-M0v"/>

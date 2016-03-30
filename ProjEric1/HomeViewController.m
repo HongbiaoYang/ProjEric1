@@ -28,25 +28,74 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    // set transit to para by default, in the very first page
-    [sharedCenter setTransit:@"para"];
+    // change the appearance depending on the login status
+    if ([sharedCenter fbLogin] || [sharedCenter ggLogin]) {
+        [[self paraButton] setAlpha:1.0];
+        [[self fixButton] setAlpha:1.0];
+    } else  {
+        [[self paraButton] setAlpha:0.5];
+        [[self fixButton] setAlpha:0.5];
+    }
 
-    
-    [[self tutSingleTap] requireGestureRecognizerToFail:
-     [self tutDoubleTap]];
-    
-    [[self paraSingleTap] requireGestureRecognizerToFail:
-     [self paraDoubleTap]];
-    
-    [[self fixSingleTap] requireGestureRecognizerToFail:
-     [self fixDoubleTap]];
-    
 }
 
+
 - (IBAction)SingleTapAnywhere:(id)sender {
+    if ([self doubleTapped]) {
+        self.doubleTapped = NO;
+        return;
+    }
+
     [sharedCenter SpeakOut:@"please double tap to make a selection"];
 }
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+
+//    if ((gestureRecognizer == [self paraDoubleTap] || gestureRecognizer == [self fixDoubleTap]) && touch.tapCount == 2) {
+    if (touch.tapCount == 2) {
+        NSLog(@"para/fixed double tapped");
+
+        if ([sharedCenter fbLogin] || [sharedCenter ggLogin]) {
+            return YES;
+        } else {
+            [self DisplayLoginRequireDialog];
+            self.doubleTapped = YES;
+            [sharedCenter SpeakOut:@"You need to login to unlock this function"];
+        }
+
+    } else {
+
+    }
+
+    return YES;
+}
+
+- (void)DisplayLoginRequireDialog {
+    UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"Please Login"
+                                                     message:@"You need to login to continue!"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Go to Login" otherButtonTitles:@"Cancel", nil];
+
+    alert.alertViewStyle = UIAlertViewStyleDefault;
+    alert.tag = 201;
+
+    [alert show];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+    if (alertView.tag == 201) {
+        // 1st Other Button
+
+        if (buttonIndex == 0) {
+            NSLog(@"go login");
+            [self settingPage:self];
+
+        }
+    }
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -69,7 +118,20 @@
     self.NoItem.title = @"No      \u2716";
     self.MoreItem.title = @"More      \u2605";
 
+    // gesture recognizer related
+    [[self tutSingleTap] requireGestureRecognizerToFail:[self tutDoubleTap]];
+    [[self paraSingleTap] requireGestureRecognizerToFail:[self paraDoubleTap]];
+    [[self fixSingleTap] requireGestureRecognizerToFail:[self fixDoubleTap]];
+
+    [self paraDoubleTap].delegate = self;
+    [self fixDoubleTap].delegate = self;
+
+
     sharedCenter = [ResourceCenter sharedResource];
+
+    // set transit to para by default, in the very first page
+    [sharedCenter setTransit:@"para"];
+
 
     // add right up corner icons: setting and emergency
     UIImage *imgEmergency = [UIImage imageNamed:@"emergency_ico"];
@@ -257,8 +319,6 @@
     [sharedCenter SpeakOut:@"No"];
 
 }
-
-
 
 
 - (void)didReceiveMemoryWarning {

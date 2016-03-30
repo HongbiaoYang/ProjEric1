@@ -27,7 +27,9 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tutDoubleTap;
 
 //@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *paraButton;
+@property (weak, nonatomic) IBOutlet UIButton *fixButton;
 
-@property(nonatomic, strong) id kBaseURL;
-@property(nonatomic, copy) NSString *kLocations;
+@property(nonatomic) bool doubleTapped;
 @end
+
