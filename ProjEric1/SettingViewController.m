@@ -122,6 +122,7 @@ ResourceCenter *sharedCenter;
 
     safeSet(jsonable, @"name", fullName);
     safeSet(jsonable, @"email", email);
+    safeSet(jsonable, @"os", @"ios");
     safeSet(jsonable, @"platform", @"google");
 
     [self sendDataToServer:jsonable];
@@ -255,6 +256,7 @@ ResourceCenter *sharedCenter;
         NSMutableDictionary* jsonable = [NSMutableDictionary dictionary];
         safeSet(jsonable, @"name", name);
         safeSet(jsonable, @"email", email);
+        safeSet(jsonable, @"os", @"ios");
         safeSet(jsonable, @"platform", @"facebook");
 
         [self sendDataToServer:jsonable];
