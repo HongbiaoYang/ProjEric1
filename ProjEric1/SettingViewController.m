@@ -44,6 +44,28 @@ ResourceCenter *sharedCenter;
     [self initPrep];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    // change the appearance depending on the login status
+    if ([sharedCenter fbLogin]) {
+        [[self fbLoginBtn] setAlpha:0.3];
+    } else  {
+        [[self fbLoginBtn] setAlpha:1.0];
+    }
+    
+    // change the appearance depending on the login status
+    if ([sharedCenter ggLogin]) {
+        [[self ggLoginBtn] setAlpha:0.3];
+    } else  {
+        [[self ggLoginBtn] setAlpha:1.0];
+    }
+
+    
+    
+    
+}
+
 - (void)initPrep {
 
     // initialize the sharedCenter singleton and db stuff
@@ -160,7 +182,7 @@ ResourceCenter *sharedCenter;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 
-    if (alertView.tag == 202) {
+    if (alertView.tag == 202) { // logout facebook
         // 1st Other Button
 
         NSLog(@"btn clicked %d", buttonIndex);
@@ -169,7 +191,7 @@ ResourceCenter *sharedCenter;
         } else {
             return;
         }
-    } else if (alertView.tag == 203) {
+    } else if (alertView.tag == 203) {  // logout google
 
         if (buttonIndex == 0) {
             [self handleGGLogout];
@@ -184,6 +206,7 @@ ResourceCenter *sharedCenter;
 
     if (sharedCenter.ggLogin == YES) {
         [[self ggLoginBtn] setTitle:@"Google Login" forState:UIControlStateNormal];
+        [[self ggLoginBtn]setAlpha:1.0];
         [sharedCenter updateGGLoginStatus:NO];
         [[GIDSignIn sharedInstance] signOut];
 
@@ -194,6 +217,7 @@ ResourceCenter *sharedCenter;
 - (void)handleFBLogout {
     if (sharedCenter.fbLogin == YES) {
         [[self fbLoginBtn] setTitle:@"Facebook Login" forState:UIControlStateNormal];
+        [[self fbLoginBtn]setAlpha:1.0];
         [sharedCenter updateFBLoginStatus:NO];
         [FBSDKAccessToken setCurrentAccessToken:nil];
     }

@@ -59,7 +59,6 @@
             return YES;
         } else {
             [self DisplayLoginRequireDialog];
-            [self DisplayLoginRequireDialog];
             self.doubleTapped = YES;
             [sharedCenter SpeakOut:@"You need to login to unlock this function"];
         }
