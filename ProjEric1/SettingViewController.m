@@ -15,7 +15,7 @@
 
 #define safeSet(d,k,v) if (v) d[k] = v;
 
-static NSString* const kBaseURL = @"http://mydesk.desktops.utk.edu:3009/";
+static NSString* const kPort = @"3009";
 static NSString* const kCollection = @"eric";
 
 
@@ -239,7 +239,10 @@ ResourceCenter *sharedCenter;
 }
 
 - (void)sendDataToServer:(NSMutableDictionary *)jsonable {
-    NSString *dbAddress = [kBaseURL stringByAppendingPathComponent:kCollection];
+
+    // server URL is decided on by 'server'
+
+    NSString *dbAddress = [NSString stringWithFormat:@"http://%@:%@/%@", [sharedCenter server], kPort, kCollection];
 
     NSURL* url = [NSURL URLWithString:dbAddress]; //1
 

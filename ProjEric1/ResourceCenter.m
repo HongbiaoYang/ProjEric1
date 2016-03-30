@@ -11,6 +11,7 @@
 #import "DBManager.h"
 #import <AVFoundation/AVSpeechSynthesis.h>
 
+static NSString* const defaultLinuxServer = @"mydesk.desktops.utk.edu";
 
 
 @implementation ResourceCenter
@@ -77,6 +78,7 @@
         // init some other global variable.
         [self setTransit:@"para"];
 
+        [self setServer:defaultLinuxServer];
         [self setFbLogin:[self readLoginStatusFromDB:@"FBLogin"]];
         [self setGgLogin:[self readLoginStatusFromDB:@"GGLogin"]];
     }

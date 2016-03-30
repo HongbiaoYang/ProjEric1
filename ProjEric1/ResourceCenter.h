@@ -33,6 +33,8 @@
 
 @property(nonatomic) BOOL ggLogin;
 
+@property(nonatomic, copy) NSString *server;
+
 +(id) sharedResource;
 
 -(void)SpeakOut:(NSString *)text;

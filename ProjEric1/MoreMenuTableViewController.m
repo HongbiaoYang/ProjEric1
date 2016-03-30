@@ -350,7 +350,16 @@
     }
     
     if (buttonIndex == 1) {
-        [sharedCenter SpeakOut:[[alertView textFieldAtIndex:0] text]];
+
+        NSString *text = [[alertView textFieldAtIndex:0] text];
+        [sharedCenter SpeakOut:text];
+
+
+        // switch server address with special keyword
+        if ([text rangeOfString:@"switch server:"].location != NSNotFound) {
+            [self switchServer:text];
+        }
+        
     } else if (buttonIndex == 0) {
 
         [self addCustomItem:[[alertView textFieldAtIndex:0] text]];
@@ -358,6 +367,34 @@
     } else {
         NSLog(@"Something is wrong, index=%ld", (long)buttonIndex);
     }
+}
+
+// switch server from debug console
+- (void)switchServer:(NSString*) serverText {
+    NSArray *serverArr = [serverText componentsSeparatedByString:@":"];
+
+    if (serverArr != nil && serverArr.count > 1) {
+        NSString *server = serverArr[1];
+
+        if ([server isEqualToString:@"default"]) {
+            sharedCenter.server = @"mydesk.desktops.utk.edu";
+        } else {    // set server with ip address
+            NSError *error = NULL;
+            NSRegularExpression *regex =
+                    [[NSRegularExpression alloc] initWithPattern:@"(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)"
+                                                         options:0
+                                                           error:&error];
+
+            [regex enumerateMatchesInString:server options:0 range:NSMakeRange(0, server.length)
+                                 usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+                                     sharedCenter.server = server;
+                                 }];
+
+        }
+
+
+    }
+
 }
 
 
