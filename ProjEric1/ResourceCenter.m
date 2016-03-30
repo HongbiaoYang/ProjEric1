@@ -48,12 +48,13 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        // init synthesizer
-        synthesizer = [[AVSpeechSynthesizer alloc] init];
-        [self setTalkSpeed:0.2f];
 
         // init db
         self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"projEric.sql"];
+
+        // init synthesizer
+        synthesizer = [[AVSpeechSynthesizer alloc] init];
+        [self setTalkSpeed:[self loadSpeedFromDB]];
 
         // init animation resources
         UIImage *frame = [UIImage imageNamed:@"sound0.png"];
@@ -81,6 +82,36 @@
     }
 
     return self;
+}
+
+
+- (float)loadSpeedFromDB {
+
+    NSString *query = @"select fieldValue from appInfo where fieldKey = 'speakSpeed';";
+
+
+    NSArray *arrInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+
+//    // if there is no record in the database
+//    if (self.arrInfo == nil) {
+//        NSString *query = [NSString stringWithFormat:@"insert into appInfo values (null, 'speakSpeed', 0.3);", self.SpeedSlider.value];
+//        [self.dbManager executeQuery:query];
+//
+//        // If the query was successfully executed then pop the view controller.
+//        if (self.dbManager.affectedRows != 0) {
+//            NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+//        }
+//        else{
+//            NSLog(@"Could not execute the query.");
+//        }
+//
+//        return 0.3f;
+//    }
+
+    NSString *speedStr = (NSString *) [[arrInfo objectAtIndex:0] objectAtIndex:0];
+
+
+    return (CGFloat) [speedStr floatValue];
 }
 
 - (BOOL)readLoginStatusFromDB:(NSString *)loginType {

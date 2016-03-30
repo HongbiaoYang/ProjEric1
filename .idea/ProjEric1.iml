@@ -11,13 +11,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/constant.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/NonEnglishViewController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/HomeViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/CognitiveItemTableViewCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/AppDelegate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/HomeViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/main.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/EmergencyTableViewCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/CognitiveTableViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/ItemTableViewCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/MoreItemTableViewCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/ResourceCenter.m" isTestSource="false" />
@@ -30,6 +28,7 @@
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/MoreMenuTableViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/MainViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/EmergencyTableViewCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/projEric.sql" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TutorialStruct.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/MoreMenuTableViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/CognitiveItemTableViewCell.h" isTestSource="false" />
@@ -42,38 +41,38 @@
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/NonEnglishViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/HearingViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/SettingViewController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/projEric.sql" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TTSItemStruct.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/Base.lproj/Main.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TutorialViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/DBManager.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TutorialViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/ItemTableViewCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/DBManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TTSItemStruct.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/SlideTutorialViewController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/HomeViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/HearingViewController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TTSItemStruct.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/TutorialViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/SlideTutorialViewController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionTutorialViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/CognitiveTableViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionTutorialViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/SettingViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ProjEric1/Images.xcassets" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjEric1/VisionTutorialViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GoogleService-Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleAppUtilities/Libraries/libOpenInChrome_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleNetworkingUtilities/Libraries/libGTMSessionFetcher_full_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleNetworkingUtilities/Libraries/libGTMSessionFetcher_core_external.a" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSymbolUtilities/Libraries/libGSDK_Overload_external.a" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleInterchangeUtilities/Libraries/libProtocolBuffers_external.a" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleAuthUtilities/Libraries/libGTMOAuth2_external_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleAuthUtilities/Libraries/libGTMOAuth2_internal_external.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleAuthUtilities/Libraries/libGTMOAuth2_external_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_GTMURLBuilder_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTMStackTrace_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_NSScannerJSON_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_NSStringXML_external.a" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_iPhone_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_StringEncoding_external.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_UIFont+LineHeight_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_DebugUtils_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_SystemVersion_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_NSDictionary+URLArguments_external.a" isTestSource="false" />
@@ -84,7 +83,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_RoundedRectPath_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_NSData+zlib_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_Regex_external.a" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_UIFont+LineHeight_external.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleUtilities/Libraries/libGTM_iPhone_external.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSymbolUtilities/Libraries/libGSDK_Overload_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-ProjEric1/Pods-ProjEric1-resources.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-ProjEric1/Pods-ProjEric1.debug.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-ProjEric1/Pods-ProjEric1-acknowledgements.plist" isTestSource="false" />
@@ -92,14 +92,13 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-ProjEric1/Pods-ProjEric1-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-ProjEric1/Pods-ProjEric1-frameworks.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-ProjEric1/Pods-ProjEric1-acknowledgements.markdown" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleAppUtilities/Libraries/libOpenInChrome_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/GGLSignIn/Public/GGLContext+SignIn.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/GGLSignIn/Public/SignIn.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLConfiguration.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLContext.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLErrorCode.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GMRConfiguration.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/Core.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLConfiguration.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/Core-Module.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/CloudMessaging-Module.h" isTestSource="false" />
@@ -108,8 +107,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/AdMob-Module.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Libraries/libGGLCore.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Libraries/libGGLSignIn.a" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Libraries/libSignIn_external.a" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Libraries/libGIPNSURL+FIFE_external.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleInterchangeUtilities/Libraries/libProtocolBuffers_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Headers/Public/GIDSignInButton.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Headers/Public/GoogleSignIn.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Headers/Public/GIDAuthentication.h" isTestSource="false" />
@@ -117,6 +115,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Headers/Public/GIDGoogleUser.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Headers/Public/GIDProfileData.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Resources/GoogleSignIn.bundle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Libraries/libSignIn_external.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Libraries/libGIPNSURL+FIFE_external.a" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
@@ -320,11 +320,11 @@
         <excluded>
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLSignIn/Public/GGLContext+SignIn.h" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLSignIn/Public/SignIn.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLConfiguration.h" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLContext.h" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLErrorCode.h" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GMRConfiguration.h" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/Core.h" />
-          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLConfiguration.h" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/Core-Module.h" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/CloudMessaging-Module.h" />

@@ -13,19 +13,13 @@
 #import "EmergencyTableViewController.h"
 #import "MoreMenuTableViewController.h"
 #import "DBManager.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <GoogleSignIn/GoogleSignIn.h>
 
-static NSString* const kBaseURL = @"http://mydesk.desktops.utk.edu:3009/";
-static NSString* const kCollection = @"eric";
+
 
 @interface HomeViewController ()
 
 @property(nonatomic, strong) DBManager *dbManager;
 @end
-
-#define safeSet(d,k,v) if (v) d[k] = v;
-
 
 @implementation HomeViewController {
     ResourceCenter *sharedCenter;
@@ -53,21 +47,6 @@ static NSString* const kCollection = @"eric";
     [sharedCenter SpeakOut:@"please double tap to make a selection"];
 }
 
-- (void)signInWillDispatch:(GIDSignIn *)signIn error:(NSError *)error {
-    NSLog(@"signInWillDispatch");
-
-}
-
-- (void)signIn:(GIDSignIn *)signIn presentViewController:(UIViewController *)viewController
-{
-    [self presentViewController:viewController animated:YES completion:nil];
-    NSLog(@"presentViewController");
-}
-
-- (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"dismissViewController");
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -109,20 +88,17 @@ static NSString* const kCollection = @"eric";
 
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: icoSetting, iconEmergency, nil]];
 
-    // google login stuff
+ /*   // google login stuff
     [GIDSignIn sharedInstance].uiDelegate = self;
     [GIDSignIn sharedInstance].delegate = self;
 
     if ([sharedCenter isFbLogged] == NO && [sharedCenter isGgLogged] == NO) {
         [self DisplayLoginDialog];
-    }
-
+    }*/
 
 }
-- (IBAction)TryMeClick:(id)sender {
-    [[GIDSignIn sharedInstance] signIn];
-    NSLog(@"tried me");
-}
+
+/*
 
 - (void)DisplayLoginDialog {
     UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"Please Login"
@@ -198,6 +174,7 @@ static NSString* const kCollection = @"eric";
     [self sendDataToServer:jsonable];
 }
 
+
 - (void)prepareDataForServerFB {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     [parameters setValue:@"id, name, email, gender, friends" forKey:@"fields"];
@@ -256,7 +233,7 @@ static NSString* const kCollection = @"eric";
 
     [dataTask resume];
 
-}
+}*/
 
 -(void) settingPage:(id)sender {
     [sharedCenter SpeakOut:@"setting"];
@@ -297,6 +274,7 @@ static NSString* const kCollection = @"eric";
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([[segue identifier] isEqualToString:@"para"] || [[segue identifier]isEqualToString:@"fixed"]) {
+
         MainViewController *destViewController = [segue destinationViewController];
         destViewController.transit = [segue identifier];
         sharedCenter.transit = [segue identifier];

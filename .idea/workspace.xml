@@ -2,72 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71deb983-a7e0-4bc4-a336-b25623f69be0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon114-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon114.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon120-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon120-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon120.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon152.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon180.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon29-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon29.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon50.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon57-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon58-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon58.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon72-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon76.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon80-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon80.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/bushelpericon87.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/bushelpericon100.imageset/bushelpericon100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon-lite.appiconset/Contents.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/bushelpericon100.imageset/Contents.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjEric1/constant.h" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1.xcodeproj/project.xcworkspace/xcuserdata/Hongbiao.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/ProjEric1.xcodeproj/project.xcworkspace/xcuserdata/Hongbiao.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1.xcworkspace/xcuserdata/Hongbiao.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/ProjEric1.xcworkspace/xcuserdata/Hongbiao.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/projEric.sql" afterPath="$PROJECT_DIR$/ProjEric1/projEric.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial10_e.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial10_e.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial11_e.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial11_e.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial1_e.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial1_e.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial1_s.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial1_s.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial2_e.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial2_e.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial2_s.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial2_s.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial3_e.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial3_e.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial3_s.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial3_s.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial4_e.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial4_e.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial4_s.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial4_s.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial5_e.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial5_e.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial5_s.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial5_s.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial6_e.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial6_e.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial6_s.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial6_s.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial7_e.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial7_e.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial7_s.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial7_s.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial8_e.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial8_e.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/sym/tutorial9_e.png" afterPath="$PROJECT_DIR$/ProjEric1/sym/tutorial9_e.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ProjEric1.iml" afterPath="$PROJECT_DIR$/.idea/ProjEric1.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/xcode.xml" afterPath="$PROJECT_DIR$/.idea/xcode.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/ProjEric1.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1.xcodeproj/project.xcworkspace/xcshareddata/ProjEric1.xccheckout" afterPath="$PROJECT_DIR$/ProjEric1.xcodeproj/project.xcworkspace/xcshareddata/ProjEric1.xccheckout" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1.xcodeproj/xcuserdata/Hongbiao.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/ProjEric1.xcodeproj/xcuserdata/Hongbiao.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/AppDelegate.h" afterPath="$PROJECT_DIR$/ProjEric1/AppDelegate.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/AppDelegate.m" afterPath="$PROJECT_DIR$/ProjEric1/AppDelegate.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/ProjEric1/Base.lproj/Main.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/HearingViewController.m" afterPath="$PROJECT_DIR$/ProjEric1/HearingViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/HomeViewController.h" afterPath="$PROJECT_DIR$/ProjEric1/HomeViewController.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/HomeViewController.m" afterPath="$PROJECT_DIR$/ProjEric1/HomeViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon.appiconset/Contents.json" afterPath="$PROJECT_DIR$/ProjEric1/Images.xcassets/AppIcon.appiconset/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/Info.plist" afterPath="$PROJECT_DIR$/ProjEric1/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/MainViewController.m" afterPath="$PROJECT_DIR$/ProjEric1/MainViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/MoreMenuTableViewController.m" afterPath="$PROJECT_DIR$/ProjEric1/MoreMenuTableViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/ResourceCenter.h" afterPath="$PROJECT_DIR$/ProjEric1/ResourceCenter.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/ResourceCenter.m" afterPath="$PROJECT_DIR$/ProjEric1/ResourceCenter.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/SettingViewController.h" afterPath="$PROJECT_DIR$/ProjEric1/SettingViewController.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjEric1/SettingViewController.m" afterPath="$PROJECT_DIR$/ProjEric1/SettingViewController.m" />
     </list>
     <ignored path="ProjEric1.iws" />
@@ -89,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HomeViewController.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeViewController.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProjEric1/HomeViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9392405">
-              <caret line="69" column="1" selection-start-line="54" selection-start-column="0" selection-end-line="69" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="276" column="0" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
               <folding>
                 <element signature="e#140#170#0" expanded="true" />
               </folding>
@@ -104,8 +46,8 @@
       <file leaf-file-name="AppDelegate.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProjEric1/AppDelegate.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.222222">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
               <folding>
                 <element signature="e#124#161#0" expanded="true" />
               </folding>
@@ -113,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingViewController.m" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SettingViewController.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ProjEric1/SettingViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.851852">
-              <caret line="95" column="51" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.28074247">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
                 <element signature="e#143#180#0" expanded="true" />
               </folding>
@@ -131,18 +73,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeViewController.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjEric1/HomeViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.7777777">
-              <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-              <folding>
-                <element signature="e#140#163#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -161,9 +91,21 @@
         <entry file="file://$PROJECT_DIR$/ProjEric1/ResourceCenter.m">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <caret line="56" column="48" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="48" />
               <folding>
-                <element signature="e#2487#3094#0" expanded="false" />
+                <element signature="e#136#162#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppDelegate.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjEric1/AppDelegate.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="78" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="78" />
+              <folding>
+                <element signature="e#124#147#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,18 +121,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceCenter.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ProjEric1/ResourceCenter.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <marker date="1459283973000" expanded="true" signature="279:990" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SettingViewController.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProjEric1/SettingViewController.h">
           <provider selected="true" editor-type-id="text-editor">
@@ -198,6 +128,18 @@
               <caret line="11" column="69" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="69" />
               <folding>
                 <element signature="e#143#166#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResourceCenter.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ProjEric1/ResourceCenter.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding>
+                <marker date="1459344599000" expanded="true" signature="279:1017" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -254,14 +196,14 @@
         <option value="$PROJECT_DIR$/ProjEric1/Info.plist" />
         <option value="$PROJECT_DIR$/ProjEric1/main.m" />
         <option value="$PROJECT_DIR$/ProjEric1/AppDelegate.h" />
-        <option value="$PROJECT_DIR$/ProjEric1/ResourceCenter.m" />
-        <option value="$PROJECT_DIR$/ProjEric1/ResourceCenter.h" />
         <option value="$PROJECT_DIR$/ProjEric1/HearingViewController.m" />
         <option value="$PROJECT_DIR$/ProjEric1/SettingViewController.h" />
         <option value="$PROJECT_DIR$/ProjEric1/HomeViewController.h" />
-        <option value="$PROJECT_DIR$/ProjEric1/SettingViewController.m" />
-        <option value="$PROJECT_DIR$/ProjEric1/HomeViewController.m" />
         <option value="$PROJECT_DIR$/ProjEric1/AppDelegate.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/HomeViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/ResourceCenter.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/SettingViewController.m" />
+        <option value="$PROJECT_DIR$/ProjEric1/ResourceCenter.h" />
       </list>
     </option>
   </component>
@@ -325,24 +267,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ProjEric1" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjEric1" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjEric1" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Supporting Files" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -434,7 +358,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="773" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -444,11 +368,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36563876" sideWeight="0.50357425" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599118" sideWeight="0.4813344" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32599118" sideWeight="0.4813344" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33920705" sideWeight="0.49642575" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33920705" sideWeight="0.49642575" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -472,54 +396,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ProjEric1/HomeViewController.m</url>
-          <line>215</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ProjEric1/SettingViewController.m</url>
-          <line>92</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ProjEric1/HomeViewController.m</url>
-          <line>251</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ProjEric1/HomeViewController.m</url>
-          <line>123</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ProjEric1/HomeViewController.m</url>
-          <line>115</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ProjEric1/AppDelegate.m</url>
-          <line>57</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ProjEric1/HomeViewController.m</url>
-          <line>152</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ProjEric1/AppDelegate.m</url>
-          <line>45</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ProjEric1/AppDelegate.m</url>
-          <line>24</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="34" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="CidrExceptionBreakpoint">
+          <properties />
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -734,7 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5">
           <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -761,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="65" column="51" selection-start-line="56" selection-start-column="3" selection-end-line="65" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,53 +690,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/AppDelegate.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="78" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="78" />
-          <folding>
-            <element signature="e#124#147#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/SettingViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="69" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="69" />
-          <folding>
-            <element signature="e#143#166#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProjEric1/HomeViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.7777777">
           <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-          <folding>
-            <element signature="e#140#163#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/SettingViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.851852">
-          <caret line="95" column="51" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="51" />
-          <folding>
-            <element signature="e#143#180#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/ResourceCenter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <marker date="1459283973000" expanded="true" signature="279:990" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -874,26 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/ResourceCenter.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="e#2487#3094#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ProjEric1/AppDelegate.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.222222">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#124#161#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProjEric1/main.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -902,12 +721,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/AppDelegate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="78" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="78" />
+          <folding>
+            <element signature="e#124#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+          <folding>
+            <element signature="e#124#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/SettingViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="69" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="69" />
+          <folding>
+            <element signature="e#143#166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ProjEric1/HomeViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9392405">
-          <caret line="69" column="1" selection-start-line="54" selection-start-column="0" selection-end-line="69" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="276" column="0" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
           <folding>
             <element signature="e#140#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/ResourceCenter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <marker date="1459344599000" expanded="true" signature="279:1017" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/ResourceCenter.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="48" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="48" />
+          <folding>
+            <element signature="e#136#162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProjEric1/SettingViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28074247">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#143#180#0" expanded="true" />
           </folding>
         </state>
       </provider>

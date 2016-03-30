@@ -40,9 +40,11 @@
 
 + (CGSize)screenSize;
 
++ (UIColor *)colorFromHexString:(NSString *)hexString;
+
 - (NSString *)decyperToReadable:(NSString *)category;
 
-+ (UIColor *)colorFromHexString:(NSString *)hexString;
+- (float)loadSpeedFromDB;
 
 - (BOOL *) isFbLogged;
 

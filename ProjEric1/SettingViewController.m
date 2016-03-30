@@ -13,6 +13,12 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <Google/SignIn.h>
 
+#define safeSet(d,k,v) if (v) d[k] = v;
+
+static NSString* const kBaseURL = @"http://mydesk.desktops.utk.edu:3009/";
+static NSString* const kCollection = @"eric";
+
+
 ResourceCenter *sharedCenter;
 
 @interface SettingViewController ()
@@ -44,7 +50,7 @@ ResourceCenter *sharedCenter;
     sharedCenter = [ResourceCenter sharedResource];
     self.dbManager = [sharedCenter dbManager];
 
-    float speedValueFromDB = [self loadSpeedFromDB];
+    float speedValueFromDB = [sharedCenter loadSpeedFromDB];
 
     [sharedCenter setTalkSpeed:speedValueFromDB];
     self.SpeedSlider.value = [sharedCenter talkSpeed];
@@ -67,31 +73,16 @@ ResourceCenter *sharedCenter;
 
 }
 
-/*- (void)signInWillDispatch:(GIDSignIn *)signIn error:(NSError *)error {
-    NSLog(@"signInWillDispatch");
-
-}
-
-- (void)signIn:(GIDSignIn *)signIn presentViewController:(UIViewController *)viewController
-{
-    [self presentViewController:viewController animated:YES completion:nil];
-    NSLog(@"presentViewController");
-}
-
-- (void)signIn:(GIDSignIn *)signIn dismissViewController:(UIViewController *)viewController {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"dismissViewController");
-}*/
-
 
 // after google login
 - (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user withError:(NSError *)error {
 
-    NSString *fullName = user.profile.name;
-    NSString *email = user.profile.email;
+    if (error != nil) {
+        NSLog(@"GG login error || cancelled");
+        return;
+    }
 
-    NSLog(@"did SignIn in setting: %@ %@ ggloged %@ %@", fullName, email, [sharedCenter ggLogin], error);
-
+    // update gg status in both db and variable
     if (sharedCenter.ggLogin == NO) {
         [[self ggLoginBtn] setTitle:@"Google Logout" forState:UIControlStateNormal];
 
@@ -99,6 +90,19 @@ ResourceCenter *sharedCenter;
         [sharedCenter updateGGLoginStatus:YES];
     }
 
+    // send the data to server
+    NSString *fullName = user.profile.name;
+    NSString *email = user.profile.email;
+
+    NSLog(@"did SignIn in setting");
+
+    NSMutableDictionary* jsonable = [NSMutableDictionary dictionary];
+
+    safeSet(jsonable, @"name", fullName);
+    safeSet(jsonable, @"email", email);
+    safeSet(jsonable, @"platform", @"google");
+
+    [self sendDataToServer:jsonable];
 }
 
 - (IBAction)ggLoginClicked:(id)sender {
@@ -203,7 +207,66 @@ ResourceCenter *sharedCenter;
 
         // update fb status in both db and variable
         [sharedCenter updateFBLoginStatus:YES];
+        [self prepareDataForServerFB];
     }
+}
+
+- (void)prepareDataForServerFB {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setValue:@"id, name, email, gender, friends" forKey:@"fields"];
+
+
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:parameters]
+            startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                [self handleDataRequestFB:result Error:error];
+            }];
+}
+
+- (void)handleDataRequestFB:(id)result Error:(NSError *)error {
+    if (error == nil) {
+        NSLog(@"result=%@", result);
+        NSString *email = result[@"email"];
+        NSString *name = result[@"name"];
+
+        NSMutableDictionary* jsonable = [NSMutableDictionary dictionary];
+        safeSet(jsonable, @"name", name);
+        safeSet(jsonable, @"email", email);
+        safeSet(jsonable, @"platform", @"facebook");
+
+        [self sendDataToServer:jsonable];
+    }
+
+}
+
+- (void)sendDataToServer:(NSMutableDictionary *)jsonable {
+    NSString *dbAddress = [kBaseURL stringByAppendingPathComponent:kCollection];
+
+    NSURL* url = [NSURL URLWithString:dbAddress]; //1
+
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST"; //2
+
+
+    NSData* data = [NSJSONSerialization dataWithJSONObject:jsonable options:0 error:NULL]; //3
+
+    request.HTTPBody = data;
+
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"]; //4
+
+    NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession* session = [NSURLSession sessionWithConfiguration:config];
+
+    NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) { //5
+                                                    if (!error) {
+                                                        NSArray* responseArray = @[[NSJSONSerialization JSONObjectWithData:data options:0 error:NULL]];
+                                                        NSLog(@"responseArray=%@", responseArray);
+                                                    }
+                                                }];
+
+    [dataTask resume];
+
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -211,37 +274,6 @@ ResourceCenter *sharedCenter;
 
 }
 
-- (float)loadSpeedFromDB {
-
-    NSString *query = @"select fieldValue from appInfo where fieldKey = 'speakSpeed';";
-
-    if (self.arrInfo != nil) {
-        self.arrInfo = nil;
-    }
-
-    self.arrInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-
-//    // if there is no record in the database
-//    if (self.arrInfo == nil) {
-//        NSString *query = [NSString stringWithFormat:@"insert into appInfo values (null, 'speakSpeed', 0.3);", self.SpeedSlider.value];
-//        [self.dbManager executeQuery:query];
-//
-//        // If the query was successfully executed then pop the view controller.
-//        if (self.dbManager.affectedRows != 0) {
-//            NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-//        }
-//        else{
-//            NSLog(@"Could not execute the query.");
-//        }
-//
-//        return 0.3f;
-//    }
-
-    NSString *speedStr = (NSString *) [[[self arrInfo] objectAtIndex:0] objectAtIndex:0];
-
-
-    return (CGFloat) [speedStr floatValue];
-}
 
 
 - (void)viewWillDisappear:(BOOL)animated {
