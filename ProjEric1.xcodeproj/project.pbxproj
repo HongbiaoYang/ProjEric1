@@ -20,7 +20,6 @@
 		815BF9DF1BAF18B6009566B5 /* VisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815BF9DE1BAF18B6009566B5 /* VisionViewController.m */; };
 		81BF1E221CA07CEF0056F01D /* AppIcon-lite.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 81BF1E211CA07CEF0056F01D /* AppIcon-lite.appiconset */; };
 		81C780501CA47B780033C5AF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C7804F1CA47B780033C5AF /* FBSDKCoreKit.framework */; };
-		81C780521CA4813E0033C5AF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C780511CA4813E0033C5AF /* FBSDKLoginKit.framework */; };
 		81D6FA051B6ACCBD0072693F /* TTSItemStruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D6FA041B6ACCBC0072693F /* TTSItemStruct.m */; };
 		81DE2E991C0E194400EB7277 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DE2E981C0E194400EB7277 /* HomeViewController.m */; };
 		81DFD3F11B72A7470039EFA6 /* ItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DFD3F01B72A7470039EFA6 /* ItemTableViewController.m */; };
@@ -43,6 +42,7 @@
 		AE099A451BC753F500C9B24A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE099A441BC753F500C9B24A /* DBManager.m */; };
 		AE1952431BC77158009DD9F6 /* CognitiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1952421BC77158009DD9F6 /* CognitiveTableViewController.m */; };
 		AE5C8A821B803C4F00D0FE5F /* CognitiveItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5C8A811B803C4F00D0FE5F /* CognitiveItemTableViewCell.m */; };
+		AEDADB811CB94E9500671C79 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDADB801CB94E9500671C79 /* FBSDKLoginKit.framework */; };
 		E3488328073438932CD175EC /* libPods-ProjEric1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49824EC88A94A215D0B8E5C /* libPods-ProjEric1.a */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +81,6 @@
 		8195E7281C77AFCC00EBD9E1 /* constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		81BF1E211CA07CEF0056F01D /* AppIcon-lite.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "AppIcon-lite.appiconset"; path = "ProjEric1/Images.xcassets/AppIcon-lite.appiconset"; sourceTree = "<group>"; };
 		81C7804F1CA47B780033C5AF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		81C780511CA4813E0033C5AF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Downloads/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		81D6FA031B6ACCBC0072693F /* TTSItemStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSItemStruct.h; sourceTree = "<group>"; };
 		81D6FA041B6ACCBC0072693F /* TTSItemStruct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSItemStruct.m; sourceTree = "<group>"; };
 		81DE2E971C0E194400EB7277 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -122,6 +121,7 @@
 		AE1952421BC77158009DD9F6 /* CognitiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CognitiveTableViewController.m; sourceTree = "<group>"; };
 		AE5C8A801B803C4F00D0FE5F /* CognitiveItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CognitiveItemTableViewCell.h; sourceTree = "<group>"; };
 		AE5C8A811B803C4F00D0FE5F /* CognitiveItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CognitiveItemTableViewCell.m; sourceTree = "<group>"; };
+		AEDADB801CB94E9500671C79 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		E49824EC88A94A215D0B8E5C /* libPods-ProjEric1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjEric1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,7 +132,7 @@
 			files = (
 				AE099A3F1BC7536D00C9B24A /* libsqlite3.dylib in Frameworks */,
 				81C780501CA47B780033C5AF /* FBSDKCoreKit.framework in Frameworks */,
-				81C780521CA4813E0033C5AF /* FBSDKLoginKit.framework in Frameworks */,
+				AEDADB811CB94E9500671C79 /* FBSDKLoginKit.framework in Frameworks */,
 				E3488328073438932CD175EC /* libPods-ProjEric1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,7 +158,7 @@
 		81EB73B11CA475F9000EA9B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				81C780511CA4813E0033C5AF /* FBSDKLoginKit.framework */,
+				AEDADB801CB94E9500671C79 /* FBSDKLoginKit.framework */,
 				81C7804F1CA47B780033C5AF /* FBSDKCoreKit.framework */,
 			);
 			name = Frameworks;
@@ -601,7 +601,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Hongbiao/Documents/FacebookSDK,
+					"~/Documents/FacebookSDK",
 				);
 				INFOPLIST_FILE = ProjEric1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -625,7 +625,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Hongbiao/Documents/FacebookSDK,
+					"~/Documents/FacebookSDK",
 				);
 				INFOPLIST_FILE = ProjEric1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
