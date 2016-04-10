@@ -125,7 +125,9 @@ ResourceCenter *sharedCenter;
     safeSet(jsonable, @"os", @"ios");
     safeSet(jsonable, @"platform", @"google");
 
+    [self updateNameInDB:fullName];
     [self sendDataToServer:jsonable];
+    
 }
 
 - (IBAction)ggLoginClicked:(id)sender {
@@ -201,6 +203,7 @@ ResourceCenter *sharedCenter;
         }
     }
 
+
 }
 
 - (void)handleGGLogout {
@@ -211,6 +214,15 @@ ResourceCenter *sharedCenter;
         [sharedCenter updateGGLoginStatus:NO];
         [[GIDSignIn sharedInstance] signOut];
 
+
+        // after log out, check whether database need to be updated back
+        [self updateNameByLoginStatus];
+    }
+}
+
+- (void)updateNameByLoginStatus {
+    if ([sharedCenter fbLogin] == NO && [sharedCenter ggLogin] == NO) {
+        [self updateNameInDB:nil];
     }
 }
 
@@ -221,6 +233,9 @@ ResourceCenter *sharedCenter;
         [[self fbLoginBtn]setAlpha:1.0];
         [sharedCenter updateFBLoginStatus:NO];
         [FBSDKAccessToken setCurrentAccessToken:nil];
+
+        // after log out, check whether database need to be updated back
+        [self updateNameByLoginStatus];
     }
 }
 
@@ -260,6 +275,31 @@ ResourceCenter *sharedCenter;
         safeSet(jsonable, @"platform", @"facebook");
 
         [self sendDataToServer:jsonable];
+        [self updateNameInDB:name];
+    }
+
+}
+
+- (void)updateNameInDB:(NSString *)name {
+//    NSString *query = [NSString stringWithFormat:@"update appInfo set fieldValue='%.4f' where fieldKey='speakSpeed';", name];
+
+
+    NSString *selfIntro = name == nil ? @"Hello, How are you?" :
+            [[NSString alloc] initWithFormat:@"Hello, How are you? My name is %@", name];
+
+    NSString *queryFix = [NSString stringWithFormat:@"update fixedTable set title='%@', text = '%@' where menu='gettingonoff' and image = 'picture107';", selfIntro, selfIntro];
+    NSString *queryPara = [NSString stringWithFormat:@"update fixedTable set title='%@', text = '%@' where menu='gettingonoff' and image = 'picture107';", selfIntro, selfIntro];
+
+    // Execute the query. update the value of self introduction in both tables
+    [self.dbManager executeQuery:queryFix];
+    [self.dbManager executeQuery:queryPara];
+
+    // If the query was successfully executed then pop the view controller.
+    if (self.dbManager.affectedRows != 0) {
+        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+    }
+    else{
+        NSLog(@"Could not execute the query.");
     }
 
 }
