@@ -288,7 +288,7 @@ ResourceCenter *sharedCenter;
             [[NSString alloc] initWithFormat:@"Hello, How are you? My name is %@", name];
 
     NSString *queryFix = [NSString stringWithFormat:@"update fixedTable set title='%@', text = '%@' where menu='gettingonoff' and image = 'picture107';", selfIntro, selfIntro];
-    NSString *queryPara = [NSString stringWithFormat:@"update fixedTable set title='%@', text = '%@' where menu='gettingonoff' and image = 'picture107';", selfIntro, selfIntro];
+    NSString *queryPara = [NSString stringWithFormat:@"update paraTable set title='%@', text = '%@' where menu='gettingonoff' and image = 'picture107';", selfIntro, selfIntro];
 
     // Execute the query. update the value of self introduction in both tables
     [self.dbManager executeQuery:queryFix];

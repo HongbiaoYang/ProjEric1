@@ -29,13 +29,14 @@
     [super viewDidAppear:animated];
 
     // change the appearance depending on the login status
-    if ([sharedCenter fbLogin] || [sharedCenter ggLogin]) {
+    ////---- disable the login requirement for now
+   /* if ([sharedCenter fbLogin] || [sharedCenter ggLogin]) {
         [[self paraButton] setAlpha:1.0];
         [[self fixButton] setAlpha:1.0];
     } else  {
         [[self paraButton] setAlpha:0.5];
         [[self fixButton] setAlpha:0.5];
-    }
+    }*/
 
 }
 
@@ -56,15 +57,16 @@
         NSLog(@"para/fixed double tapped");
 
         if ([sharedCenter fbLogin] || [sharedCenter ggLogin]) {
+            NSLog(@"para/fixed logged");
             return YES;
         } else {
             [self DisplayLoginRequireDialog];
             self.doubleTapped = YES;
             [sharedCenter SpeakOut:@"You need to login to unlock this function"];
         }
-
     } else {
 
+        return NO;
     }
 
     return YES;
@@ -123,8 +125,10 @@
     [[self paraSingleTap] requireGestureRecognizerToFail:[self paraDoubleTap]];
     [[self fixSingleTap] requireGestureRecognizerToFail:[self fixDoubleTap]];
 
-    [self paraDoubleTap].delegate = self;
-    [self fixDoubleTap].delegate = self;
+    ////---- comment these two line will disable the function:
+    // - (BOOL)gestureRecognizer:(UIGestureRecognizer *) shouldReceiveTouch:(UITouch *)
+    /*[self paraDoubleTap].delegate = self;
+    [self fixDoubleTap].delegate = self;*/
 
 
     sharedCenter = [ResourceCenter sharedResource];
