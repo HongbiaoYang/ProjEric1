@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ProjEric1Lite.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>A99AEAC61B597F7900BBBD08</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE7F62EA1CF78829008771DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AEEABBA81CF7874200C03C23</key>
 		<dict>
 			<key>primary</key>
 			<true/>

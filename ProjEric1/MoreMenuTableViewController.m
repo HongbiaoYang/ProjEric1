@@ -51,10 +51,10 @@
     if ([[self from] isEqualToString:@"displayMore-hearing"]|| [[self from] isEqualToString:@"hearingMore"] ||
             [[self from] isEqualToString:@"mainMore"] || [[self from] isEqualToString:@"homeMore"]) {
         query = [[NSString alloc] initWithFormat:
-                @"select * from %@Table where menu = 'response' order by hearing desc", [sharedCenter transit]];
+                @"select * from %@Table where menu = 'response' order by hearing desc, itemID asc", [sharedCenter transit]];
     } else {
         query = [[NSString alloc] initWithFormat:
-                @"select * from %@Table where menu = 'response' and customize = 'normal' order by hearing desc"
+                @"select * from %@Table where menu = 'response' and customize != 'input' order by hearing desc, itemID asc"
                 , [sharedCenter transit]];
     }
 
@@ -64,6 +64,7 @@
     NSMutableArray *customArray = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     NSMutableArray *customArrayItems = [self.dbManager convertValueToItem:customArray];
 
+    NSLog(@"array in More:%@", customArrayItems);
 
     // add input option if from hearing/main
     NSLog(@"from %@", [self from]);
@@ -182,7 +183,21 @@
 
     if ([sItem.customize isEqualToString:@"input"]) {
         
-        if (freeVersion == NO) {
+#if defined(LITE)
+
+            NSString *message = @"This feature is only available in premium version";
+
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"\u266B Lite Version"
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK" otherButtonTitles:nil];
+
+            alert.alertViewStyle = UIAlertViewStyleDefault;
+            alert.tag = 200;
+            self.drill = YES;
+
+            [alert show];
+#else
         
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add..." message:@"Input Your Text" delegate:self
                                                cancelButtonTitle:@"Save" otherButtonTitles:@"Speak", nil];
@@ -190,23 +205,16 @@
             alert.alertViewStyle = UIAlertViewStylePlainTextInput;
 
             [alert show];
-        } else {
-            
-            NSString *message = @"This feature is only available in premium version";
-            
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"\u266B Lite Version"
-                                                            message:message
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            
-            alert.alertViewStyle = UIAlertViewStyleDefault;
-            alert.tag = 200;
-            self.drill = YES;
-            
-            [alert show];
-        }
+#endif
 
     } else  {
+
+        [sharedCenter SpeakOut:sItem.text];
+
+        // skip the frequency update process for demo item
+        if ([sItem.customize isEqualToString:@"demo"])
+            return;
+
 
         int freq;
         NSString *subMenu = nil;
@@ -243,8 +251,6 @@
             NSLog(@"Could not execute the query.");
         }
 
-
-        [sharedCenter SpeakOut:sItem.text];
     }
 
 

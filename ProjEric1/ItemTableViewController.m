@@ -54,7 +54,7 @@
     NSString *table = [[NSString alloc] initWithFormat:@"%@Table", [self transit]];
 
     NSString *query = [[NSString alloc] initWithFormat:
-            @"select * from %@ where menu = '%@' order by %@ desc", table, [self category], [self subMenu]];
+            @"select * from %@ where menu = '%@' order by %@ desc, itemID asc", table, [self category], [self subMenu]];
 
     NSLog(@"query in itemlist=%@", query);
 
@@ -63,7 +63,7 @@
     NSMutableArray *customArrayItems = [self.dbManager convertValueToItem:customArray];
     self.items = customArrayItems;
 
-//    NSLog(@"item array in items:%@", customArray);
+    NSLog(@"item array in items:%@", customArray);
 
     // change background of page and navigation bar, and separator line disappear
     self.view.backgroundColor = [UIColor blackColor];
@@ -124,6 +124,13 @@
         // get the item clicked
         TTSItemStruct *sItem = self.items[row];
 
+        // speak out the item
+        [sharedCenter SpeakOut:sItem.text];
+
+        // for demo item, do not update frequency
+        if ([sItem.customize isEqualToString:@"demo"])
+            return;
+
         int freq;
 
         if ([[self subMenu] isEqualToString:@"hearing"]) {
@@ -156,8 +163,6 @@
             NSLog(@"Could not execute the query.");
         }
 
-        // speak out the item
-        [sharedCenter SpeakOut:sItem.text];
     }
 }
 

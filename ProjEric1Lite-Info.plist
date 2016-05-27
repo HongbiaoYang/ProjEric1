@@ -52,7 +52,7 @@
 	<key>FacebookAppID</key>
 	<string>1051479971583650</string>
 	<key>FacebookDisplayName</key>
-	<string>Project Eric</string>
+	<string>Project Eric Lite</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

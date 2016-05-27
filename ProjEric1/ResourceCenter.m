@@ -51,7 +51,15 @@ static NSString* const defaultLinuxServer = @"mydesk.desktops.utk.edu";
     if (self) {
 
         // init db
-        self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"projEric.sql"];
+        NSString *DATABASE_NAME = nil;
+
+#if defined(LITE)
+        DATABASE_NAME = @"projEricLite.sql";
+#else
+        DATABASE_NAME = @"projEric.sql";
+#endif
+
+        self.dbManager = [[DBManager alloc] initWithDatabaseFilename:DATABASE_NAME];
 
         // init synthesizer
         synthesizer = [[AVSpeechSynthesizer alloc] init];

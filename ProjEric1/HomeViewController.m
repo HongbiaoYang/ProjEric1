@@ -27,7 +27,14 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
+    
+    
+#if defined (LITE)
+    NSLog(@"Lite Version");
+#else
+    NSLog(@"Full Version");
+#endif
+    
     // change the appearance depending on the login status
     ////---- disable the login requirement for now
    /* if ([sharedCenter fbLogin] || [sharedCenter ggLogin]) {
