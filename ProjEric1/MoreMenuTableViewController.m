@@ -21,7 +21,7 @@
 @property (nonatomic, strong) DBManager *dbManager;
 
 @property(nonatomic, strong) UITapGestureRecognizer *dpGesture;
-@property(nonatomic, strong) UILongPressGestureRecognizer *lpGesgure;
+@property(nonatomic, strong) UILongPressGestureRecognizer *lpGesture;
 @property(nonatomic, strong) UITapGestureRecognizer *spGesture;
 @end
 
@@ -101,7 +101,7 @@
     self.dpGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
     self.dpGesture.numberOfTapsRequired = 2;
 
-    self.lpGesgure = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    self.lpGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
 
     self.spGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     self.spGesture.numberOfTapsRequired = 1;
@@ -110,7 +110,7 @@
 
     // set long press or double tap according to where it comes from
     if ([self.from isEqualToString:@"cognitiveMore"]) {
-        [self.view addGestureRecognizer:self.lpGesgure];
+        [self.view addGestureRecognizer:self.lpGesture];
         NSLog(@"in lp from =%@", [self from]);
 
     } else {
@@ -164,7 +164,7 @@
 
 - (void)handleLongPress:(UILongPressGestureRecognizer *)sender
 {
-    if ([sender isEqual:self.lpGesgure]) {
+    if ([sender isEqual:self.lpGesture]) {
         if (sender.state == UIGestureRecognizerStateBegan)
         {
             CGPoint lpLocation = [sender locationInView:self.tableView];

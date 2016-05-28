@@ -17,6 +17,8 @@
 
 @property(nonatomic, strong) UITapGestureRecognizer *dpGesture;
 @property(nonatomic, strong) UITapGestureRecognizer *spGesture;
+@property(nonatomic, strong) UILongPressGestureRecognizer *lpGesture;
+@property(nonatomic, copy) NSString *type;
 @end
 
 @implementation EmergencyTableViewController {
@@ -44,15 +46,15 @@
 
     NSLog(@"from emer ico:%@", self.dbManager);
 
-    NSString *type;
-    if ([[self from] isEqualToString:@"cognitive"]) {
-        type = [self from];
+
+    if ([self from] != NULL  && [[self from] isEqualToString:@"cognitive"]) {
+        self.type = [self from];
     } else {
-        type = @"hearing";
+        self.type = @"hearing"; // by default
     }
 
     NSString *query = [[NSString alloc] initWithFormat:
-            @"select * from %@Table where menu = 'emergency' order by %@ desc", [sharedCenter transit], type];
+            @"select * from %@Table where menu = 'emergency' order by %@ desc", [sharedCenter transit], [self type]];
 
     NSLog(@"query in emer=%@", query);
     // obtain and flatten the list
@@ -74,7 +76,7 @@
     self.MoreItem.title = @"More      \u2605";
 
     // hide 'more' button if comes from cognitive
-    if ([[self from] isEqualToString:@"cognitive"]) {
+    if ([self.type isEqualToString:@"cognitive"]) {
 
         NSMutableArray *toolbarButtons = [self.toolbarItems mutableCopy];
 
@@ -82,12 +84,21 @@
         [toolbarButtons removeObject:self.MoreItem];
         [self setToolbarItems:toolbarButtons animated:YES];
 
-        NSLog(@"emergency from %@", [self from]);
+        NSLog(@"emergency from %@", [self type]);
     }
 
     self.dpGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
     self.dpGesture.numberOfTapsRequired = 2;
-    [self.view addGestureRecognizer:self.dpGesture];
+
+    self.lpGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+
+    // add long press gesture for cognitive, double gesture for others
+    if ([self.type isEqualToString:@"cognitive"]) {
+        [self.view addGestureRecognizer:self.lpGesture];
+    } else {
+        [self.view addGestureRecognizer:self.dpGesture];
+    }
+
 
     self.spGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     self.spGesture.numberOfTapsRequired = 1;
@@ -110,13 +121,35 @@
     }
 }
 
+- (void)handleLongPress:(UILongPressGestureRecognizer *)sender
+{
+    if ([sender isEqual:self.lpGesture]) {
+        if (sender.state == UIGestureRecognizerStateBegan)
+        {
+            CGPoint lpLocation = [sender locationInView:self.tableView];
+            NSIndexPath  *lpIndexPath = [self.tableView indexPathForRowAtPoint:lpLocation];
+
+            [self handleItemAtRowOf:[lpIndexPath row]];
+
+        }
+    }
+}
+
 - (void)handleItemAtRowOf:(NSInteger)row {
     TTSItemStruct *sItem = self.items[row];
+
+    [sharedCenter SpeakOut: sItem.text];
+
+    // for demo version, not updating the frequency
+    if ([sItem.customize isEqualToString:@"demo"])
+        return;
+
+
 
     int freq;
     NSString *subMenu = nil;
 
-    if ([[self from] isEqualToString:@"cognitive"]) {
+    if ([[self type] isEqualToString:@"cognitive"]) {
         sItem.cognitive += 1;
         freq = sItem.cognitive;
         subMenu = @"cognitive";
@@ -142,8 +175,6 @@
     else {
         NSLog(@"Could not execute the query.");
     }
-
-    [sharedCenter SpeakOut: sItem.text];
 }
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)sender {
@@ -199,13 +230,13 @@
     // blue background color of each cell
     UIColor *colorBack;
 
-    if ([self from] != NULL && [[self from] isEqualToString:@"cognitive"]) {
+    if ([[self type] isEqualToString:@"cognitive"]) {
         colorBack = [ResourceCenter colorFromHexString:tItem.color];
     } else {
         colorBack = [UIColor colorWithRed: 64.0/255.0f green:147.0/255.0f blue:223.0/255.0f alpha:1.0];
     }
 
-    NSLog(@"from in emer=%@", [self from]);
+    NSLog(@"from in emer=%@", [self type]);
 
     cell.itemLabel.backgroundColor = colorBack;
     cell.itemLabel.textColor = [UIColor whiteColor];
@@ -219,7 +250,7 @@
 // in iOS 7 regardless of orientation width is the shorter side; in iOS8+ it is orientation dependent
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    if ([[self from] isEqualToString:@"cognitive"]) {
+    if ([[self type] isEqualToString:@"cognitive"]) {
         return [ResourceCenter screenSize].height / 2;
     } else {
         return [ResourceCenter screenSize].height / 3;
